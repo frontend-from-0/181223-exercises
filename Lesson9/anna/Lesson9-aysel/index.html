@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <article class="post">
+      <h1>Time-saving CSS techniques to create responsive images</h1>
+      <div class="follow-box">
+        <img
+          class="first-pic"
+          src="https://miro.medium.com/v2/resize:fill:44:44/1*p3v_yjsMfK5k1oKYDXij7Q.jpeg"
+          alt="Adrien Zaganelli"
+        />
+        <img
+          class="second-pic"
+          src="https://miro.medium.com/v2/resize:fill:24:24/1*MotlWcSa2n6FrOx3ul89kw.png"
+          alt="freecodecamp logo"
+        />
+
+        <p class="publisher">
+          <a href="https://medium.com/@adri_zag">Adrien Zaganelli</a> ·
+          <button>Follow</button> <br />
+          Published in
+          <a href="https://medium.com/free-code-camp"
+            >We’ve moved to freeCodeCamp.org/news</a>
+          ·
+          <span>3 min read · Aug 12, 2018</span>
+        </p>
+        <p class="responsive-publisher">
+          <a href="https://medium.com/@adri_zag">Adrien Zaganelli</a> ·
+          <button>Follow</button> <br />
+          Published in
+          <a href="https://medium.com/free-code-camp"
+            >We’ve moved to freeCodeCamp.org/news</a>
+          <br>
+          <span>3 min read · Aug 12, 2018</span>
+        </p>
+      </div>
+    <hr> <!--they disappeared on the browser i couldnt solve the problem-->
+      <div class="bottom-information">
+        <div class="left-bottom-information">
+          <i class="fa-solid fa-hands-clapping"> 10 K </i>
+          <i class="fa-regular fa-comment"> 21 </i>
+        </div>
+        <div class="right-bottom-information">
+          <i class="fa-regular fa-bookmark"></i>
+          <i class="fa-regular fa-circle-play"></i>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </div>  
+    </div>
+    <hr>
+
+    <img class="clock" src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg" 
+    srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg 640w, 
+    https://miro.medium.com/v2/resize:fit:720/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg 720w, 
+    https://miro.medium.com/v2/resize:fit:750/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg 750w, 
+    https://miro.medium.com/v2/resize:fit:786/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg 786w, 
+    https://miro.medium.com/v2/resize:fit:828/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg 828w,
+     https://miro.medium.com/v2/resize:fit:1100/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg 1100w, 
+     https://miro.medium.com/v2/resize:fit:2000/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg 2000w" 
+     alt="clock-pic"/>
+     <figcaption>Photo by Kevin Ku on Unsplash</figcaption>
+   
+      <p>
+        As a web developer, there is a high probability that you have
+        encountered the two enemies of this article: images and deadlines.
+        Sometimes, for some reasons, your images won’t fit the layout and you
+        don’t want to wrap your head around this for hours.
+      </p>
+      <p>
+        This situation has happened to me many times and I have learned from my
+        mistakes. No more black magic hacks — here are my five favorites
+        techniques to handle image resizing.
+      </p>
+      <h5>the “OMG I NEED THIS ASAP” way</h5>
+      <p>
+        It’s 5:00 pm on Friday, you have to finish this page, but the images
+        won’t fit the layout. It’s time to use your magic trick!
+      </p>
+      <div class="gray-box">
+        .myImg {<br />
+        background-image: url("my-image.png");<br />
+        background-size: cover;<br />
+        }
+      </div>
+      <p>
+        Sounds familiar? We’ve all done it once, doesn’t it feel like cheating
+        to you?
+      </p>
+      <p>
+        Using background properties is very useful, they just work. Yet,
+        remember that you should use them only for non-content images or as a
+        replacement of text and in some particular cases.
+      </p>
+      <h5>The way from the future</h5>
+      <p>
+        What if I told you this kind of magic exists also for <img /> elements?
+        Say “hi” to the object-fit property — which also works for videos, by
+        the way!
+      </p>
+      <div class="gray-box">
+        .myImg {<br />
+        object-fit: cover; <br />width: 320px;<br />
+        height: 180px;<br />
+        }
+      </div>
+      <p>
+        That’s all folks! See how when we retrieve the friendly value cover, we
+        can also use contain.
+      </p>
+      <h5>Okay what’s the trap?</h5>
+      <p>
+        Unfortunately object-fit will not work on IE and older versions of
+        Safari, but there is a polyfill.
+      </p>
+     
+        <img class="desktop-pic"
+          src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*d0wZwFpXGiAYH9_NrJCroA.png"
+          alt=""
+        />
+        <figcaption>
+          source:
+          https://css-tricks.com/almanac/properties/o/object-fit/#article-header-id-4
+        </figcaption>
+      
+      <h5>The “Netflix” way</h5>
+      <p>
+        You may think “nice trick man, one more way that doesn’t work in old
+        browsers like IE 😔”. Don’t worry, this one works everywhere and it is
+        my favorite! You’ll need to wrap your image with a relative padded
+        parent.
+      </p>
+      <p>
+        We will keep the image ratio with a percentage on the padding property.
+        Your image will be a full size absolute child.
+      </p>
+      <p>The code looks like this:</p>
+      <div class="gray-box">
+        .wrapper { <br />
+        position: relative; <br />padding-top: 56.25%; <br />/* 16:9 Aspect
+        Ratio */<br />
+        } <br />img { <br />position: absolute; <br />left: 0; <br />top: 0;
+        <br />width: 100%; <br />height: auto;<br />
+        }
+      </div>
+      <p>“Hey man, it looks complicated.”</p>
+      <p>
+        Once you get the concept, the technique is simple and widely used.
+        Netflix uses it!
+      </p>
+      <img class="youtube-pic" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png" 
+      srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png 640w, 
+      https://miro.medium.com/v2/resize:fit:720/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png 720w, 
+      https://miro.medium.com/v2/resize:fit:750/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png 750w, 
+      https://miro.medium.com/v2/resize:fit:786/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png 786w, 
+      https://miro.medium.com/v2/resize:fit:828/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png 828w, 
+      https://miro.medium.com/v2/resize:fit:1100/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png 1100w, 
+      https://miro.medium.com/v2/resize:fit:2000/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png 2000w" 
+       alt="pictures from youtube">
+       <figcaption>Take a look at the class names !</figcaption>
+      
+      <h5>The Simple way</h5>
+      <p>You may already know this one:</p>
+      <div class="gray-box">
+        img { <br />
+        height: auto; <br />
+        width: 100%; <br />
+        /* even more control with max-width */ <br />
+        max-width: 720px; <br />
+        }
+      </div>
+      <p>If your layout isn’t too complicated, it works in most cases.</p>
+      <h5>The Performance way (Advanced)</h5>
+      <p>
+        By performance, I mean load times. A big hero image can ruin it and make
+        your page feel slow, especially on mobile.
+      </p>
+      <p>
+        Did you know that in modern browsers you can change an image source
+        depending on your page width? That’s what srcset is made for!
+      </p>
+      <p>
+        You can combine them with the HTML 5 &lt;picture&gt; tag, which
+        gracefully degrades with an <img />.
+      </p>
+      <div class="gray-box">
+        &lt;picture&gt;
+        <br />&nbsp;&nbsp;&lt;source srcset="elva-480w.jpg" media="(max-width:
+        799px)"&gt; <br />&nbsp;&nbsp;&lt;source srcset="elva-800w.jpg"
+        media="(min-width: 800px)"&gt; <br />&nbsp;&nbsp;&lt;img
+        src="elva-800w.jpg" &gt; <br />&lt;/picture&gt;
+      </div>
+      <h5>To Recap</h5>
+      <ol>
+        <li>
+          Use background-image if your image is not part of the page’s content.
+        </li>
+        <li>Use object-fit if you don’t care about IE.</li>
+        <li>
+          The padded container technique, used by Netflix, works everywhere.
+        </li>
+        <li>In most cases, just add height: auto; in your CSS.</li>
+        <li>
+          If you need fast load times, use srcset to load smaller images on
+          mobile.
+        </li>
+      </ol>
+
+      <div class="btn-section">
+        <a href="https://medium.com/tag/css" class="btn">CSS</a>
+
+        <a href="https://medium.com/tag/coding" class="btn">Coding</a>
+        <a href="https://medium.com/tag/responsive-design" class="btn"
+          >Responsive Design</a
+        >
+        <a href="https://medium.com/tag/tech" class="btn">Tech</a>
+        <a href="https://medium.com/tag/programming" class="btn">Programing</a>
+      </div>
+
+      <div class="bottom-information">
+        <div class="left-bottom-information">
+          <i class="fa-solid fa-hands-clapping"> 10 K </i>
+          <i class="fa-regular fa-comment"> 21 </i>
+        </div>
+        <div class="right-bottom-information">
+          <i class="fa-regular fa-bookmark"></i>
+          <i class="fa-regular fa-circle-play"></i>
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </div>
+      </div>
+
+      </div>
+    </article>
+  </body>
+</html>
