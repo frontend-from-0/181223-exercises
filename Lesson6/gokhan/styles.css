@@ -140,6 +140,7 @@ hr {
 
 .footer{
   max-width: 800px;
+  flex: 1;
 }
 
 .footer-content{
