@@ -130,6 +130,7 @@ hr {
   flex-direction: row;
   justify-content: center;
   max-width: 800px;
+  margin: 0 auto;
 }
 
 .footer > h4{
