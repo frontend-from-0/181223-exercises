@@ -2,7 +2,6 @@
     box-sizing: border-box;
   }
   body{
-  max-width: 100%;
   margin: 0;
   padding: 20px;
   font-size: 1em;
@@ -23,7 +22,7 @@
   }
   .article-info__container{
    max-width: 700px;
-   left: 200px;
+   margin: 0 auto;
   }
   .social-media__profile {
     position: relative;
@@ -79,11 +78,9 @@
   margin-top: 40px;
   }
   .images{
-  width: 100%;
-  max-width: 1000px;
-  display: flex;
-  align-items:center;
-  justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   .images > img {
     width:100%;
