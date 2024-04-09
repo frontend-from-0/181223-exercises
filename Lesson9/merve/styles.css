@@ -105,3 +105,61 @@ line-height: 32px;
 font-size: 20px;
 font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 }
+pre{
+  overflow-x:scroll;
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
+  letter-spacing: -0.022em;
+  font-size: 16px;
+  color: #000000;
+  background-color: #f2f2f2;
+  padding: 15px;
+  }
+  code, .code{
+  background-color: #f2f2f2;
+  padding: 5px;
+  font-style: normal;
+  line-height: 1.5;
+  font-weight: 500;
+  font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
+  letter-spacing: -0.022em;
+  font-size: 16px;
+  color: #000000;
+  }
+  p{
+  margin: 40px auto;
+  }
+  h2, h3, h4, pre{
+  margin-right: 90px;
+  margin-left: 90px;
+  margin: 0 auto;
+  }
+  ol{
+  list-style-type: decimal;
+  margin: 50px;
+  }
+  li {
+  margin-top: 1.14em;
+  letter-spacing: -0.003em;
+  line-height: 1.58;
+  font-style: normal;
+  font-size: 20px;
+  }
+  .highlight {
+  background-color: #e8efe6;
+  text-decoration: none !important;
+  }
+  .highlight:hover{
+  background-color: #acf699;
+  cursor: pointor;
+  }
+  .alengirli{
+  color: black;
+  text-decoration: none;
+  margin: 0 10px 20px 0;
+  background-color: #f2f2f2;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 15px;
+  }
