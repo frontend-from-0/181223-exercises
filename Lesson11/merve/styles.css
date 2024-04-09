@@ -40,13 +40,13 @@
     .a--nav-selector:hover{
       letter-spacing: 2px;
       color: var(--quinary-color);
+      transition: 0.3s;
     }
     .welcome-section {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 100%;
       height: 100vh;
       background-color: var(--primary-color);
       background-image: linear-gradient(62deg, var(--tertiary-color) 0%, var(--primary-color) 100%);
@@ -78,11 +78,13 @@
       height: 420px;
       width: 100%;
       object-fit: cover;
-      padding: 25px 20px;
-      border-radius: 25px;
+      padding: 25px 35px;
+      border-radius: 45px;
   }
   .project-image:hover{
     background-color: var(--hover-color);
+    width: 110%;
+    transition: 0.3s;
   }
     .contact-section{
       text-align: center;
@@ -97,12 +99,12 @@
       font-size: 2.5rem;
       font-weight: 600;
       letter-spacing: 3px;
-      color:var(--hover-color)
+      color:var(--hover-color);
+      transition: 0.3s;
     }
     .contact-section-content{
       font-size: 1.6rem;
       text-decoration: none;
-  
     }
     .contact-details{
       text-decoration: none;
@@ -113,6 +115,7 @@
       color:var(--hover-color);
       box-shadow: 0 0 5px var(--hover-color);
       border-radius: 15px;
+      transition: 0.3s;
     }
     footer{
     font-size: 1.2rem;
