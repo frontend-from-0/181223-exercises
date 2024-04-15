@@ -12,7 +12,7 @@ const number8 = 8;
 let number9 = number8++
 
 console.log('number8, number9');
-
+fffff
 
 // 11. Declare a variable number10 and initialize it to -3. Use the postfix ++ operator to increment the value of num by 1, then multiply the result by 2 and log it to the console.
 const number10 = -3;
