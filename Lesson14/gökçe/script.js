@@ -9,7 +9,7 @@ console.log(number8,number9);
 // 11. Declare a variable number10 and initialize it to -3. Use the postfix ++ operator to increment the value of num by 1, then multiply the result by 2 and log it to the console.
 let number10=-3;
 number10++;
-const number11=(number10*2);
+const number11= (number10 * 2);
 console.log(number10,number11);
 
 // 12. Declare two variables a and b and initialize them to 2 and 3, respectively. Use the prefix ++ operator to increment the value of a by 1, then add b to the result and log it to the console.
