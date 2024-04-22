@@ -16,5 +16,5 @@ console.log(number10,number11);
 let a=2;
 let b=3;
 a++;
-let result=a+b;
+const result=a+b;
 console.log(result);
