@@ -25,4 +25,4 @@ let a= 2;
 let b= 3;
 let newResult = (++a)+b;
 
-console.log('newResult');  
+console.log('Ex.2 newResult:', newResult);  
