@@ -14,7 +14,7 @@ console.log(number10,number11);
 
 // 12. Declare two variables a and b and initialize them to 2 and 3, respectively. Use the prefix ++ operator to increment the value of a by 1, then add b to the result and log it to the console.
 let a=2;
-let b=3;
+number7 b=3;
 a++;
 const result=a+b;
 console.log(result);
