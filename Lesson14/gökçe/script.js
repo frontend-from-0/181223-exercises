@@ -1,6 +1,6 @@
 // 9. Declare a variable number6 and initialize it to 6. Declare a variable number7 and initialize it to `++number6` (number6 incremented using prexif ++ operator). Log both values to the console.
 let number6= 6 ;
-let number7= ++number6;
+const number7= ++number6;
 console.log(number6,number7);
 // 10. Declare a variable number8 and initialize it to 8. Declare a variable number9 and initialize it to `number8++` (number8 incremented using postfix ++ operator). Log both values to the console.
 let number8=8;
