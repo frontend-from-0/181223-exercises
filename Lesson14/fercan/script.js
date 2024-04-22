@@ -3,7 +3,7 @@ let number6 = 6 ;
 const number7 = ++number6;
    
 
-console.log('Exercise 9:, ${number7}');
+console.log('Exercise 9:, ${number6}, ${number7}');
 console.log('------------------------');
 
 
