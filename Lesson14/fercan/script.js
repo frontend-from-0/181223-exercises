@@ -1,6 +1,6 @@
 // 9. Declare a variable number6 and initialize it to 6. Declare a variable number7 and initialize it to `++number6` (number6 incremented using prexif ++ operator). Log both values to the console.
 let number6 = 6 ;
-number7 = '++number6' ;
+const number7 = ++number6;
    
 
 console.log('Exercise 9:, ${number7}');
