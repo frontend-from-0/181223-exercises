@@ -88,7 +88,7 @@ const string1Exercise13 = '$9.99 - Sale! 50% off all items in store';
 const string2Exercise13 =
 	'Bundle deal: Save $50 when you buy two products together!';
 const percentSymbol = '%';
-
+  
 console.log('Exercise13: ');
 console.log('Exercise13: ');
 console.log('------------------------');
