@@ -19,4 +19,8 @@ console.log(stringExercise15.trim());
 const planPriceString = 'Premium plan - 9.99 USD/month.'; // Should return "9.99 USD"
 
 console.log('Exercise16: ');
-console.log(planPriceString.slice(15, 23));
+const startIndex = planPriceString.indexOf('- ')+2;
+const lastIndex = planPriceString.indexOf('/')+2;
+console.log(planPriceString.slice(startIndex, lastIndex));
+
+// can you check again please? I am not sure about slice method 
