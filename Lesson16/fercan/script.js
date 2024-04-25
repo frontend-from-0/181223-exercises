@@ -12,6 +12,14 @@ if (a < b) {
 
 // 5. Write a function that takes in a number and checks if it's positive, negative, or zero using if else statement.
 
+function isPositiveOrNegative (number) {
+if(number<0){
+    console.log('It\'s a negative number');
+} else if {
+    console.log('It\'s a positive number');
+} else {
+    console.log ('It\'s equal to zero.');
+}}
 // 6. Write a function that takes in a year and checks if it's a leap year (is divisible by 4 and not divisible by 100 OR divisible by 400) or not using if else statement.
 
 // 7. Write a function that takes in a temperature and checks if it's above or below freezing using if else statement.
@@ -30,8 +38,22 @@ if (a < b) {
 
 // 11. Write a function that asks the user to enter their salary and their years of experience. If the salary is less than $30,000 and the years of experience are less than 5, print "Sorry, we cannot offer you the job at this time". If the salary is less than $50,000 and the years of experience are between 5 and 10 (inclusive), print "We can offer you the job at a lower salary". If the salary is greater than or equal to $50,000 or the years of experience are greater than or equal to 10, print "We can offer you the job at the requested salary".
 
-// 12. Write a function that asks the user to enter their score on a test. If the score is less than 60, print "You failed the test". If the score is between 60 and 70 (inclusive), print "You passed the test, but your grade is not great". If the score is between 71 and 80 (inclusive), print "You got a B". If the score is between 81 and 90 (inclusive), print "You got an A". If the score is greater than 90, print "You got an A+ - Great job!".
+// 12. Write a function that asks the user to enter their score on a test. If the score is less than 60, print "You failed the test". 
+//If the score is between 60 and 70 (inclusive), print "You passed the test, but your grade is not great". 
+//If the score is between 71 and 80 (inclusive), print "You got a B". 
+//If the score is between 81 and 90 (inclusive), print "You got an A". 
+//If the score is greater than 90, print "You got an A+ - Great job!".
 
+function testFailOrPass (score) {
+if(60=<score>=70) {
+    console.log("You passed the test, but your grade is not great");
+    } else if (71=<score>=80) {
+        console.log("You got a B");
+        } else if (81=<score>=90) {
+            console.log("You got an A");
+            } else {
+                console.log ("You got an A+ - Great job!");
+            }}
 
 // 14. Write a function that asks the user to enter a grade letter (A, B, C, D, or F) and displays a message indicating whether the grade is passing (A, B, C) or failing (D, F). Use a switch statement to handle the different cases.
 
