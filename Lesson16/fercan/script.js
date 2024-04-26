@@ -15,17 +15,27 @@ if (a < b) {
 function isPositiveOrNegative (number) {
 if(number<0){
     console.log('It\'s a negative number');
-} else if {
+ } else if (number>0) {  
     console.log('It\'s a positive number');
-} else {
+ } else { 
     console.log ('It\'s equal to zero.');
 }}
-// 6. Write a function that takes in a year and checks if it's a leap year (is divisible by 4 and not divisible by 100 OR divisible by 400) or not using if else statement.
+// 6. Write a function that takes in a year and checks if it's a leap year (is divisible by 4 and not divisible by 100 OR divisible by 400) 
+//or not using if else statement.
+
+function isLeapYear (year) {
+    if(year%4==0 && year%100!=0){
+        console.log('It\'s a leap year');
+     } else (year%400==0); {  
+        console.log('It\'s a leap year');
+    }}
 
 // 7. Write a function that takes in a temperature and checks if it's above or below freezing using if else statement.
 
-// 8. Write a function that takes in a person's height and weight and checks if they are considered underweight, normal, overweight, or obese using if else statement.
-// Body Mass Index (BMI) is a person’s weight in kilograms (or pounds) divided by the square of height in meters (or feet). A high BMI can indicate high body fatness.
+// 8. Write a function that takes in a person's height and weight and checks if they are considered underweight, normal, overweight, 
+//or obese using if else statement.
+// Body Mass Index (BMI) is a person’s weight in kilograms (or pounds) divided by the square of height in meters (or feet). 
+//A high BMI can indicate high body fatness.
 //Formula: weight (kg) / [height (m)]2
 // Below 18.5	Underweight
 // 18.5 – 24.9	Healthy Weight
@@ -44,17 +54,35 @@ if(number<0){
 //If the score is between 81 and 90 (inclusive), print "You got an A". 
 //If the score is greater than 90, print "You got an A+ - Great job!".
 
-function testFailOrPass (score) {
-if(60=<score>=70) {
-    console.log("You passed the test, but your grade is not great");
-    } else if (71=<score>=80) {
-        console.log("You got a B");
-        } else if (81=<score>=90) {
-            console.log("You got an A");
-            } else {
-                console.log ("You got an A+ - Great job!");
-            }}
+function testFailOrPass(number) {
+    if (60 <= number && number <= 70) {
+        console.log('You passed the test, but your grade is not great');
+    } else if (71 <= number && number <= 80) {
+        console.log('You got a B');
+    } else if (81 <= number && number <= 90) {
+        console.log('You got an A');
+    } else {
+        console.log('You got an A+ - Great job!');
+    }
+}
 
-// 14. Write a function that asks the user to enter a grade letter (A, B, C, D, or F) and displays a message indicating whether the grade is passing (A, B, C) or failing (D, F). Use a switch statement to handle the different cases.
+// 14. Write a function that asks the user to enter a grade letter (A, B, C, D, or F) and 
+//displays a message indicating whether the grade is passing (A, B, C) or failing (D, F). 
+//Use a switch statement to handle the different cases.
+
+let grade=0;
+switch (grade) {
+    case A:
+    case B:
+    case C:
+      text = "Passing";
+      break;
+    case D:
+    case F:
+      text = "Failing";
+      break;
+    default:
+      text = "unvalid grade";
+  }
 
 // 15. Write a function that asks the user to enter their age, and then calculates and displays their age in dog years (where one human year is equivalent to seven dog years). If the user enters a negative number or zero, display an error message.
