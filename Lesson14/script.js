@@ -1,12 +1,27 @@
 // 9. Declare a variable number6 and initialize it to 6. Declare a variable number7 and initialize it to `++number6` (number6 incremented using prexif ++ operator). Log both values to the console.
+let number6 = 6;
+let number7 = ++number6;
+console.log('exercises 9');
+console.log(number6, number7);
 
-console.log('------------------------');
 // 10. Declare a variable number8 and initialize it to 8. Declare a variable number9 and initialize it to `number8++` (number8 incremented using postfix ++ operator). Log both values to the console.
 
-console.log('------------------------');
+let number8 = 8;
+let number9 = number8++;
+console.log('exercises 10');
+console.log(number8, number9);
+
 // 11. Declare a variable number10 and initialize it to -3. Use the postfix ++ operator to increment the value of num by 1, then multiply the result by 2 and log it to the console.
 
-console.log('------------------------');
+let number10 = -3;
+let result = (number10++ * 2);
+console.log('exercises 11');
+console.log(result);
+
 // 12. Declare two variables a and b and initialize them to 2 and 3, respectively. Use the prefix ++ operator to increment the value of a by 1, then add b to the result and log it to the console.
 
-console.log('------------------------');
+let a = 2;
+let b = 3;
+let result2 = ++a + b;
+console.log('exercises 12');
+console.log(result2);
