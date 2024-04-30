@@ -19,6 +19,6 @@ console.log(stringExercise15.trim());
 const planPriceString = 'Premium plan - 9.99 USD/month.'; // Should return "9.99 USD"
 const startingIndex=planPriceString.indexOf('-')+2;
 const lastingIndex=planPriceString.indexOf('/');
-console.log(startingIndex,lastingIndex);
+console.log(planPriceString.slice(startingIndex,lastingIndex));
 console.log('Exercise16: ');
 console.log(planPriceString.slice(15,23));
