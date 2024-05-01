@@ -217,3 +217,4 @@ function calculateDogAge(age){
 calculateDogAge(5);
 calculateDogAge(-6);
 calculateDogAge(0);
+console.log('--------------');
