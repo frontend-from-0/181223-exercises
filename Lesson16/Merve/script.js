@@ -8,6 +8,8 @@ function compareNumbers(num1, num2) {
         return `${num1} is equal to ${num2}`;
     }
 }
+compareNumbers(1, 5);
+console.log(compareNumbers(1, 5));
 // 5. Write a function that takes in a number and checks if it's positive, negative, or zero using if else statement.
 function isPositiveOrNegative (number) {
     if(number<0){
@@ -77,6 +79,7 @@ function checkVotingEligibility(age, isStudent) {
         console.log("You are old enough to vote.");
     }
 }
+checkVotingEligibility(20, true);
 // 11. Write a function that asks the user to enter their salary and their years of experience. If the salary is less than $30,000 and the years of experience are less than 5, print "Sorry, we cannot offer you the job at this time". If the salary is less than $50,000 and the years of experience are between 5 and 10 (inclusive), print "We can offer you the job at a lower salary". If the salary is greater than or equal to $50,000 or the years of experience are greater than or equal to 10, print "We can offer you the job at the requested salary".
 function jobOffer(salary, experience) {
     if (salary < 30000 && experience < 5) {
@@ -119,7 +122,7 @@ function checkGradeLetter(grade) {
 }
 // 15. Write a function that asks the user to enter their age, and then calculates and displays their age in dog years (where one human year is equivalent to seven dog years). If the user enters a negative number or zero, display an error message.
 function calculateDogYear(yourAge){
-    if(yourAge<0 || yourAge<=0){
+    if (yourAge<=0) {
         return "Error. Please enter a valid age";
     } else{
         return yourAge*7;
