@@ -17,6 +17,8 @@ let number10 = -3;
 let result = (number10++ * 2);
 console.log('exercises 11');
 console.log(result);
+console.log('---------');
+
 
 // 12. Declare two variables a and b and initialize them to 2 and 3, respectively. Use the prefix ++ operator to increment the value of a by 1, then add b to the result and log it to the console.
 
