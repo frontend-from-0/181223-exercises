@@ -28,3 +28,4 @@ let result2 = ++a + b;
 console.log('exercises 12');
 console.log(result2);
 console.log(result2);
+console.log('---------');
