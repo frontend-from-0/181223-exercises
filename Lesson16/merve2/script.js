@@ -14,6 +14,7 @@ compareNumbers(4, 9);
 compareNumbers(4, 4);
 compareNumbers(25, 7);
 console.log('--------------');
+console.log('--------------');
 
 // 5. Write a function that takes in a number and checks if it's positive, negative, or zero using if else statement.
 
