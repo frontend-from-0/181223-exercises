@@ -126,9 +126,8 @@ function checkVoterEligibility(age, isStudent) {
     } 
 }
 
-checkVoterEligibility(17, "yes"); 
-checkVoterEligibility(70, "no"); 
-checkVoterEligibility(20, "yes"); 
+checkVoterEligibility(17, "true"); 
+
 
 // 11. Write a function that asks the user to enter their salary and their years of experience. If the salary is less than $30,000 and the years of experience are less than 5, print "Sorry, we cannot offer you the job at this time". If the salary is less than $50,000 and the years of experience are between 5 and 10 (inclusive), print "We can offer you the job at a lower salary". If the salary is greater than or equal to $50,000 or the years of experience are greater than or equal to 10, print "We can offer you the job at the requested salary".
 function hireEmployee(salary, experience){
