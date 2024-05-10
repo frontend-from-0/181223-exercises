@@ -1,20 +1,50 @@
 // 1. Write a loop that prints out the numbers from 1 to 10.
 
-for(let i=1; i<11; i++){
-console.log(i);
-}
+
+for(let i=1; i<=10; i++){
+        console.log(i);
+    }
 console.log('- - - - - - - - - - - - - - - - - ');
+
+
 // 2. Write a loop that prints out the odd numbers from 1 to 20.
 
+for(let i=1; i<=20; i++){
+    if (i % 2 !== 0) {
+        console.log(i);
+    }
+}
+        
 console.log('- - - - - - - - - - - - - - - - - ');
+
+
 // 3. Write a loop that prints out the even numbers from 1 to 20.
 // 2, 4, 6...
 
-console.log('- - - - - - - - - - - - - - - - - ');
-// 4. Write a loop that finds the maximum number in an array of numbers.
-const findMaxNumberInArray = [300, 1000, 23, 42, 300, 120, 7, 4, 90];
+for(let i=1; i<=10; i++){
+    if (i % 2 ==0) {
+console.log(i);
+}
+}
 
 console.log('- - - - - - - - - - - - - - - - - ');
+
+
+// 4. Write a loop that finds the maximum number in an array of numbers.
+
+const findMaxNumberInArray = [300, 1000, 23, 42, 300, 120, 7, 4, 90];
+
+let maxNumber = findMaxNumberInArray[0]; // Assume the first element is the maximum initially
+
+for (let i = 1; i < findMaxNumberInArray.length; i++) {
+  if (findMaxNumberInArray[i] > maxNumber) {
+    maxNumber = findMaxNumberInArray[i]; // Update maxNumber if a larger element is found
+  }
+}
+
+console.log("The maximum number in the array is:", maxNumber);
+console.log('- - - - - - - - - - - - - - - - - ');
+
 // 5. Write a loop that finds the minimum number in an array of numbers.
 const findMinNumberInArray = [1, 10, 23, 42, 0, 12, 7, 0];
 
