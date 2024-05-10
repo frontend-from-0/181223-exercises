@@ -45,17 +45,37 @@ for (let i = 1; i < findMaxNumberInArray.length; i++) {
 console.log("The maximum number in the array is:", maxNumber);
 console.log('- - - - - - - - - - - - - - - - - ');
 
+
 // 5. Write a loop that finds the minimum number in an array of numbers.
 const findMinNumberInArray = [1, 10, 23, 42, 0, 12, 7, 0];
 
+let minNumber = findMinNumberInArray[0]; 
+
+for (let i = 1; i < findMinNumberInArray.length; i++) {
+  if (findMinNumberInArray[i] < minNumber) {
+    minNumber = findMinNumberInArray[i]; 
+  }
+}
+console.log("The minimum number in the array is:", minNumber);
 console.log('- - - - - - - - - - - - - - - - - ');
+
+
 // 6. Write a loop that reverses a given string.
 const string = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
 
-console.log('- - - - - - - - - - - - - - - - - ');
-// 7. Write a while loop that counts from 10 to 1 and prints out each number.
+console.log('answer to number6: no answer - - - - - - - - - - - - ');
 
-console.log('- - - - - - - - - - - - - - - - - ');
+    
+// 7. Write a while loop that counts from 10 to 1 and prints out each number.
+console.log('answer to number7:');
+let count = 10;
+
+while (count >= 1) {
+  console.log(count);
+  count--;
+}
+
+
 // 8. Write a while loop that generates random numbers between 1 and 10 until a number greater than 8 is generated, and then prints out the total number of iterations.
 
 console.log('- - - - - - - - - - - - - - - - - ');
