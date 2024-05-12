@@ -69,13 +69,13 @@ function checkAgeCategory(age) {
 }
 // 10. Write a function that takes age as a number and whether they are a student (yes or no). If the age is less than 18 and the user is a student, print "You are a student and not old enough to vote". If the age is between 18 and 65 (inclusive) and the user is not a student, print "You are eligible to vote". If the age is greater than 65, print "You are a senior citizen". If the user is a student but their age is greater than or equal to 18, print "You are old enough to vote".
 function checkVotingEligibility(age, isStudent) {
-    if (age < 18 && isStudent === "yes") {
+    if (age < 18 && isStudent) {
         console.log("You are a student and not old enough to vote.");
-    } else if (age >= 18 && age <= 65 && isStudent === "no") {
+    } else if (age >= 18 && age <= 65 && isStudent) {
         console.log("You are eligible to vote.");
     } else if (age > 65) {
         console.log("You are a senior citizen.");
-    } else if (isStudent === "yes") {
+    } else if (isStudent) {
         console.log("You are old enough to vote.");
     }
 }
@@ -90,6 +90,7 @@ function jobOffer(salary, experience) {
         console.log("We can offer you the job at the requested salary.");
     }
 }
+jobOffer(45000, 3);
 // 12. Write a function that asks the user to enter their score on a test. If the score is less than 60, print "You failed the test". If the score is between 60 and 70 (inclusive), print "You passed the test, but your grade is not great". If the score is between 71 and 80 (inclusive), print "You got a B". If the score is between 81 and 90 (inclusive), print "You got an A". If the score is greater than 90, print "You got an A+ - Great job!".function checkTestScore(score) {
     function checkTestScore(score) {
         if (score < 60) {
@@ -104,6 +105,8 @@ function jobOffer(salary, experience) {
             console.log("You got an A+ - Great job!");
         }
     }
+    checkTestScore(60); 
+    checkTestScore(95);  
 // 14. Write a function that asks the user to enter a grade letter (A, B, C, D, or F) and displays a message indicating whether the grade is passing (A, B, C) or failing (D, F). Use a switch statement to handle the different cases.
 function checkGradeLetter(grade) {
     switch (grade) {
@@ -120,6 +123,9 @@ function checkGradeLetter(grade) {
             console.log("Invalid grade");
     }
 }
+checkGradeLetter('a');
+checkGradeLetter('F');
+checkGradeLetter('J');
 // 15. Write a function that asks the user to enter their age, and then calculates and displays their age in dog years (where one human year is equivalent to seven dog years). If the user enters a negative number or zero, display an error message.
 function calculateDogYear(yourAge){
     if (yourAge<=0) {
