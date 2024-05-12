@@ -76,16 +76,59 @@ while (count >= 1) {
 }
 
 
-// 8. Write a while loop that generates random numbers between 1 and 10 until a number greater than 8 is generated, and then prints out the total number of iterations.
+// 8. Write a while loop that generates random numbers between 1 and 10 until a number greater than 8 is generated,
+// and then prints out the total number of iterations.
+
+let iterations = 0;
+let randomNumber;
+
+while (true) {
+  randomNumber = Math.floor(Math.random() * 10) + 1; 
+  iterations++; 
+
+  console.log("Random number:", randomNumber);
+
+  if (randomNumber > 8) {
+    break; // Exit the loop if a number greater than 8 is generated
+  }
+}
+
+console.log("Total iterations:", iterations);
+
 
 console.log('- - - - - - - - - - - - - - - - - ');
 // 9. Write a do-while loop that counts from 1 to 10 and prints out each number.
 
+let text = ""
+let i = 1;
+
+do {
+  text += "The number is: " + i;
+  i++;
+}
+while (i<10);
+
+console.log(text)
+
 // 10. Write a for...in loop that prints out the keys and values of an object.
 const person = { name: 'John', surname: 'Doe', age: 30, city: 'New York' };
 
+for (let key in person) {
+  console.log("Key:", key, "Value:", person[key]);
+}
+
+
 // 11. Write a for...in loop that sums the values of an object.
+
 const obj = { a: 10, b: 20, c: 30, d: 23 };
+let sum = 0;
+
+for (let key in obj) {
+  sum += obj[key];
+}
+
+console.log("The sum of the values:", sum);
+
 
 // Excercises below are additional (as requested during the lesson)
 
