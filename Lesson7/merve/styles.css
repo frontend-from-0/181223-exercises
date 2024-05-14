@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#bfd7ea;
+    --secondary-color:#e0ff4f;
+    --emphasis-color:#ff6663;
+    --shadow-color:#0b3954;
+    --light-color:#fefffe;
+
+
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(25deg, var(--emphasis-color), var(--shadow-color), var(--emphasis-color));
+    background-size: 500% 500%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color:inherit;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--secondary-color);
+}
+
+.sign-up-form {
+    text-align: center;
+}
+
+.sign-up-form h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--light-color);
+}
+
+.form-group {
+    font-size: 1.5em;
+    font-weight: 500;
+    padding: 10px 30px 10px 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--light-color);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 10px;
+}
+
+button {
+    font-size: 1em;
+    font-weight: 500;
+    padding: 12px 48px;
+    background-color: var(--shadow-color);
+    color: var(--light-color);
+    box-shadow: 0 0 20px var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
