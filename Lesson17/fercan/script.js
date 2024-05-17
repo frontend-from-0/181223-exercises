@@ -21,7 +21,7 @@ console.log('- - - - - - - - - - - - - - - - - ');
 // 3. Write a loop that prints out the even numbers from 1 to 20.
 // 2, 4, 6...
 
-for(let i=1; i<=10; i++){
+for(let i=1; i<=20; i++){
     if (i % 2 ==0) {
 console.log(i);
 }
