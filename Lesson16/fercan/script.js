@@ -23,12 +23,14 @@ if(number<0){
 // 6. Write a function that takes in a year and checks if it's a leap year (is divisible by 4 and not divisible by 100 OR divisible by 400) 
 //or not using if else statement.
 
-function isLeapYear (year) {
-    if(year%4==0 && year%100!=0){
+if(year%4==0 && year%100!=0){
         console.log('It\'s a leap year');
-     } else (year%400==0); {  
+     } else if (year%400==0); {  
         console.log('It\'s a leap year');
-    }}
+    } else {
+      console.log('It\'s not a leap year');
+  }
+}
 
 // 7. Write a function that takes in a temperature and checks if it's above or below freezing 
 //using if else statement.
