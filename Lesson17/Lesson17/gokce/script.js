@@ -6,14 +6,14 @@ console.log(i);
 
 // 2. Write a loop that prints out the odd numbers from 1 to 20.
 console.log("Exercise 2");
-for(let i=1; i<=18; i+=2){
+for(let i=1; i<=20; i+=2){
     console.log(i);
 }
 // 3. Write a loop that prints out the even numbers from 1 to 20.
 // 2, 4, 6...
 
 console.log("Exercise 3");
-for(let i=2; i<=18; i+=2){
+for(let i=2; i<=20; i+=2){
    console.log(i);
 }
 
@@ -114,27 +114,20 @@ console.log("total result : " + totalResult );
 
 // 13. Count Even Numbers: Write a for loop that generates and checks 100 random numbers between 1 and 50. Count how many even numbers are generated and print the count at the end.
 console.log("Exercise 13");
-let sumIteration = 0;
-let evenNum =0;
+let iteration = 0;
+let evenNumbersCount =0;
 do{
-let fullNum = Math.floor(Math.random()*50)+1; 
-console.log(fullNum);   
-sumIteration++;
-if (fullNum %2 ===0){
-    evenNum++;
-};
-console.log(evenNum);
-}
-while(sumIteration<=100);
-
-let evenNumbersCount = 0;
-for (let t=0; t<100; t ++);
-let ranNum= Math.floor(Math.random()*50)+1;
-console.log(ranNum);
-if(ranNum % 2 === 0){
+let randomNumber = Math.floor(Math.random()*50)+1; 
+console.log(randomNumber);   
+iteration++;
+if (randomNumber %2 ===0){
     evenNumbersCount++;
-}
+};
 console.log(evenNumbersCount);
+}
+while(iteration<=100);
+
+
   
 
 
@@ -169,15 +162,15 @@ console.log("Exercise 15");
 let randNumber = 0;
 let totalMultiplesOfThree = 0; 
 let resultSum = 0;
-let m=1;
+
 while (resultSum<=50){
     randNumber = Math.floor(Math.random()*15)+1;
-    m++;
+
     if (randNumber%3===0){
          resultSum += randNumber;
          totalMultiplesOfThree++;
     }
-    m++;
+
 }
 console.log("total sum"+ resultSum);
 console.log("total number :" + totalMultiplesOfThree);
