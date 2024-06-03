@@ -119,19 +119,21 @@ console.log('------------------------');
 //If the user is a student but their age is greater than or equal to 18, print "You are old enough to vote".
 
 function checkVotingEligibility(age, isStudent) {
-    if (age < 18 && isStudent === "yes") {
+    if (age < 18 && isStudent) {
         console.log("You are a student and not old enough to vote.");
-    } else if (age >= 18 && age <= 65 && isStudent === "no") {
+    } else if (age >= 18 && age <= 65 && !isStudent) {
         console.log("You are eligible to vote.");
     } else if (age > 65) {
         console.log("You are a senior citizen.");
-    } else if (isStudent === "yes" && age >= 18) {
+    } else if (isStudent && age >= 18) {
         console.log("You are old enough to vote.");
     }
 }
-checkVotingEligibility(35,"no"),
-checkVotingEligibility(70);
-checkVotingEligibility(12,"yes");
+
+checkVotingEligibility(35, false);
+checkVotingEligibility(70, false);
+checkVotingEligibility(12, true);
+
 console.log('------------------------');
 // 11. Write a function that asks the user to enter their salary and their years of experience.
 // If the salary is less than $30,000 and the years of experience are less than 5, 
