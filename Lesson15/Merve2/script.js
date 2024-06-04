@@ -23,6 +23,9 @@ console.log('------------------------');
 // 16. Extract the price and currency from a string below using "slice" method and print it to console.
 const planPriceString = 'Premium plan - 9.99 USD/month.'; // Should return "9.99 USD"
 
+const startIndex = planPriceString.indexOf('- ') + 2;
+const endIndex = planPriceString.indexOf('/', startIndex);
+
 console.log('Exercise16: ');
-console.log(planPriceString.slice(15, 23));
-console.log('------------------------ ');
+console.log(planPriceString.slice(startIndex, endIndex));
+console.log('------------------------');
