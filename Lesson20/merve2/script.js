@@ -52,7 +52,7 @@ class Square extends Shape{
         this.area = sideLength * sideLength;
     }
     describe(){
-        console.log(`This is ${this._color} ${this._name} and area is ${this.area}`)
+        console.log(`This is ${this._color} ${this._name} and area is ${this._area}`)
     }
 }
 
