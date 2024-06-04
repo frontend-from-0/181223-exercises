@@ -49,7 +49,7 @@ class Square extends Shape{
     constructor(name,color,sideLength){
         super(name,color);
         this._sideLength = sideLength;
-        this.area = sideLength * sideLength;
+        this._area = sideLength * sideLength;
     }
     describe(){
         console.log(`This is ${this._color} ${this._name} and area is ${this._area}`)
