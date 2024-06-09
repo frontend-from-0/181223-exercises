@@ -228,7 +228,6 @@ const reverseWords = (sentence) => {
 	return reversedWords.join(' ');
   };
   
-  const sentenceEx8 = 'Hello, how are you?';
 
   const reversedSentence = reverseWords(sentenceEx8);
   console.log(reversedSentence);
@@ -237,25 +236,18 @@ const reverseWords = (sentence) => {
 
 // 9. Write a recursive function to find the length of the longest word in a sentence.
 const sentenceEx9 = 'The quick brown fox jumps over the lazy dog';
-
-const findLongestWordLength = (sentence) => {
-
-	const words = sentence.split(' ');
-  
-	let maxLength = 0;
-  
-
-	for (let i = 0; i < words.length; i++) {
-
-	  if (words[i].length > maxLength) {
-		maxLength = words[i].length;
-	  }
+function findLongestWord(words) {
+	if (words.length === 0) {
+	  return 0;
+	} else {
+	  const firstWordLength = words[0].length;
+	  const maxLengthOfOtherWords = findLongestWord(words.slice(1)); 
+	  return Math.max(firstWordLength, maxLengthOfOtherWords);
 	}
+}
 
-	return maxLength;
-  };
+console.log(findLongestWord(sentenceEx9.split(' ')));
   
-  console.log(findLongestWordLength(sentenceEx9)); 
   
 // 10. Write a recursive function to check if an object contains a specified property.
 const person = {
