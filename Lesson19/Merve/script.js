@@ -257,14 +257,18 @@ const person = {
 	},
 };
 
-function findProperty(object, property){
-    for( let key in object){
-        if (key === property){
+function findProperty(object, property){ 
+    for (let key in object) {
+        if (key === property) {
             return true;
+        }
+        if (typeof object[key] === 'object' && object[key] !== null) {
+            if (findProperty(object[key], property)) {
+                return true;
+            }
         }
     }
     return false;
 }
-
 console.log(findProperty(person, 'name')); 
 console.log(findProperty(person, 'favouritecolour'));
