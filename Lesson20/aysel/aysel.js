@@ -133,17 +133,8 @@ class BankAccount {
   
     
     getCurrentBalance() {
-      
-      const totalAmount = this.transactionHistory.reduce((total, transaction) => {
-        if (transaction.type === "deposit") {
-          return total + transaction.amount;
-        } else {
-          return total - transaction.amount;
-        }
-      }, 0);
-      return totalAmount;
+      return this.balance;
     }
-  }
   
 
 
