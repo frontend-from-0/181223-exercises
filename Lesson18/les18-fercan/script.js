@@ -37,8 +37,7 @@ function findAverage(array) {
 	return sum / array.length;
 }
 
-console.log(findAverage(integersEx1));
-console.log(findAverage(integersEx1V2));
+
 
 // 1. Create a function
 // 2. Create a variable average of all elements
@@ -48,19 +47,34 @@ console.log(findAverage(integersEx1V2));
 // 6. Call the function with example data
 
 console.log('Exercise 2:');
+console.log(findAverage(integersEx1));
+console.log(findAverage(integersEx1V2));
 console.log('----------------------------');
 
 
-// 3. Write a function that takes an array of strings 
-//and concatenates them together adding spaces.
+// 3. Write a function that takes an array of strings and concatenates them together adding spaces.
 // Input: ["Hello", "World", "!"]
 // Output: "Hello World !"
 
 let stringE3 = ['Hello', 'World', '!'];
 
-console.log('Exercise 3:');
+function addArrOfStrings(arr) {
+	let newString = '';
+	for (i=0; i<arr.length; i++) {
+		newString += arr[i];
 
+		if (i< arr.length - 1) {
+			newString +=' ';
+		}
+	}
+	return newString;
+}
+console.log('Exercise 3:');
+const newString = addArrOfStrings(stringE3);
+console.log(newString);
 console.log('----------------------------');
+
+
 // 4. Write a function that takes an array of integers and returns a new array with odd numbers only.
 // Input: [1, 2, 3, 4, 7, 10]
 // Output: [1, 3, 7]
@@ -76,32 +90,31 @@ function getOddNumbers(array) {
 
 	return oddNumbers;
 }
+
+console.log('Exercise 4: ');
 console.log(getOddNumbers(arrayEx));
 console.log(getOddNumbers([1, 2, 0, 34, 23]));
-
-//create a function
-//create a variable odd numbers
-//loop
-
-console.log('Ex4');
 console.log('----------------------------');
 
 
-// 5. Write a function that takes an array of integers 
-//and returns a new array with even numbers only.
+// 5. Write a function that takes an array of integers and returns a new array with even numbers only.
 // Input: [1, 2, 3, 4, 7, 10]
-// Output: [1, 2, 4, 10]
+// Output: [ 2, 4, 10]
 const testArrayEx5 = [1, 2, 3, 4, 7, 10];
 
-function takeOnlyEvenNumbers(array){
-    let newArrayWithEvens =[];
-    for (let i=0, i< array.length, i++) {
-            if(array[i]%2 ===0){
-                newArrayWithEvens.push(array[]);
+function filterEvenNumbers(arr){
+    const evenNumbers =[];
+    for (let i=0; i< arr.length; i++) {
+            if(arr[i]%2 ===0){
+                evenNumbers.push(arr[i]);
             }
     }
+	return evenNumbers;
 }
-console.log('Exercise 5: ');
+console.log('Exercise 5: ' );
+
+const evenNumbers = filterEvenNumbers(testArrayEx5);
+console.log(evenNumbers);
 console.log('----------------------------');
 
 
@@ -116,14 +129,13 @@ function removeOccurences(array, valueToRemove) {
 		if (array[i] !== valueToRemove) {
 			newArray.push(array[i]);
 		}
-    // Alternative syntax (if you have only if condition and if the code inside if condition is only one line!)
-    // if (array[i] !== valueToRemove) newArray.push(array[i]);
 	}
 	return newArray;
 }
-console.log(removeOccurences(testArrayEx6, 3));
+
 
 console.log('exercise 6:');
+console.log(removeOccurences(testArrayEx6, 3));
 console.log('----------------------------');
 
 
@@ -134,9 +146,10 @@ const testObjEx7 = { name: 'John', age: 30, city: 'New York' };
 function getObjectKeys(object){
   return Object.keys(object);
 };
-console.log(getObjectKeys(testObjEx7));
+
 
 console.log('exercise 7:');
+console.log(getObjectKeys(testObjEx7));
 console.log('----------------------------');
 
 
@@ -144,8 +157,12 @@ console.log('----------------------------');
 // Input: {name: "John", age: 30, city: "New York"}
 // Output: ["John", 30, "New York"]
 const testObjEx8 = { name: 'John', age: 30, city: 'New York' };
+function getObjectValues(object){
+	return Object.values(object);
+  };
 
-console.log('exercise 8:');
+  console.log('exercise 8:');
+console.log(getObjectValues(testObjEx8));
 console.log('----------------------------');
 
 
@@ -155,9 +172,14 @@ console.log('----------------------------');
 // Input: ({name: "John", age: 30, city: "New York"}, "surname")
 // Output: false
 const testObjEx9 = { name: 'John', age: 30, city: 'New York' };
+function keyExists(obj, key) {
+	// Use the 'in' operator to check if the key exists in the object
+	return key in obj;
+  }
 
-console.log('Ex 9:');
 
+console.log('Exercise 9: ');
+console.log(keyExists(testObjEx9, 'age'));
 console.log('----------------------------');
 
 
@@ -165,7 +187,12 @@ console.log('----------------------------');
 // Input: ({name: "John", age: 30}, "city", "New York")
 // Output: {name: "John", age: 30, city: "New York"}
 const testObjEx10 = { name: 'John', age: 30 };
-
+function addKeyValuePair(obj, key, value) {
+	obj[key] = value;
+	return obj;
+  }
+console.log('Exercise 10: ');
+console.log(addKeyValuePair(testObjEx10, 'city', 'New York'));
 console.log('----------------------------');
 
 
@@ -174,11 +201,39 @@ console.log('----------------------------');
 // Output: {name: "John", age: 30}
 const testObjEx11 = { name: 'John', age: 30, city: 'New York' };
 
+function removeKeyValuePair(obj, key) {
+	if (obj.hasOwnProperty(key)) {
+	  delete obj[key];
+	}
+	return obj;
+  }
+  
+
+console.log('Exercise 11: ');
+console.log(removeKeyValuePair(testObjEx11, "city"));
 console.log('----------------------------');
 
 
-// 12. Write a function that takes two arrays of equal length and returns an object with the first array as keys and the second array as values.
+// 12. Write a function that takes two arrays of equal length and returns an object with the first array as keys 
+//and the second array as values.
 // Input: (["name", "age", "city"], ["John", 30, "New York"])
 // Output: {name: "John", age: 30, city: "New York"}
 const array1Ex12 = ['name', 'age', 'city'];
 const array2Ex12 = ['John', 30, 'New York'];
+
+function matchKeysAndValues(keysArr, valuesArr) {
+	const newMatchingArray = {} ;
+
+	if (keysArr.length !== valuesArr.length) {
+		throw new Error('Both arrays must have the same length.');
+	  }
+	
+	  for (let i = 0; i < keysArr.length; i++) {
+		newMatchingArray [keysArr[i]] = valuesArr[i];
+	  }
+	  	  return newMatchingArray;
+	}
+
+console.log('Exercise 12: ');
+const result = matchKeysAndValues(array1Ex12, array2Ex12);
+console.log(result);
