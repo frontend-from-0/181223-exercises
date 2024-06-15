@@ -7,29 +7,29 @@ function checkNumber(num1, num2) {
         console.log("First Number is greater than to the second age.");
     } else if (num1 < num2) {
         console.log("First Number is less than to the second age.");
-    } else {console.log("First Number is equal to the second age.")}
+    } else { console.log("First Number is equal to the second age.") }
 
 }
 
-    checkNumber(11,1);
-    checkNumber(5,35);
+checkNumber(11, 1);
+checkNumber(5, 35);
 
 
 
 // 5. Write a function that takes in a age and checks if it's positive, negative, or zero using if else statement.
 
 function numberChecks(age) {
-    
+
     if (age > 0) {
         console.log("Number is POSITIVE.");
     } else if (age < 0) {
         console.log("Number is NEGATIVE.");
-    } else {console.log("Number is ZERO.")}
+    } else { console.log("Number is ZERO.") }
 
 }
 
-    numberChecks(5);
-    numberChecks(-7);
+numberChecks(5);
+numberChecks(-7);
 
 
 // 6. Write a function that takes in a year and checks 
@@ -39,17 +39,17 @@ function checkLeapYear(year) {
 
     if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
         console.log(year + " is a leap year.");
-    } else {console.log(year + " is not a leap year.")}
+    } else { console.log(year + " is not a leap year.") }
 
 }
-    // I didn't do this myself (with AI)
-    checkLeapYear(2020);
-    checkLeapYear(1900);
-    checkLeapYear(2000);
+// I didn't do this myself (with AI)
+checkLeapYear(2020);
+checkLeapYear(1900);
+checkLeapYear(2000);
 
 // 7. Write a function that takes in a temperature and checks if it's above or below freezing using if else statement.
 
-function temperatureChecks (freezing) {
+function temperatureChecks(freezing) {
 
     if (freezing > 0) {
         console.log("The temperature is above the freezing.");
@@ -59,8 +59,8 @@ function temperatureChecks (freezing) {
 
 }
 
-    temperatureChecks(27);
-    temperatureChecks(-15);
+temperatureChecks(27);
+temperatureChecks(-15);
 
 // 8. Write a function that takes in a person's height and weight and checks 
 //    if they are considered underweight, normal, overweight, or obese using if else statement.
@@ -82,14 +82,14 @@ function checkBMI(weight, height) {
         console.log("Healthy Weight");
     } else if (bmi >= 25.0 && bmi <= 29.9) {
         console.log("Overweight");
-    } else {console.log("Above Obesity")}
+    } else { console.log("Above Obesity") }
 
 }
 
-    checkBMI(15, 1.6);
-    checkBMI(21, 1.5);
-    checkBMI(28, 1.8);
-    checkBMI(36, 1.2);
+checkBMI(15, 1.6);
+checkBMI(21, 1.5);
+checkBMI(28, 1.8);
+checkBMI(36, 1.2);
 
 // 9. Write a function that takes in a person's age and checks 
 //     if they are a child (age 0-12), teenager (age 13-19), adult (age 20-64), 
@@ -105,14 +105,14 @@ function personAge(age) {
         console.log("You are adult.");
     } else if (age >= 65) {
         console.log("You are senior citizen.");
-    } 
+    }
 
 }
 
-    personAge(7);
-    personAge(15);
-    personAge(41);
-    personAge(77);
+personAge(7);
+personAge(15);
+personAge(41);
+personAge(77);
 
 
 // 10. Write a function that takes age as a age and whether they are a student (yes or no). 
@@ -123,22 +123,22 @@ function personAge(age) {
 
 function checkVotingEligibility(age, isStudent) {
 
-    if (age < 18 && isStudent === "yes") {
+    if (age < 18 && isStudent) {
         console.log("You are a student and not old enough to vote");
-    } else if (age >= 18 && age <= 65 && isStudent === "no") {
+    } else if (age >= 18 && age <= 65 && !isStudent) {
         console.log("You are eligible to vote");
-    } else if (age >= 65) {
+    } else if (age > 65) {
         console.log("You are a senior citizen");
-    } else if (isStudent === "yes" && age >= 18) {
+    } else if (isStudent && age >= 18) {
         console.log("You are old enough to vote");
     }
 
-}    
+}
 
-    checkVotingEligibility(16, "yes");
-    checkVotingEligibility(40, "no");
-    checkVotingEligibility(65, "no");
-    checkVotingEligibility(22, "yes");
+checkVotingEligibility(16, "yes");
+checkVotingEligibility(40, "no");
+checkVotingEligibility(65, "no");
+checkVotingEligibility(22, "yes");
 
 // 11. Write a function that asks the user to enter their salary and their years of experience. 
 //     If the salary is less than $30,000 and the years of experience are less than 5, 
@@ -160,9 +160,9 @@ function salaryAndExperience(salary, experience) {
 
 }
 
-    salaryAndExperience(28000, 3);
-    salaryAndExperience(43000, 7);
-    salaryAndExperience(63000, 12);
+salaryAndExperience(28000, 3);
+salaryAndExperience(43000, 7);
+salaryAndExperience(63000, 12);
 
 
 // 12. Write a function that asks the user to enter their score on a test. 
@@ -173,7 +173,7 @@ function salaryAndExperience(salary, experience) {
 //     If the score is greater than 90, print "You got an A+ - Great job!".
 
 function scoreTest(score) {
-    
+
     if (score < 60) {
         console.log("You failed the test.")
     } else if (score >= 60 && score <= 70) {
@@ -186,7 +186,7 @@ function scoreTest(score) {
         console.log("You got an A+ - Great job!")
     }
 
-}    
+}
 
 scoreTest(43);
 scoreTest(68);
@@ -197,7 +197,7 @@ scoreTest(68);
 //     displays a message indicating whether the grade is passing (A, B, C) or failing (D, F). 
 //     Use a switch statement to handle the different cases.
 
-function gradeLetter (grade) {
+function gradeLetter(grade) {
 
     switch (grade) {
         case "A":
@@ -213,22 +213,22 @@ function gradeLetter (grade) {
 
 }
 
-    gradeLetter("B");
-    gradeLetter("F");
+gradeLetter("B");
+gradeLetter("F");
 
 
 // 15. Write a function that asks the user to enter their age, 
 //     and then calculates and displays their age in dog years (where one human year is equivalent to seven dog years). 
 //     If the user enters a negative age or zero, display an error message.
 
-function calculateDogYears (humanAge) {
+function calculateDogYears(humanAge) {
 
     if (humanAge > 0) {
-        let dogAge = 7* humanAge;
+        let dogAge = 7 * humanAge;
         console.log("You are " + dogAge + " years old in dog years.");
-    } else {console.log("Error: Please enter a number greater than zero.")}
+    } else { console.log("Error: Please enter a number greater than zero.") }
 
 }
 
-    calculateDogYears(12);
-    calculateDogYears(-1);
+calculateDogYears(12);
+calculateDogYears(-1);
