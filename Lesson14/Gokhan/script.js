@@ -26,10 +26,11 @@ console.log(number8, number9);
 // Use the postfix ++ operator to increment the value of num by 1, 
 // then multiply the result by 2 and log it to the console.
 
+let number10 = -3;
+const result = (number10++ * 2);
 
 
-
-console.log('------------------------');
+console.log('Result: ', number10, result);
 
 
 
@@ -37,7 +38,9 @@ console.log('------------------------');
 // respectively. Use the prefix ++ operator to increment the value of a by 1, 
 // then add b to the result and log it to the console.
 
+let a = 2;
+let b = 3;
+const result11 = ++a + b;
 
 
-
-console.log('------------------------');
+console.log('Result: ', 'a +' + ' b = ', result11);
