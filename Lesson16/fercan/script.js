@@ -23,14 +23,20 @@ if(number<0){
 // 6. Write a function that takes in a year and checks if it's a leap year (is divisible by 4 and not divisible by 100 OR divisible by 400) 
 //or not using if else statement.
 
-function isLeapYear (year) {
-    if(year%4==0 && year%100!=0){
-        console.log('It\'s a leap year');
-     } else (year%400==0); {  
-        console.log('It\'s a leap year');
-    }}
 
-// 7. Write a function that takes in a temperature and checks if it's above or below freezing using if else statement.
+
+if(year%4==0 && year%100!=0){
+        console.log('It\'s a leap year');
+     } else if (year%400==0); {  
+        console.log('It\'s a leap year');
+    } else {
+      console.log('It\'s not a leap year');
+  }
+}
+
+// 7. Write a function that takes in a temperature and checks if it's above or below freezing 
+//using if else statement.
+
 
 // 8. Write a function that takes in a person's height and weight and checks if they are considered underweight, normal, overweight, 
 //or obese using if else statement.
@@ -42,13 +48,26 @@ function isLeapYear (year) {
 // 25.0 – 29.9	Overweight
 // 30.0 and Above	Obesity
 
-// 9. Write a function that takes in a person's age and checks if they are a child (age 0-12), teenager (age 13-19), adult (age 20-64), or senior citizen (age 65 and above) using if else statement.
 
-// 10. Write a function that takes age as a number and whether they are a student (yes or no). If the age is less than 18 and the user is a student, print "You are a student and not old enough to vote". If the age is between 18 and 65 (inclusive) and the user is not a student, print "You are eligible to vote". If the age is greater than 65, print "You are a senior citizen". If the user is a student but their age is greater than or equal to 18, print "You are old enough to vote".
+// 9. Write a function that takes in a person's age and checks if they are a child (age 0-12), 
+//teenager (age 13-19), adult (age 20-64), or senior citizen (age 65 and above) using if else statement.
 
-// 11. Write a function that asks the user to enter their salary and their years of experience. If the salary is less than $30,000 and the years of experience are less than 5, print "Sorry, we cannot offer you the job at this time". If the salary is less than $50,000 and the years of experience are between 5 and 10 (inclusive), print "We can offer you the job at a lower salary". If the salary is greater than or equal to $50,000 or the years of experience are greater than or equal to 10, print "We can offer you the job at the requested salary".
+// 10. Write a function that takes age as a number and whether they are a student (yes or no). 
+//If the age is less than 18 and the user is a student, print "You are a student and not old enough to vote". 
+//If the age is between 18 and 65 (inclusive) and the user is not a student, print "You are eligible to vote". 
+//If the age is greater than 65, print "You are a senior citizen". If the user is a student but their age is greater than 
+//or equal to 18, print "You are old enough to vote".
 
-// 12. Write a function that asks the user to enter their score on a test. If the score is less than 60, print "You failed the test". 
+// 11. Write a function that asks the user to enter their salary and their years of experience. 
+//If the salary is less than $30,000 and the years of experience are less than 5, 
+//print "Sorry, we cannot offer you the job at this time". If the salary is less than $50,000 
+//and the years of experience are between 5 and 10 (inclusive), print "We can offer you the job at a lower salary". 
+//If the salary is greater than or equal to $50,000 or the years of experience are greater than or equal to 10, 
+//print "We can offer you the job at the requested salary".
+
+// 12. Write a function that asks the user to enter their score on a test. If the score is less than 60, 
+//print "You failed the test". 
+
 //If the score is between 60 and 70 (inclusive), print "You passed the test, but your grade is not great". 
 //If the score is between 71 and 80 (inclusive), print "You got a B". 
 //If the score is between 81 and 90 (inclusive), print "You got an A". 
