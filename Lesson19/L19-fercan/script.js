@@ -101,7 +101,12 @@ function countVowels(string, index = 0, count = 0) {
     count = count + 1;
   }
 
-  // The issue was the missing 'return' keyword in the line below. We need to use return keyword in both base condition and here if we want the function to return the result (unlike ex. 1 where the result was only printed to terminal). If we omit return in the recursive call, the function will still run, but the accumulated count would not be returned to the initial call, resulting in undefined.
+  // The issue was the missing 'return' keyword in the line below. 
+  //We need to use return keyword in both base condition 
+  //and here if we want the function to return the result 
+  //(unlike ex. 1 where the result was only printed to terminal). 
+  //If we omit return in the recursive call, the function will still run, 
+  //but the accumulated count would not be returned to the initial call, resulting in undefined.
   return countVowels(string, index + 1, count);
 }
 
@@ -126,9 +131,36 @@ console.log(countVowelsLoop(sentenceEx4));
 const sentenceEx5 = 'Hello, how are you?';
 const charToRemove = 'o';
 
+function removeCharRecursive(str, charToReve) {
+	if (str.length === 0) {
+	  return '';
+	}
+	if (str[0] === charToRemove) {
+	  return removeCharRecursive(str.slice(1), charToReve);
+	} else {
+	  return str[0] + removeCharRecursive(str.slice(1), charToReve);
+	}
+  }
+
+  console.log(removeCharRecursive(sentenceEx5, charToRemove));
+
 // 5. Write a recursive function to check if an array includes a specific value.
 const numbers = [1, 2, 3, 4, 5];
 const valueToCheck = 3;
+
+function checkIfIncludes(arr, aSpecificValue) {
+	if (arr.length ===0) {
+		return false;
+	}
+	if (arr[0] === aSpecificValue) {
+		return true;
+	} else {
+		return checkIfIncludes(arr.slice(1), aSpecificValue);
+	}
+}
+
+const result = checkIfIncludes(numbers, valueToCheck);
+console.log(result);
 
 // 6. Write a recursive function to flatten an object with nested objects into a single-level object.
 const nestedObj = {
@@ -146,6 +178,9 @@ const nestedObj = {
 	},
 };
 
+///maalesef bu da benim seviyemin cok ilerisinde ...
+
+
 // 7. Write a recursive function to find the maximum depth of a nested object.
 const nestedObjEx7 = {
 	a: 1,
@@ -160,10 +195,39 @@ const nestedObjEx7 = {
 	},
 	h: 5,
 };
+
+///maalesef bu da benim seviyemin cok ilerisinde ...
+
 // 8. Write a recursive function to reverse the order of words in a sentence.
 const sentenceEx8 = 'Hello, how are you?';
+
+function reverseWords(sentence) {
+	if (sentence === '') {
+	  return '';
+	}
+	let words = sentence.split(' ');
+	function reverseArray(arr) {
+	  if (arr.length === 0) {
+		return [];
+	  }
+	  return [arr.pop()].concat(reverseArray(arr));
+	}
+	let reversedWords = reverseArray(words);
+	return reversedWords.join(' ');
+  }
+console.log('Ex.8: ');
+console.log(reverseWords(sentenceEx8));
+
+
 // 9. Write a recursive function to find the length of the longest word in a sentence.
 const sentenceEx9 = 'The quick brown fox jumps over the lazy dog';
+
+
+// IMKANSIZ, COK ZOR GELDI BU SORU, CHAT GPT BILE ISE YARAMADI :)
+
+
+console.log('Ex.9: ');
+
 // 10. Write a recursive function to check if an object contains a specified property.
 const person = {
 	name: 'John',
@@ -173,3 +237,7 @@ const person = {
 		country: 'USA',
 	},
 };
+
+//BUGUNKU BILGIMLE BUNU DA YAPAMAM, BELKI 1-2 AY SONRA :)
+
+console.log('Ex.10: ');
