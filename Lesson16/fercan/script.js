@@ -23,6 +23,8 @@ if(number<0){
 // 6. Write a function that takes in a year and checks if it's a leap year (is divisible by 4 and not divisible by 100 OR divisible by 400) 
 //or not using if else statement.
 
+
+
 if(year%4==0 && year%100!=0){
         console.log('It\'s a leap year');
      } else if (year%400==0); {  
@@ -35,6 +37,7 @@ if(year%4==0 && year%100!=0){
 // 7. Write a function that takes in a temperature and checks if it's above or below freezing 
 //using if else statement.
 
+
 // 8. Write a function that takes in a person's height and weight and checks if they are considered underweight, normal, overweight, 
 //or obese using if else statement.
 // Body Mass Index (BMI) is a person’s weight in kilograms (or pounds) divided by the square of height in meters (or feet). 
@@ -44,6 +47,7 @@ if(year%4==0 && year%100!=0){
 // 18.5 – 24.9	Healthy Weight
 // 25.0 – 29.9	Overweight
 // 30.0 and Above	Obesity
+
 
 // 9. Write a function that takes in a person's age and checks if they are a child (age 0-12), 
 //teenager (age 13-19), adult (age 20-64), or senior citizen (age 65 and above) using if else statement.
@@ -63,6 +67,7 @@ if(year%4==0 && year%100!=0){
 
 // 12. Write a function that asks the user to enter their score on a test. If the score is less than 60, 
 //print "You failed the test". 
+
 //If the score is between 60 and 70 (inclusive), print "You passed the test, but your grade is not great". 
 //If the score is between 71 and 80 (inclusive), print "You got a B". 
 //If the score is between 81 and 90 (inclusive), print "You got an A". 
