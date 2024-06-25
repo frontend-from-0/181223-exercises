@@ -1,140 +1,164 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Responsive Images</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
-  <main>
 
-    <h1 class="header1">Time-saving CSS techniques to create responsive images</h1>
-    
-    <figure>
-    <img class="img1" src="https://miro.medium.com/v2/resize:fit:1000/1*aVzJTznRRfP1lM7AXe9yLw.jpeg" alt="" style="width:100%">
-      </figure>
-    
-    <figcaption>Photo by <a href="https://unsplash.com/photos/brown-analog-clock-aiyBwbrWWlo">Kevin Ku</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
-    
-    <p>As a web developer, there is a high probability that you have encountered the two enemies of this article: <strong>images</strong> and <strong>deadlines</strong>. Sometimes, for some reasons, your images won’t fit the layout and you don’t want to wrap your head around this for hours.</p>
-    
-    <p>This situation has happened to me many times and I have learned from my mistakes. No more black magic hacks — here are my five favorites techniques to handle image resizing.</p>
-    
-    <h2 class="headers">the “OMG I NEED THIS ASAP” way</h2>
-    
-    <p>It’s 5:00 pm on Friday, you have to finish this page, but the images won’t fit the layout. It’s time to use your magic trick!</p>
-    
-    <div class="gray-area">
-        .myImg {<br>
-        background-image: url("my-image.png");<br>
-        background-size: cover;<br>
-        }
-      </div>
-    
-    <p>Sounds familiar? We’ve all done it once, doesn’t it feel like cheating to you?</p>
-    
-    <p>Using <code class="gray">background</code> properties is very useful, they just work. Yet, remember that you should use them only for non-content images or as a replacement of text and in <a class="adress" href="https://stackoverflow.com/a/1469139">some particular cases</a>.</p>
-    
-    <h2 class="headers">The way from the future</h2>
-    
-    <p>What if I told you this kind of magic exists also for <code class="gray">&lt;img&gt;</code> elements? Say “hi” to the <code class="gray">object-fit</code> property — which also works for videos, by the way!</p>
-    
-    <div class="gray-area">
-        .myImg {<br>
-        object-fit: cover; <br>width: 320px;<br>
-        height: 180px;<br>
-        }
-      </div>
-    
-    <p>That’s all folks! See how when we retrieve the friendly value <code class="gray">cover</code>, we can also use <code class="gray">contain</code>.</p>
-    
-    <h2 class="headers">Okay what’s the trap?
-</h2>
-    
-    <p>Unfortunately <code class="gray">object-fit</code> will not work on IE and older versions of Safari, but there is a <a href="https://github.com/fregante/object-fit-images">polyfill</a>.</p>
-    
-    <img class="desktop-img" alt=""  min-width="320px" src="https://miro.medium.com/v2/resize:fit:700/1*d0wZwFpXGiAYH9_NrJCroA.png" style="width:100%">
-    
-    <a class="css-tricks" href="https://css-tricks.com/almanac/properties/o/object-fit/#article-header-id-4" target="_blank">source: "https://css-tricks.com/almanac/properties/o/object-fit/#article-header-id-4</a>
-    
-    <h2 class="headers">The “Netflix” way</h2>
-    
-    <p>You may think “nice trick man, one more way that doesn’t work in old browsers like IE 😔”. Don’t worry, this one works everywhere and it is my favorite! You’ll need to wrap your image with a relative padded parent.</p>
-    
-    <p>We will keep the image ratio with a percentage on the padding property. Your image will be a full size absolute child.</p>
-    
-    <p>The code looks like this:</p>
-    
-   <div class="gray-area">
-        .wrapper { <br>
-        position: relative; <br>padding-top: 56.25%; <br>/* 16:9 Aspect
-        Ratio */<br>
-        } <br>
-     <br>img { <br>position: absolute; <br>left: 0; <br>top: 0;
-        <br>width: 100%; <br />height: auto;<br>
-        }
-      </div>
-    
-    <p>“Hey man, it looks complicated.”</p>
-    
-    <p>Once you get the concept, the technique is simple and <a href="https://www.w3schools.com/howto/howto_css_aspect_ratio.asp">widely used.</a> Netflix uses it!</p>
-    
-    <figure>
-    <img class="youtube-pic"
-  src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png"
-          alt="" style="width:100%">
+<body>
+
+  <h1>Time-saving CSS techniques to create responsive images</h1>
+
+  <figure>
+    <img class="img1" src="https://miro.medium.com/v2/resize:fit:1000/1*aVzJTznRRfP1lM7AXe9yLw.jpeg" alt=""
+      style="width:100%">
+  </figure>
+
+  <figcaption>Photo by <a href="https://unsplash.com/photos/brown-analog-clock-aiyBwbrWWlo">Kevin Ku</a> on <a
+      href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  </figcaption>
+
+  <p>As a web developer, there is a high probability that you have encountered the two enemies of this article:
+    <strong>images</strong> and <strong>deadlines</strong>. Sometimes, for some reasons, your images won’t fit the
+    layout and you don’t want to wrap your head around this for hours.
+  </p>
+
+  <p>This situation has happened to me many times and I have learned from my mistakes. No more black magic hacks — here
+    are my five favorites techniques to handle image resizing.</p>
+
+  <h2 class="headers">the “OMG I NEED THIS ASAP” way</h2>
+
+  <p>It’s 5:00 pm on Friday, you have to finish this page, but the images won’t fit the layout. It’s time to use your
+    magic trick!</p>
+
+  <div class="gray-area">
+    .myImg {<br>
+    background-image: url("my-image.png");<br>
+    background-size: cover;<br>
+    }
+  </div>
+
+  <p>Sounds familiar? We’ve all done it once, doesn’t it feel like cheating to you?</p>
+
+  <p>Using <code class="gray">background</code> properties is very useful, they just work. Yet, remember that you should
+    use them only for non-content images or as a replacement of text and in <a class="adress"
+      href="https://stackoverflow.com/a/1469139">some particular cases</a>.</p>
+
+  <h2 class="headers">The way from the future</h2>
+
+  <p>What if I told you this kind of magic exists also for <code class="gray">&lt;img&gt;</code> elements? Say “hi” to
+    the <code class="gray">object-fit</code> property — which also works for videos, by the way!</p>
+
+  <div class="gray-area">
+    .myImg {<br>
+    object-fit: cover; <br>width: 320px;<br>
+    height: 180px;<br>
+    }
+  </div>
+
+  <p>That’s all folks! See how when we retrieve the friendly value <code class="gray">cover</code>, we can also use
+    <code class="gray">contain</code>.
+  </p>
+
+  <h2 class="headers">Okay what’s the trap?
+  </h2>
+
+  <p>Unfortunately <code class="gray">object-fit</code> will not work on IE and older versions of Safari, but there is a
+    <a href="https://github.com/fregante/object-fit-images">polyfill</a>.
+  </p>
+
+  <img class="desktop-img" alt="" min-width="320px"
+    src="https://miro.medium.com/v2/resize:fit:700/1*d0wZwFpXGiAYH9_NrJCroA.png" style="width:100%">
+
+  <a class="css-tricks" href="https://css-tricks.com/almanac/properties/o/object-fit/#article-header-id-4"
+    target="_blank">source: "https://css-tricks.com/almanac/properties/o/object-fit/#article-header-id-4</a>
+
+  <h2 class="headers">The “Netflix” way</h2>
+
+  <p>You may think “nice trick man, one more way that doesn’t work in old browsers like IE 😔”. Don’t worry, this one
+    works everywhere and it is my favorite! You’ll need to wrap your image with a relative padded parent.</p>
+
+  <p>We will keep the image ratio with a percentage on the padding property. Your image will be a full size absolute
+    child.</p>
+
+  <p>The code looks like this:</p>
+
+  <div class="gray-area">
+    .wrapper { <br>
+    position: relative; <br>padding-top: 56.25%; <br>/* 16:9 Aspect
+    Ratio */<br>
+    } <br>
+    <br>img { <br>position: absolute; <br>left: 0; <br>top: 0;
+    <br>width: 100%; <br />height: auto;<br>
+    }
+  </div>
+
+  <p>“Hey man, it looks complicated.”</p>
+
+  <p>Once you get the concept, the technique is simple and <a
+      href="https://www.w3schools.com/howto/howto_css_aspect_ratio.asp">widely used.</a> Netflix uses it!</p>
+
+  <figure>
+    <img class="youtube-pic" src="https://miro.medium.com/v2/resize:fit:2000/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png"
+      alt="" style="width:100%">
     <figcaption>Take a look at the class names !</figcaption>
-      </figure>
-    
-    
-    <h2>The Simple way</h2>
-    
-    <p>You may already know this one:</p>
-    
-    <div class="gray-area">
-        img { <br>
-        height: auto; <br>
-        width: 100%; <br>
-        /* even more control with max-width */ <br>
-        max-width: 720px; <br>
-        }
-      </div>
-    
-    <p>If your layout isn’t too complicated, it works in most cases.</p>
-    
-    <h2>The Performance way (Advanced)</h2>
-    
-    <p>By performance, I mean load times. A big hero image can ruin it and make your page feel slow, especially on mobile.</p>
-    
-    <p>Did you know that in <a href="https://caniuse.com/srcset">modern browsers</a> you can change an image source depending on your page width? That’s what srcset is made for!</p>
-    
-    <p>You can combine them with the HTML 5 <code class="gray">&lt;picture&gt;</code> tag, which gracefully degrades with an <code class="gray">&lt;img&gt;</code>.</p>
-    
-    <div class="gray-area">
-      &lt;picture&gt;
-        <br />&nbsp;&nbsp;&lt;source srcset="elva-480w.jpg" media="(max-width:
-        799px)"&gt; <br />&nbsp;&nbsp;&lt;source srcset="elva-800w.jpg"
-        media="(min-width: 800px)"&gt; <br />&nbsp;&nbsp;&lt;img
-        src="elva-800w.jpg" &gt; <br />&lt;/picture&gt;
-    </div>
-    
-    <h2>To Recap</h2>
-    
-    <ol>
-      <li>Use <code class="gray">background-image</code> if your image is not part of the page’s content.</li>
-      <li>Use <code class="gray">object-fit</code> if you don’t care about IE.</li>
-      <li>The padded container technique, used by Netflix, works everywhere.</li>
-      <li>In most cases, just add <code class="gray">height: auto;</code> in your CSS.</li>
-      <li>If you need fast load times, use <code class="gray">srcset</code> to load smaller images on mobile.</li>
-    </ol>
-    
-    <div class="footer-buttons">
-      <a href="https://medium.com/tag/css" class="btn">CSS</a>
-      <a href="https://medium.com/tag/coding" class="btn">Coding</a>
-      <a href="https://medium.com/tag/responsive-design" class="btn">Responsive Design</a>
-      <a href="https://medium.com/tag/tech" class="btn">Tech</a>
-      <a href="https://medium.com/tag/programming" class="btn">Programming</a>
-    </div>
-      
-  </main>
+  </figure>
+
+
+  <h2>The Simple way</h2>
+
+  <p>You may already know this one:</p>
+
+  <div class="gray-area">
+    img { <br>
+    height: auto; <br>
+    width: 100%; <br>
+    /* even more control with max-width */ <br>
+    max-width: 720px; <br>
+    }
+  </div>
+
+  <p>If your layout isn’t too complicated, it works in most cases.</p>
+
+  <h2>The Performance way (Advanced)</h2>
+
+  <p>By performance, I mean load times. A big hero image can ruin it and make your page feel slow, especially on mobile.
+  </p>
+
+  <p>Did you know that in <a href="https://caniuse.com/srcset">modern browsers</a> you can change an image source
+    depending on your page width? That’s what srcset is made for!</p>
+
+  <p>You can combine them with the HTML 5 <code class="gray">&lt;picture&gt;</code> tag, which gracefully degrades with
+    an <code class="gray">&lt;img&gt;</code>.</p>
+
+  <div class="gray-area">
+    &lt;picture&gt;
+    <br />&nbsp;&nbsp;&lt;source srcset="elva-480w.jpg" media="(max-width:
+    799px)"&gt; <br />&nbsp;&nbsp;&lt;source srcset="elva-800w.jpg"
+    media="(min-width: 800px)"&gt; <br />&nbsp;&nbsp;&lt;img
+    src="elva-800w.jpg" &gt; <br />&lt;/picture&gt;
+  </div>
+
+  <h2>To Recap</h2>
+
+  <ol>
+    <li>Use <code class="gray">background-image</code> if your image is not part of the page’s content.</li>
+    <li>Use <code class="gray">object-fit</code> if you don’t care about IE.</li>
+    <li>The padded container technique, used by Netflix, works everywhere.</li>
+    <li>In most cases, just add <code class="gray">height: auto;</code> in your CSS.</li>
+    <li>If you need fast load times, use <code class="gray">srcset</code> to load smaller images on mobile.</li>
+  </ol>
+
+  <div class="footer-buttons">
+    <a href="https://medium.com/tag/css" class="btn">CSS</a>
+    <a href="https://medium.com/tag/coding" class="btn">Coding</a>
+    <a href="https://medium.com/tag/responsive-design" class="btn">Responsive Design</a>
+    <a href="https://medium.com/tag/tech" class="btn">Tech</a>
+    <a href="https://medium.com/tag/programming" class="btn">Programming</a>
+  </div>
+
+</body>
+
 </html>
