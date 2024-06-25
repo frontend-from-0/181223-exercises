@@ -1,4 +1,7 @@
-/* I can^t use live share */
+
+/* when i was write and save */
+/* i can^t use live server for this work */
+
 * {
   box-sizing: border-box;
 }
@@ -13,44 +16,48 @@ body {
   font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
+.text-content {
+  width: 100%;
+  max-width: 800px;
+}
+
 h1 {
   font-size: 40px;
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-figcaption,
-a {
+figcaption, a {
   color: #6B6B6B;
   font-size: 15px;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.image1 {
+.image1{
   max-width: 100%;
 }
 
-p {
+p{
   font-size: 18px;
   color: #242424;
   margin: 20px 10px;
 }
 
-.headers {
+.headers{
   font-size: 25px;
   margin: 20px 10px;
 }
 
-.gray-area {
+.gray-area{
   background-color: #EEEDEB;
   padding: 20px;
 }
 
-.gray {
+.gray{
   background-color: #EEEDEB;
 }
 
-.desktop-img {
+.desktop-img{
   max-width: 100%;
 }
 
@@ -59,27 +66,38 @@ p {
   font-size: 14px
 }
 
-.youtube-pic {
+.youtube-pic{
   max-width: 100%;
 }
 
-ol {
+ol{
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 50px
 }
 
-.footer-buttons {
+.footer-buttons{
   display: flex;
   justify-content: center;
   gap: 40px;
 }
 
-.btn {
+.btn{
   text-decoration: none;
   color: #191919;
   border: 1px solid #EEEDEB;
   border-radius: 15px;
   padding: 10px;
   background-color: #EEEDEB;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
