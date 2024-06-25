@@ -1,5 +1,3 @@
-/* I have a problem with this Branch */
-
 * {
   box-sizing: border-box;
 }
@@ -15,7 +13,7 @@ body {
 }
 
 h1 {
-  font-size: 250px;
+  font-size: 40px;
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
