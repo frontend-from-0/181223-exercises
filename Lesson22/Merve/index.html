@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>To-Do App</title>
+        <style>
+            .completed {
+                text-decoration: line-through;
+            }
+        </style>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
+	<body>
+        
+		<div class="container">
+			<h1>To-Do List</h1>
+			<form id="toDoForm">
+				<input type="text" placeholder="Enter new to do..." id="toDoInput"/>
+				<button class="list--btn" type="submit"><span>Submit</span></button>
+				<button class="list--btn" type="reset"><span>Reset</span></button>
+			</form>
+
+			<ul id="todoList">
+				<!-- <li>New todo <button>X</button></li> -->
+			</ul>
+            <button class="button--light" id="btnSayHello">Hello</button>
+		    <button class="button--light" id="btnSayBye">Goodbye</button>
+		</div>
+		<!-- 
+			- Form element
+				- Input type text
+				- Submit button 
+				- Reset button
+			- Background image
+		-->
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
