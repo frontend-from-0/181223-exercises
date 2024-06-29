@@ -135,10 +135,10 @@ function checkVotingEligibility(age, isStudent) {
 
 }
 
-checkVotingEligibility(16, "yes");
-checkVotingEligibility(40, "no");
-checkVotingEligibility(65, "no");
-checkVotingEligibility(22, "yes");
+checkVotingEligibility(16, "true");
+checkVotingEligibility(40, "false");
+checkVotingEligibility(65, "false");
+checkVotingEligibility(22, "true");
 
 // 11. Write a function that asks the user to enter their salary and their years of experience. 
 //     If the salary is less than $30,000 and the years of experience are less than 5, 
