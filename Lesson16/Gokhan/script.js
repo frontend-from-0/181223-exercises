@@ -135,10 +135,17 @@ function checkVotingEligibility(age, isStudent) {
 
 }
 
+<<<<<<< HEAD
 checkVotingEligibility(16, "true");
 checkVotingEligibility(40, "false");
 checkVotingEligibility(65, "false");
 checkVotingEligibility(22, "true");
+=======
+checkVotingEligibility(16, true);
+checkVotingEligibility(40, false);
+checkVotingEligibility(65, false);
+checkVotingEligibility(22, true);
+>>>>>>> 176cf55623c4760bd3c8a3973c321a3ce1dd9849
 
 // 11. Write a function that asks the user to enter their salary and their years of experience. 
 //     If the salary is less than $30,000 and the years of experience are less than 5, 
