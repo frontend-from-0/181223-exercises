@@ -135,7 +135,7 @@ function checkVotingEligibility(age, isStudent) {
 
 }
 
-checkVotingEligibility(16, "yes");
+checkVotingEligibility(16, true);
 checkVotingEligibility(40, "no");
 checkVotingEligibility(65, "no");
 checkVotingEligibility(22, "yes");
