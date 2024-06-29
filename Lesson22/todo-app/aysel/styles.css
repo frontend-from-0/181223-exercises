@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/130/908/original/cHJpdmF0ZS90ZW1wbGF0ZXMvZmlsZXMvY3JlYXRlX3Rvb2wvMjAyMy0wNy8wMWdwamRubTNlOGFlemRueTNwdzVweW4ycy1sazlmdnE2ZC5wbmc.png?1719694901");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  
+  .container {
+    margin:50px auto;
+    max-width: 600px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0 0 0 0.2);
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  button[type="submit"] button[type="reset"]{
+    padding: 12px 24px; 
+  font-size: 16px; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, color 0.3s; 
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  li:last-child {
+    border-bottom: none;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  
+  .button--light {
+    background-color: #fff;
+    border: none;
+  }
+  
+  .button--light:hover {
+    cursor: pointer;
+  }
