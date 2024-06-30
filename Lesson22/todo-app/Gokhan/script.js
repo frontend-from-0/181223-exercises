@@ -23,7 +23,10 @@ function handleSubmit(event) {
 	const input = document.getElementById('toDoInput');
 
 	const listItem = document.createElement('li');
-	listItem.innerText = input.value;
+	const spanElement = document.createElement('span');
+	spanElement.innerText = input.value;
+	
+	listItem.append(spanElement);
 	listItem.addEventListener('click', function () {
 		listItem.classList.toggle('completed');
 	});
