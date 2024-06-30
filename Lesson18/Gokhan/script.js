@@ -189,7 +189,7 @@ function returnTrueOrFalse (obj, key) {
 	if ( key in obj ) {
 		console.log("true");
 	} else console.log("false");
-
+	return key in object;
 }
 
 returnTrueOrFalse(testObjEx9, "age");
