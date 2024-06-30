@@ -77,9 +77,26 @@
     background-color: orange;
   }
 
+  .button-delete {
+    font-size: '16px';
+    padding: 10px 15px;
+    background-color: #fff;
+    width: '35px';
+    height: '30px';
+    border: red 2,8px solid;
+    border-radius: 8px;
+    border-color: red;
+    background-size: 16px;
+  }
+
+  .button-delete:hover {
+    color: #fff;
+    background-color: red;
+  }
+
   ul {
     list-style: none;
-    margin: 0;
+    margin: 10px;
     padding: 0;
   }
   
