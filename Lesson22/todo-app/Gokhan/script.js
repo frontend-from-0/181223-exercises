@@ -28,7 +28,7 @@ function handleSubmit(event) {
 	
 	listItem.append(spanElement);
 	listItem.addEventListener('click', function () {
-		listItem.classList.toggle('completed');
+		spanElement.classList.toggle('completed');
 	});
 	
 		// H E L P :)
