@@ -97,7 +97,7 @@ class Car extends Vehicle {
     }
 
     start() {
-        return `${this._make} ${this._model} ${this._year} The car has ${this._numWheels} wheels.`
+        return `${this._make} ${this._model} ${this._year} car has ${this._numWheels} wheels.`
     }
 }
 
