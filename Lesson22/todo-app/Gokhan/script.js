@@ -30,8 +30,8 @@ function handleSubmit(event) {
 		spanElement.classList.toggle('completed');
 	});
 	
-		// H E L P :)
-		// I could't do anything about cross. How can i do that?
+		// Thanks for your helping ANNA :)
+		
 
 	// TODO: Make sure that only the text of todo item is crossed
 
