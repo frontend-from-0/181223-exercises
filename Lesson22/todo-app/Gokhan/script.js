@@ -25,29 +25,30 @@ function handleSubmit(event) {
 	const listItem = document.createElement('li');
 	const spanElement = document.createElement('span');
 	spanElement.innerText = input.value;
-	
 	listItem.append(spanElement);
 	listItem.addEventListener('click', function () {
 		spanElement.classList.toggle('completed');
 	});
 	
-		// H E L P :)
-		// I could't do anything about cross. How can i do that?
+		// Thanks for your helping ANNA :)
+		
 
 	// TODO: Make sure that only the text of todo item is crossed
 
 	const button = document.createElement('button');
 	button.innerHTML = '&#128465';
-	button.style.fontSize = '16px';
+	button.classList.add('button-delete');
+	button.addEventListener('click', function () {
+		listItem.remove();
+	});
+
+	  /*button.style.fontSize = '16px';
 	button.style.color = 'red';
 	button.style.backgroundColor = '#fff';
 	button.style.width = '40px';
 	button.style.height = '30px';
 	button.style.borderRadius = '10px';
-	button.style.borderColor = 'red';
-	button.addEventListener('click', function () {
-		listItem.remove();
-	});
+	button.style.borderColor = 'red';*/
 
 	button.addEventListener('mouseover', function () {
 		button.style.color = '#fff';
@@ -67,4 +68,5 @@ function handleSubmit(event) {
 	/*document.getElementById('todoList').append(listItem);*/
 
 	// TODO: clear input element
+	input.value = '';
 }
