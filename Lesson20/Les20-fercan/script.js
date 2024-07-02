@@ -38,7 +38,7 @@ console.log(person1.greet());
  }
 
  class Square extends Shape {
-    constructor(name, color, sideLength, area){
+    constructor(name, color, sideLength){
         super(name, color);
         this._sideLength = sideLength;
         this._area = area ;
