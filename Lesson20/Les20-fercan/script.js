@@ -41,7 +41,7 @@ console.log(person1.greet());
     constructor(name, color, sideLength){
         super(name, color);
         this._sideLength = sideLength;
-        this._area = area ;
+        this._area = sideLength * sideLength;
 
     }
     express (){
