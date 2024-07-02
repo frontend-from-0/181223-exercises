@@ -50,7 +50,7 @@ console.log(person1.greet());
 }
 
 const shape1 = new Shape('circle', 'red');
-const shape2 = new Square('square', 'white', 12, 144);
+const shape2 = new Square('square', 'white', 12);
 console.log('Exercise 2: ');
 console.log(shape1.describe());
 console.log(shape2.express());
