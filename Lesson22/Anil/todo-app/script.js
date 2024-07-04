@@ -39,6 +39,6 @@ function handleSubmit(event) {
    // const ul = document.getElementById('todoList');
    // ul.append(listItem);
  document.getElementById('todoList').append(listItem);
- 
+ input.value= "";
  // TODO: clear input element
 }
