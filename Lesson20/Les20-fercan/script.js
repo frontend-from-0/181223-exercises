@@ -16,9 +16,23 @@ class Person {
 }
 
 }
+class Student extends Person {
+    constructor(name, age, gender, major){
+        super(name, age, gender);
+        this._major = major;
+
+    }
+    greet (){
+        return 'This is ${this._name} aged ${this._age} and ${this._gender} educated in ${this._major}';
+    }
+}
+
 const person1 = new Person('adam', 34, 'female');
+const person2 = new Student('heidi', 23, 'female', 'biology');
 console.log('Exercise 1: ');
+
 console.log(person1.greet());
+console.log(person2.greet());
 
 // 2. Create a Shape class with name and color properties, and a describe() method that logs a description of the shape 
 //to the console (e.g. "This is a blue square"). Then create a Square class that extends the Shape class 
