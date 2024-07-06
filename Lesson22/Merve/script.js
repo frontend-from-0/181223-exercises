@@ -8,6 +8,8 @@ function handleSubmit(event) {
         alert('Please enter a todo item.');
         return;
     }
+    document.getElementById('errorMsg').innerText = 'Please enter a todo item.';
+    document.getElementById('errorMsg').innerText = '';
     
     const listItem = document.createElement('li');
 

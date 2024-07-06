@@ -4,7 +4,7 @@
   :root {
     --light-first: #ccd0d1;
     --light-second: #fcfeff;
-    --light-third: #cce1e2
+    --light-third: #cce1e2;
     --dark-first: #214c62;
     --dark-second: #0d1b29;
     --basic-white: #ffffff;
@@ -18,6 +18,9 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+  .completed {
+    text-decoration: line-through;
+}
   
   .container {
     margin: 50px auto;
@@ -92,6 +95,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px auto;
     background-color: var(--light-second);
     color: var(--dark-second);
     font-size: 16px;
