@@ -17,7 +17,7 @@ class Student extends Person{
         this._major = major;
     }
     greet(){
-        return `Hello, my name is ${this._name} and i am ${this._age} ${this._gender}`;
+        return `Hello, my name is ${this._name} and I am ${this._age} years old  ${this._gender}. I study ${this._major}`;
     }
 }
 const person1 = new Person('Sam', 40, 'male');
@@ -37,10 +37,10 @@ class Shape{
 }
 
 class Square extends Shape{
-    constructor(name, color, sideLength, area){
+    constructor(name, color, sideLength){
         super(name, color);
         this._sideLength = sideLength;
-        this._area = area;
+        this._area = sideLength * sideLength;
     }
     describe(){
         return `This is a ${this._name} ${this._color} with a side length of ${this._sideLength} and an area of ${this._area}`;
@@ -48,7 +48,7 @@ class Square extends Shape{
 }
 
 const shape = new Shape('purple', 'rectangular');
-const square = new Square('yellow', 'square', 6, 36);
+const square = new Square('yellow', 'square', 6);
 
 console.log(shape, shape.describe());
 console.log(square, square.describe());
@@ -74,8 +74,8 @@ class Car extends Vehicle{
         return `${this._numWheels} wheels of ${this._make} ${this._model} is better in ${this._year}.` ;
     }
 }
-const vehicle = new Vehicle('Honda', 'Jazz', '2002', 4)
-const car = new Car('Ford', 'Ranger', '2022')
+const vehicle = new Vehicle('Honda', 'Jazz', '2002', 4);
+const car = new Car('Ford', 'Ranger', '2022');
 
 console.log(vehicle, vehicle.start());
 console.log(car, car.start());
