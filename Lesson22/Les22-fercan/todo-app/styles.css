@@ -5,21 +5,26 @@
 body {
   margin: 0;
   background-color: #f8f8f8;
+  background-position: center;
+  background-size: contain;
+  background: url(https://www.freepik.com/free-photo/beach-background-with-beach-elements_2364770.htm#query=summer&position=10&from_view=keyword&track=sph&uuid=da674839-ec25-478f-bbac-cd3a11f535ac);
   font-family: Arial, sans-serif;
 }
 
 .container {
   margin: 50px auto;
-  padding: 20px;
+  padding: 40px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  max-width: 600px;
+  max-width: 800px;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: rgb(255, 0, 230);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 800;
 }
 
 form {
@@ -33,18 +38,42 @@ input[type="text"] {
   font-size: 16px;
   border: none;
   border-bottom: 2px solid #ddd;
+  border-top: 2px solid #ddd;
+  border:2px solid #ddd ;
 }
 
 button[type="submit"] {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #333;
+  background-color: rgb(51, 51, 51);
   color: #fff;
   border: none;
   border-radius: 5px;
   margin-left: 10px;
   cursor: pointer;
 }
+
+
+
+button[type="reset"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: gray;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  color: #fff;
+  background-color:  rgba(0, 255, 21, 0.917);
+}
+  button[type="reset"]:hover {
+    color: #fff;
+    background-color:  rgb(255, 81, 0);
+  }
 
 ul {
   list-style: none;
@@ -62,7 +91,7 @@ li {
 }
 
 li:last-child {
-  border-bottom: none;
+  border-bottom: yes;
 }
 
 .completed {

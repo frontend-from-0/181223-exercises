@@ -21,9 +21,12 @@ function handleSubmit(event) {
 	const input = document.getElementById('toDoInput');
 
 	const listItem = document.createElement('li');
-	listItem.innerText = input.value;
+
+	const spanElement = document.createElement('span');
+	spanElement.innerText = input.value;
+
 	listItem.addEventListener('click', function () {
-		listItem.classList.toggle('completed');
+		spanElement.classList.toggle('completed');
 	});
   // TODO: Make sure that only the text of todo item is crossed
 
@@ -39,4 +42,5 @@ function handleSubmit(event) {
   document.getElementById('todoList').append(listItem);
   
   // TODO: clear input element
+  input.value = '';
 }
