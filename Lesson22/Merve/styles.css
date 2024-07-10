@@ -8,6 +8,8 @@
     --dark-first: #214c62;
     --dark-second: #0d1b29;
     --basic-white: #ffffff;
+    --error-red: #ff0000;
+    --error-background: #ffe6e6; 
   }
   body {
     margin: 0;
@@ -132,4 +134,14 @@
     width: 340px; 
     margin: 20px auto; 
     list-style-type: none; 
+}
+#errorMsg {
+  color: var(--error-red);
+  font-size: 14px;
+  margin-top: 10px;
+  background-color: var(--error-background);
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--error-red);
+  display: none;
 }

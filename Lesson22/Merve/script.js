@@ -4,13 +4,13 @@ form.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
     event.preventDefault();
     const input = document.getElementById('toDoInput');
+    const errorMsg = document.getElementById('errorMsg');
+
     if (input.value.trim() === '') {
-        alert('Please enter a todo item.');
+        errorMsg.innerText = 'Please enter a todo item.';
+        errorMsg.style.display = 'block'; 
         return;
     }
-    document.getElementById('errorMsg').innerText = 'Please enter a todo item.';
-    document.getElementById('errorMsg').innerText = '';
-    
     const listItem = document.createElement('li');
 
     const textSpan = document.createElement('span');
