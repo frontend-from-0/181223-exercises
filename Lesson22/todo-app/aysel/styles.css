@@ -30,6 +30,7 @@
   form {
     display: flex;
     margin-bottom: 20px;
+    gap: 10px;
   }
   
   input[type="text"] {
@@ -40,7 +41,7 @@
     border-bottom: 2px solid #ddd;
   }
   
-  button[type="submit"] button[type="reset"]{
+  .btn {
     padding: 12px 24px; 
   font-size: 16px; 
   color: white; 
@@ -48,6 +49,30 @@
   border-radius: 5px; 
   cursor: pointer; 
   transition: background-color 0.3s, color 0.3s; 
+  }
+
+  button[type="submit"] {
+    background-color: rgb(43, 77, 70);
+  }
+  button[type="submit"]:hover {
+    color: rgb(43, 77, 70);
+    background-color: #fff;
+  }
+  button[type="reset"] {
+    background-color: rgb(109, 41, 41);
+  }
+  button[type="reset"]:hover {
+    color: rgb(109, 41, 41);
+    background-color: #fff;
+  }
+
+  button#clearList {
+    background-color: rgb(109, 41, 41);
+    margin-top: 10px;}
+
+    button#clearList:hover {
+      color: rgb(109, 41, 41);
+      background-color: #fff;
   }
   
   ul {

@@ -1,7 +1,7 @@
 const form = document.getElementById('toDoForm');
 
 form.addEventListener('submit', handleSubmit);
-form.addEventListener('reset', handleReset);
+
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -17,6 +17,7 @@ function handleSubmit(event) {
 
   const button = document.createElement('button');
   button.innerText = 'x';
+  button.classList.add('button--light');
   button.addEventListener('click', function () {
     listItem.remove();
   });
@@ -27,10 +28,10 @@ function handleSubmit(event) {
   
   input.value = '';
 }
-function handleReset(event) {
-    event.preventDefault();
-    document.getElementById('todoList').innerHTML = '';
-  }
+
+document.getElementById('clearList').addEventListener('click', function () {
+  document.getElementById('todoList').innerHTML = '';
+});
 
 
 
