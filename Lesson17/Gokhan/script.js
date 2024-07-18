@@ -151,7 +151,27 @@ console.log(count);
 // (https://www.techtarget.com/whatis/definition/prime-number#:~:text=A%20prime%20number%20is%20a,%2C%2019%2C%2023%20and%2029.) 
 // and the number of iterations it took to find it.
 
-// ??? 
+// First, we need a function that checks if number is prime or not (function would be a reusable block of code that helps to shorten the total amount of code) 
+function isPrime(num) {
+    if (num <= 1) return false; // if number is less or equal 1, it's not prime 
+    if (num <= 3) return true; // if number is 2 or 3, it's prime number
+    if (num % 2 === 0 || num % 3 === 0) return false; // any number that can be divided by 2 or 3 is not a prime number 
+    for (let i = 5; i * i <= num; i += 6) { // checks the rest of the numbers
+      if (num % i === 0 || num % (i + 2) === 0) return false;
+    } return true; 
+  } 
+  
+  let foundPrime = false; // assume that the initially the prime number is not found 
+  let count = 0; 
+  let number; 
+  
+  while (!foundPrime) { 
+    number = Math.floor(Math.random() * 100) + 1; // generate random number 
+    count++; // increase count 
+    if (isPrime(number)) { // check if the generated number is prime or not, if it's prime, the loop will stop due to `while (!foundPrime) {` condition
+    foundPrime = true; 
+    } 
+  }
 
 
 // 15. Accumulate Multiples of Three: Write a while loop that continuously generates random numbers between 1 and 15. 
@@ -207,4 +227,22 @@ for (let i = 30; i >= 0; i--) {
 // The loop should iterate over the string and compare characters from the beginning and the end,
 // moving towards the center. Print whether or not the string is a palindrome.
 
-// ??? 
+let str = "level"; // String to check
+str = str.toLowerCase(); // convert string to lower case
+
+let isPalindrome = true; // Assume the string is a palindrome until proven otherwise
+let left = 0; // Start index
+let right = str.length - 1; // End index
+
+for (; left < right; left++, right--) { // in this for statment the first `let i = 0;` (or similar) is omitted (`(; `) as we want to use variables defined outside the loop.
+    if (str[left] !== str[right]) { // check if the characters at the same position both on the left and right sides are the same
+        isPalindrome = false; // if not the same, the given string is not a palindrome 
+        break; // Exit the loop if a mismatch is found
+    }
+}
+
+if (isPalindrome) {
+    console.log(`'${str}' is a palindrome.`);
+} else {
+    console.log(`'${str}' is not a palindrome.`);
+} 
