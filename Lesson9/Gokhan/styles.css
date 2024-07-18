@@ -3,6 +3,7 @@
 }
 
 body {
+  margin: 0;
   font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
@@ -44,7 +45,7 @@ p{
   padding: 20px;
 }
 
-.gray{
+.gray {
   background-color: #EEEDEB;
 }
 
