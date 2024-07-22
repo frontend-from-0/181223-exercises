@@ -13,10 +13,16 @@ const wordsExercise1 = [
 	'jungle',
 ];
 
+const upperCaseStrings = [...wordsExercise1].map((x)=>x.toUpperCase());
+console.log("uppercaseStrings: ",upperCaseStrings);
+
 
 // Exercise 2:
 // Given an array of numbers, square each number using .map().
 const numbersExercise2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const squaredX = array => array.map(x=> x = x**2);
+console.log("squaredX: " ,squaredX(numbersExercise2));
 
 // Exercise 3:
 // Given an array of objects representing products, extract an array of their names using .map().
@@ -83,6 +89,9 @@ const products = [
 	},
 ];
 
+const productNames = array => array.map(obj=> obj = obj.name);
+console.log("productNames: ",productNames(products));
+
 // Exercise 4:
 // Given an array of words, find the length of each word using .map().
 const wordsExercise4 = [
@@ -97,6 +106,9 @@ const wordsExercise4 = [
 	'island',
 	'jungle',
 ];
+
+const wordLengths = array => array.map(x=> x= x.length );
+console.log("wordLengths: ", wordLengths(wordsExercise4));
 
 // Exercise 5:
 // Given an array of student objects with their names and grades, extract an array of only the student names and grade using .map(). E.g. ['Alice A', ...]
@@ -163,9 +175,15 @@ const studentsExercise5 = [
 	},
 ];
 
+const namesAndGrades = array => array.map(obj=> obj = `${obj.name} ${obj.grade}` );
+console.log("namesAndGrades: ",namesAndGrades(studentsExercise5));
+
 // Exercise 6:
 // Given an array of numbers, convert each number to a string representation using .map().
 const numbersExercise6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const stringNumbers = array => array.map(String);
+console.log("stringNumbers: ",stringNumbers(numbersExercise6));
 
 // Exercise 7:
 // Given an array of sentences, split each sentence into an array of words using .map().
@@ -182,6 +200,8 @@ const sentencesExercise7 = [
 	'The room was filled with laughter and joy.',
 ];
 
+const splittedWords = array => array.map(x=> x = x.split(" "));
+console.log("splittedWords: ", splittedWords(sentencesExercise7))
 // Exercise 8:
 // Given an array of user objects, extract an array of their email addresses using .map().
 const usersExercise8 = [

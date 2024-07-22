@@ -3,7 +3,7 @@
 const numbersExercise1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const isEven = number => number % 2 == 0;
 const evenNums = array=> [...array].filter(isEven);
-console.log("numberExercise1 :",evenNums(numbersExercise1));
+console.log("evenNums :",evenNums(numbersExercise1));
 
 // Exercise 2:
 // Given an array of strings, filter out the strings that contain the letter "a".
@@ -22,7 +22,7 @@ const wordsExercise2 = [
 
 const isContainLetterA = string => !string.includes("a");
 const arrayOfStringsWithoutA = array => [...array].filter(isContainLetterA);
-console.log("wordsExercise2:",arrayOfStringsWithoutA(wordsExercise2));
+console.log("arrayOfStringsWithoutA:",arrayOfStringsWithoutA(wordsExercise2));
 // Exercise 3:
 // Given an array of objects representing books, filter out the books with a price less than $10.
 
@@ -159,6 +159,9 @@ const usersExercise4 = [
 	},
 ];
 
+const under25 = (array,age) => [...array].filter((person)=> person.age < 25 );
+console.log("under25:", under25(usersExercise4,25) ) ;
+
 
 // Exercise 5:
 // Given an array of sentences, filter out the sentences that have more than 10 words.
@@ -184,6 +187,9 @@ const sentencesExercise5 = [
 	'The aroma of freshly brewed coffee permeated the air, enticing passersby to indulge in a cup of warmth.',
 	'The butterfly gracefully fluttered its wings, showcasing vibrant colors in a delicate dance.',
 ];
+
+const under10Words = (array,length) => [...array].filter((sentence)=> sentence.split(" ").length < 10 );
+console.log("under10Words:", under10Words(sentencesExercise5,10) ) ;
 
 
 // Exercise 6:
@@ -251,9 +257,17 @@ const productsExercise6 = [
 	},
 ];
 
+const outOfStock = (array,stock) => [...array].filter((product)=> product.quantity == stock );
+console.log("outOfStock:", outOfStock(productsExercise6,0) ) ;
+
+
 // Exercise 7:
 // Given an array of numbers, filter out the numbers that are divisible by 3.
 const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const divisiblebyX = (array,x) => [...array].filter((number)=> number % x == 0 );
+console.log("divisibleby3:", divisiblebyX(numbersExercise7,3) ) ;
+
 
 // Exercise 8:
 // Given an array of strings, filter out the strings that have more than 5 characters.
@@ -269,6 +283,10 @@ const wordsExercise8 = [
 	'island',
 	'jungle',
 ];
+
+const moreThanX = (array,x) => [...array].filter((string)=> string.length > x );
+console.log("moreThan5 :", moreThanX(wordsExercise8,5) ) ;
+
 
 // Exercise 9:
 // Given an array of objects representing students, filter out the students who have a grade lower than C.
@@ -335,6 +353,12 @@ const studentsExercise9 = [
 	},
 ];
 
+const grades = ["A+","A","A-","B+","B","B-","C+","C","C-","D+","D","F"].reverse();
+
+const lowerThanX = (array,x) => [...array].filter((student)=> grades.indexOf(student.grade) > grades.indexOf(x) );
+console.log("lowerThanC :", lowerThanX(studentsExercise9,"C") ) 
+
+
 // Exercise 10:
 // Given an array of user objects, filter out the users who have a name starting with the letter "J".
 const usersExercise10 = [
@@ -399,3 +423,6 @@ const usersExercise10 = [
 		email: 'sophia@example.com',
 	},
 ];
+
+const startsWithX = (array,x) => [...array].filter((person)=> person.name[0] == x );
+console.log("startsWithJ :", startsWithX(usersExercise10,"J") ) ;
