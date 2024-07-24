@@ -269,7 +269,7 @@ const usersExercise8 = [
     },
 ];
 
-const usersExercise8Email = usersExercise8.map((users) => `${users.email}`);
+const usersExercise8Email = usersExercise8.map((user) => user.email);
 
 console.log(usersExercise8Email);
 // Exercise 9:
