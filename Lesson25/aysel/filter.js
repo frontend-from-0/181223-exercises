@@ -254,7 +254,7 @@ const productsExercise6 = [
 	},
 ];
 
-const outOfStockProducts = productsExercise6.filter(product => product.quantity = 0);
+const outOfStockProducts = productsExercise6.filter(product => product.quantity > 0);
 console.log(outOfStockProducts);
 
 // Exercise 7:
@@ -346,26 +346,7 @@ const studentsExercise9 = [
 	},
 ];
 
-const gradeScale = {
-    'A+': 4.3,
-    'A': 4.0,
-    'A-': 3.7,
-    'B+': 3.3,
-    'B': 3.0,
-    'B-': 2.7,
-    'C+': 2.3,
-    'C': 2.0,
-    'C-': 1.7,
-    'D+': 1.3,
-    'D': 1.0,
-    'D-': 0.7,
-    'F': 0.0
-  };
-  
-  const loserStudents = studentsExercise9.filter(student => {
-    const grade = student.grade.toUpperCase();
-    return gradeScale[grade] < gradeScale['C'];
-  });
+  studentsExercise9.filter(student => student.grade[0].toUpperCase() === 'D' || student.grade[0].toUpperCase() ==='F' || student.grade.toUpperCase() === 'C-')
   
 
 // Exercise 10:
