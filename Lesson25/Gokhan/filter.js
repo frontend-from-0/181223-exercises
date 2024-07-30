@@ -352,8 +352,6 @@ const studentsExercise9 = [
 
 const passingGrades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C'];
 const gradeLowerThanC = studentsExercise9.filter((students) => !passingGrades.includes(students.grade.toUpperCase()));
-
-// const gradeLowerThanC = studentsExercise9.filter((students) => students.grade >= 'C');
 console.log('Exercise 9 - ', 'Grade Lower Than C Of Students: ', gradeLowerThanC);
 
 // Exercise 10:
