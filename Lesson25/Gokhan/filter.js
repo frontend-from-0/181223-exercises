@@ -91,7 +91,7 @@ const booksExercise9 = [
 	},
 ];
 
-const booksPrice = booksExercise9.filter((book) => book.price < 10);
+const booksPrice = booksExercise9.filter((book) => book.price > 10);
 console.log('Exercise 3 - ', booksPrice);
 
 // Exercise 4:
@@ -159,7 +159,7 @@ const usersExercise4 = [
 	},
 ];
 
-const filterUsersAge = usersExercise4.filter((users) => users.age < 25);
+const filterUsersAge = usersExercise4.filter((users) => users.age > 25);
 console.log('Exercise 4 - ', filterUsersAge);
 
 
@@ -257,14 +257,14 @@ const productsExercise6 = [
 	},
 ];
 
-const emptyStock = productsExercise6.filter((stock) => stock.quantity <= 0);
+const emptyStock = productsExercise6.filter((stock) => stock.quantity > 0);
 console.log('Exercise 6 - ', 'Empty Stocks Are: ', emptyStock);
 
 // Exercise 7:
 // Given an array of numbers, filter out the numbers that are divisible by 3.
 const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const divisibleBy3 = numbersExercise7.filter((number) => number % 3 === 0);
+const divisibleBy3 = numbersExercise7.filter((number) => number % 3 !== 0);
 console.log('Exercise 7 - ', 'Divisible Numbers With 3: ', divisibleBy3);
 
 // Exercise 8:
@@ -282,7 +282,7 @@ const wordsExercise8 = [
 	'jungle',
 ];
 
-const moreThan5Words = wordsExercise8.filter((words) => words.length <= 5);
+const moreThan5Words = wordsExercise8.filter((words) => words.length > 5);
 console.log('Exercise 8 - ', 'More Than 5 Characters Of Words: ', moreThan5Words);
 
 // Exercise 9:
@@ -350,8 +350,11 @@ const studentsExercise9 = [
 	},
 ];
 
-const gradeLowerThanC = studentsExercise9.filter((students) => students.grade >= 'C');
-console.log('Exercise 9 - ', 'Grade Lower Than C Of Studebts: ', gradeLowerThanC);
+const passingGrades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C'];
+const gradeLowerThanC = studentsExercise9.filter((students) => !passingGrades.includes(students.grade.toUpperCase()));
+
+// const gradeLowerThanC = studentsExercise9.filter((students) => students.grade >= 'C');
+console.log('Exercise 9 - ', 'Grade Lower Than C Of Students: ', gradeLowerThanC);
 
 // Exercise 10:
 // Given an array of user objects, filter out the users who have a name starting with the letter "J".
@@ -418,5 +421,5 @@ const usersExercise10 = [
 	},
 ];
 
-const startingNameWithJ = usersExercise10.filter((user) => user.name.startsWith ('J'));
+const startingNameWithJ = usersExercise10.filter((user) => user.name.toUpperCase().startsWith ('J'));
 console.log('Exercise 10 - ', 'Name Starting With "J" Of Users: ', startingNameWithJ);
