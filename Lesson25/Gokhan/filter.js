@@ -91,7 +91,7 @@ const booksExercise9 = [
 	},
 ];
 
-const booksPrice = booksExercise9.filter((book) => book.price < 10);
+const booksPrice = booksExercise9.filter((book) => book.price > 10);
 console.log('Exercise 3 - ', booksPrice);
 
 // Exercise 4:
