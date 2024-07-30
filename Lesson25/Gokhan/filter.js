@@ -257,7 +257,7 @@ const productsExercise6 = [
 	},
 ];
 
-const emptyStock = productsExercise6.filter((stock) => stock.quantity <= 0);
+const emptyStock = productsExercise6.filter((stock) => stock.quantity > 0);
 console.log('Exercise 6 - ', 'Empty Stocks Are: ', emptyStock);
 
 // Exercise 7:
