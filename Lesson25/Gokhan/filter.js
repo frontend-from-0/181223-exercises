@@ -282,7 +282,7 @@ const wordsExercise8 = [
 	'jungle',
 ];
 
-const moreThan5Words = wordsExercise8.filter((words) => words.length <= 5);
+const moreThan5Words = wordsExercise8.filter((words) => words.length > 5);
 console.log('Exercise 8 - ', 'More Than 5 Characters Of Words: ', moreThan5Words);
 
 // Exercise 9:
