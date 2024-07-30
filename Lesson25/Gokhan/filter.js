@@ -264,7 +264,7 @@ console.log('Exercise 6 - ', 'Empty Stocks Are: ', emptyStock);
 // Given an array of numbers, filter out the numbers that are divisible by 3.
 const numbersExercise7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const divisibleBy3 = numbersExercise7.filter((number) => number % 3 === 0);
+const divisibleBy3 = numbersExercise7.filter((number) => number % 3 !== 0);
 console.log('Exercise 7 - ', 'Divisible Numbers With 3: ', divisibleBy3);
 
 // Exercise 8:
