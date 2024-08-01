@@ -83,7 +83,6 @@ function createPost() {
 
 }
 
-
 function deletePost(postId) {
 
 	fetch(`${URL}${postId}`, {

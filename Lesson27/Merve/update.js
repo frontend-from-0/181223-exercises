@@ -9,11 +9,15 @@ function getPostById(id) {
     .catch(error => console.error('Error fetching post:', error));
 }
 
+
+
 // 2. Prefill form with post title and post body
 getPostById(postId).then(post => {
   document.getElementById('postId').value = post.id;
   document.getElementById('postContent').value = post.content;
 });
+
+
 
 // 3. Select form element and attach 'submit' event listener to it, send new post information with UPDATE request
 document.getElementById('update-post-form').addEventListener('submit', function (event) {
@@ -35,6 +39,8 @@ function updatePost(id, content) {
   })
     .then(response => {
       if (response.ok) {
+
+
         // 4. Show confirmation to the user if update operation was successful
         alert('Post updated successfully!');
       } else {

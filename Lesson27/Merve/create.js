@@ -20,6 +20,5 @@ function createPost(title, content) {
     const formElement = document.getElementById('newForm');
     formElement.insertAdjacentHTML('afterend', postHtml);
 
-
     document.getElementById('newForm').reset();
 }
