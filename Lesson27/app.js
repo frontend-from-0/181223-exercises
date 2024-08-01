@@ -26,6 +26,7 @@ function getPosts() {
 			responseArray.map((postData) => createPostHtml(postData))
 		);
 }
+getPostButton.addEventListener('click', () => getPostById(id));
 
 function createPostHtml(postData) {
 	const h2 = document.createElement('h2');
@@ -39,12 +40,14 @@ function createPostHtml(postData) {
 	const deleteButton = document.createElement(`button`);
 	deleteButton.classList.add('button', 'button--danger');
 	deleteButton.innerText = 'delete';
-  // TODO: add event listener for click event to call delete post method (postData.id)
+	// TODO: add event listener for click event to call delete post method (postData.id)
+	deleteButton.addEventListener('click', () => deletePost(postData.id));
 
 	const updateButton = document.createElement(`a`);
+	updateButton.addEventListener('click', () => updatePost(postData.id));
 	updateButton.classList.add('button', 'button--success');
 	updateButton.innerText = 'update';
-  updateButton.href = `./update-post.html?postId=${postData.id}`;
+	updateButton.href = `./update-post.html?postId=${postData.id}`;
 
 	li.append(updateButton, deleteButton);
 
@@ -53,12 +56,47 @@ function createPostHtml(postData) {
 	// p
 	// p.innerText
 	// add class
+	const p = document.createElement('p');
+	p.innerText = postData.body;
+	p.classList.add('post-body');
+	li.append(p);
 }
 
 
 function createPost() {
-  // Send post request
+	// Send post request
+	const newPost = {
+		title: 'New Post Title',
+		body: 'New post content',
+		userId: 1
+	};
+
+	fetch(URL, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(newPost)
+	})
+		.then(response => response.json())
+		.then(data => console.log('Post created:', data))
+		.catch(error => console.error('Error:', error));
+
 }
 
 
-function deletePost(postId) {}
+function deletePost(postId) {
+
+	fetch(`${URL}${postId}`, {
+		method: 'DELETE'
+	})
+		.then(response => {
+			if (response.ok) {
+				console.log('Post deleted:', postId);
+				document.querySelector(`li[data-id="${postId}"]`).remove();
+			} else {
+				console.error('Failed to delete post:', postId);
+			}
+		})
+		.catch(error => console.error('Error:', error));
+}

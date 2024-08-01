@@ -1,0 +1,82 @@
+:root {
+    --marine-blue: #02295a;
+    --pastel-blue: #adbeff;
+    --light-blue: #eff5ff;
+    --cool-gray: #9699ab;
+    --white: #ffffff;
+  }
+  
+  body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    background-color: var(--light-blue);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  form {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--cool-gray);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--marine-blue);
+    width: 100%;
+  }
+  
+  form input[type="text"],
+  form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--cool-gray);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--marine-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 0.1rem;
+  }
+  
+  form button:hover {
+    background-color: var(--pastel-blue);
+    color: var(--marine-blue);
+  }
+  
+  button.delete {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cool-gray);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  button.delete:hover {
+    background-color: var(--marine-blue);
+  }
