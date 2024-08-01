@@ -17,12 +17,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    height: 100vh;
 }
 
 form {
     max-width: 600px;
-    width: 100%; 
+    width: 100%;
     margin: 50px auto;
     padding: 30px;
     background: var(--marine-blue);
@@ -35,25 +35,25 @@ form {
 
 form label {
     display: block;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     font-weight: bold;
     color: var(--white);
     width: 80%;
-    text-align: left; 
+    text-align: left;
 }
 
 form input[type="text"],
 form textarea {
-    width: 80%; 
+    width: 80%;
     padding: 10px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     border: 1px solid var(--cool-gray);
     border-radius: 4px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 form button {
-    width: 80%;  
+    width: 80%;
     padding: 10px 20px;
     margin-top: 20px;
     background-color: var(--white);
@@ -72,7 +72,7 @@ form button:hover {
 
 .post {
     max-width: 600px;
-    width: 100%; 
+    width: 100%;
     margin: 20px auto;
     padding: 20px;
     background: var(--white);

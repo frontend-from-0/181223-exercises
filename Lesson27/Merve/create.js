@@ -1,15 +1,15 @@
-document.getElementById('newForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+document.getElementById('newForm').addEventListener('submit', function (event) {
+    event.preventDefault();
 
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
 
-    
+
     createPost(title, content);
 });
 
 function createPost(title, content) {
- 
+
     const postHtml = `
         <div class="post">
             <h3>${title}</h3>

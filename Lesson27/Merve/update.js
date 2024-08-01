@@ -16,9 +16,9 @@ getPostById(postId).then(post => {
 });
 
 // 3. Select form element and attach 'submit' event listener to it, send new post information with UPDATE request
-document.getElementById('update-post-form').addEventListener('submit', function(event) {
+document.getElementById('update-post-form').addEventListener('submit', function (event) {
   event.preventDefault();
-  
+
   const postId = document.getElementById('postId').value;
   const postContent = document.getElementById('postContent').value;
 
@@ -33,13 +33,13 @@ function updatePost(id, content) {
     },
     body: JSON.stringify({ content: content })
   })
-  .then(response => {
-    if (response.ok) {
-      // 4. Show confirmation to the user if update operation was successful
-      alert('Post updated successfully!');
-    } else {
-      console.error('Failed to update post:', id);
-    }
-  })
-  .catch(error => console.error('Error:', error));
+    .then(response => {
+      if (response.ok) {
+        // 4. Show confirmation to the user if update operation was successful
+        alert('Post updated successfully!');
+      } else {
+        console.error('Failed to update post:', id);
+      }
+    })
+    .catch(error => console.error('Error:', error));
 }

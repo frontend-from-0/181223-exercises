@@ -62,7 +62,6 @@ function createPostHtml(postData) {
 	li.append(p);
 }
 
-
 function createPost() {
 	// Send post request
 	const newPost = {
