@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --marine-blue: #02295a;
+    --purplish-blue: #473dff;
+    --pastel-blue: #adbeff;
+    --light-blue: #eff5ff;
+    --strawberry-red: #ed3548;
+    --cool-gray: #9699ab;
+    --light-gray: #d6d9e6;
+    --magnolia: #f0f6ff;
+    --alabaster: #fafbff;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--light-blue);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container__main--parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 150px auto;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--cool-gray);
+    width: 70%;
+    max-width: 1000px;
+    height: 600px;
+    padding: 20px;
+    overflow: visible;
+}
+
+.container__main--leftchild {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    background-color: var(--purplish-blue);
+    background-image: url('bg-sidebar-desktop.svg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    width: 30%;
+    height: 100%;
+    color: var(--white);
+}
+
+.nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav__list--item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.nav__list--item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav__list--item .num {
+    background-color: var(--purplish-blue);
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s, opacity 0.3s;
+    margin-right: 10px;
+}
+
+.nav__list--item .text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__list--item .step {
+    font-size: 13px;
+    font-weight: 100;
+    color: var(--alabaster);
+    opacity: 0.7;
+    letter-spacing: 0.1rem;
+}
+
+.nav__list--item .main-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--alabaster);
+    letter-spacing: 0.1rem;
+    margin-top: 5px;
+}
+
+.nav__list--item:hover .num {
+    opacity: 0.7;
+}
+
+.nav__list--item.active .num {
+    background-color: var(--pastel-blue);
+    color: var(--purplish-blue);
+}
+
+.container__main--rightchild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    width: 65%;
+    height: 100%;
+    margin: -5px;
+}
+
+.container__main--rightchild--header {
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container__main--rightchild--header h1 {
+    margin: 0;
+    color: var(--marine-blue);
+    width: 100%;
+}
+
+.container__main--rightchild--header p {
+    color: var(--cool-gray);
+    margin: 0;
+    width: 100%;
+    margin-top: 7px;
+}
+
+.container__main--rightchild--form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 90%;
+    margin-top: 40px;
+}
+
+.container__main--rightchild--form label {
+    color: var(--marine-blue);
+    margin-bottom: 10px;
+    display: block;
+    width: 90%;
+    font-weight: 500;
+}
+
+.container__main--rightchild--form input {
+    padding: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: 16px;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.container__main--rightchild--form .button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 90%;
+    margin-top: 60px;
+}
+
+.container__main--rightchild--form button {
+    background-color: var(--marine-blue);
+    color: var(--white);
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container__main--rightchild--form button:hover {
+    background-color: var(--purplish-blue);
+}
