@@ -8,8 +8,16 @@
 
 </head>
 <body>
-  <!-- TODO: add form element -->
-
+  <!-- TODO: DONE add form element -->
+  <form action="/submit-update" method="post">
+    <label for="postTitle">Title:</label>
+    <input type="text" id="postTitle" name="postTitle" required>
+    
+    <label for="postContent">Content:</label>
+    <textarea id="postContent" name="postContent" required></textarea>
+    
+    <button type="submit">Update Post</button>
+  </form>
   <script src="./update.js"></script>
   
 </body>

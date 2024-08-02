@@ -39,8 +39,8 @@ function createPostHtml(postData) {
 	const deleteButton = document.createElement(`button`);
 	deleteButton.classList.add('button', 'button--danger');
 	deleteButton.innerText = 'delete';
-  // TODO: add event listener for click event to call delete post method (postData.id)
-
+  // TODO: DONE add event listener for click event to call delete post method (postData.id)
+  deleteButton.addEventListener('click', () => deletePost(postData.id));
 	const updateButton = document.createElement(`a`);
 	updateButton.classList.add('button', 'button--success');
 	updateButton.innerText = 'update';
