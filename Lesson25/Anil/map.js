@@ -267,6 +267,10 @@ const usersExercise8 = [
 	},
 ];
 
+const emailAdresses = array => array.map(obj => email = obj.email);
+console.log("emailAdresses : ", emailAdresses(usersExercise8))
+
+
 // Exercise 9:
 // Given an array of objects representing books, extract an array of book titles and authors using .map().
 const booksExercise9 = [
@@ -332,6 +336,12 @@ const booksExercise9 = [
 	},
 ];
 
+const bookTitlesAndAuthors = array => array.map(obj => both = [obj.title,obj.author]);
+console.log("bookTitlesAndAuthors : ", bookTitlesAndAuthors(booksExercise9))
+
 // Exercise 10:
 // Given an array of prices, add a currency symbol to each price using .map().
 const pricesExercise10 = [1999, 899, 1499, 299, 399, 999, 499, 649, 99, 129];
+
+const priceWithCurrency = array => array.map(price => newPrice = `${price}$`);
+console.log("priceWithCurrency : ", priceWithCurrency(pricesExercise10))
