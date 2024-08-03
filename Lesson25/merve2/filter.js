@@ -362,7 +362,7 @@ function isGradeAtLeastC(grade) {
 }
 
 const goodStudents = studentsExercise9.filter(student => isGradeAtLeastC(student.grade));
-console.log("Students with grade C or higher:", goodStudents);
+console.log(goodStudents);
 
 console.log('------------------')
 // Exercise 10:
@@ -430,4 +430,4 @@ const usersExercise10 = [
 	},
 ];
 const usersNotStartingWithJ = usersExercise10.filter(user => !user.name.startsWith('J'));
-console.log("Users whose names don't start with 'J':", usersNotStartingWithJ);
+console.log(usersNotStartingWithJ);

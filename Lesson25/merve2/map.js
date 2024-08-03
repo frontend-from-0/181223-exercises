@@ -180,7 +180,8 @@ console.log('----------------------------------------')
 // Exercise 6:
 // Given an array of numbers, convert each number to a string representation using .map().
 const numbersExercise6 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
+const numberStrings = numbersExercise6.map(number => number.toString());
+console.log("Numbers as strings:", numberStrings);
 console.log('----------------------------------------')
 
 // Exercise 7:
@@ -197,8 +198,8 @@ const sentencesExercise7 = [
 	'The mountain peaks were covered in snow.',
 	'The room was filled with laughter and joy.',
 ];
-const numberStrings = numbersExercise6.map(number => number.toString());
-console.log("Numbers as strings:", numberStrings);
+const wordsArrays = sentencesExercise7.map(sentence => sentence.split(' '));
+console.log("Sentences split into words:", wordsArrays);
 console.log('----------------------------------------')
 
 // Exercise 8:
