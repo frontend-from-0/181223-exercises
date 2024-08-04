@@ -3,7 +3,7 @@ const API_KEY = 'UcxmetuPnt2wd3vltsdXqYaOSvDxirnsB7rh5iRrBHI';
 
 const button = document.getElementById('fetch-button');
 button.addEventListener('click', () => {
-	fetch(`https://api.unsplash.com/photos/random?count=10&client_id=${API_KEY}`)
+	fetch(`https://api.unsplash.com/photos/random?count=3&client_id=${API_KEY}`)
 		.then((response) => response.json())
 		.then((data) =>
 			data.map((imgData) => {
