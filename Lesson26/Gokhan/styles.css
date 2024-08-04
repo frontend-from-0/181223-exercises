@@ -41,3 +41,17 @@
   .button:hover {
     background-color: #45a049;
   }
+
+  button[type="reset"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button[type="reset"]:hover {
+    background-color: #45a049;
+  }
