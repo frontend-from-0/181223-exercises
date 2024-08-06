@@ -37,15 +37,15 @@ function createPostHtml(postData) {
 	li.classList.add('post');
 	li.append(h2);
 
-	const deleteButton = document.createElement(`button`);
-	deleteButton.classList.add('button', 'button--danger');
+	const deleteButton = document.createElement(`a`);
+	deleteButton.classList.add('button', 'button--danger','button--equal');
 	deleteButton.innerText = 'delete';
 	// TODO: add event listener for click event to call delete post method (postData.id)
 	deleteButton.addEventListener('click', () => deletePost(postData.id));
 
 	const updateButton = document.createElement(`a`);
 	updateButton.addEventListener('click', () => updatePost(postData.id));
-	updateButton.classList.add('button', 'button--success');
+	updateButton.classList.add('button', 'button--success', 'button--equal');
 	updateButton.innerText = 'update';
 	updateButton.href = `./update-post.html?postId=${postData.id}`;
 
@@ -61,7 +61,6 @@ function createPostHtml(postData) {
 	p.classList.add('post-body');
 	li.append(p);
 }
-
 
 function createPost() {
 	// Send post request
@@ -84,19 +83,18 @@ function createPost() {
 
 }
 
-
-function deletePost(postId) {
-
-	fetch(`${URL}${postId}`, {
-		method: 'DELETE'
-	})
-		.then(response => {
-			if (response.ok) {
-				console.log('Post deleted:', postId);
-				document.querySelector(`li[data-id="${postId}"]`).remove();
-			} else {
-				console.error('Failed to delete post:', postId);
-			}
-		})
-		.catch(error => console.error('Error:', error));
+function deletePost(id) {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log(`Post with ID ${id} deleted.`);
+            alert(`Post with ID ${id} has been deleted.`);
+        } else {
+            console.error('Failed to delete post:', id);
+            alert('Failed to delete post.');
+        }
+    })
+    .catch(error => console.error('Error:', error));
 }

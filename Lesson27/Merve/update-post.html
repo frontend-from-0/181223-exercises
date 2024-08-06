@@ -5,24 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Update post</title>
-  <link rel="stylesheet" type="text/css" href="update.css" />
-
+  <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
 <body>
   <!-- TODO: add form element -->
   
   <form id="update-post-form">
-    <label for="postId">Post ID</label>
-    <input type="text" id="postId" name="postId" required>
+    <label for="postTitle">Title</label>
+    <input type="text" id="postTitle" name="postTitle" required>
     <label for="postContent">Content</label>
     <textarea id="postContent" name="postContent" required></textarea>
-    <button type="submit">Update Post</button>
+    <a href="#" id="update-button">Update post</a>
   </form>
-  <button onclick="deletePost(1)">Delete Post</button>
-
+  <div id="message"></div>
   <script src="./update.js"></script>
-
 </body>
 
 </html>
