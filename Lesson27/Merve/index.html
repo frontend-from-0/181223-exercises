@@ -9,15 +9,13 @@
 <body>
 	<div class="container">
 		<h1>Posts</h1>
-		<button id="fetch-button" class="button button--success">
-			Fetch posts
-		</button>
-		<!-- TODO: When clicked, redirect user to ./create-post.html page. What HTML this button should be? -->
-		
-		<button id="create-button" class="button button--success"
-			onclick="window.location.href='./create-post.html'"></button>>
-		Create post
-		</button>
+		<a href="#" id="fetch-button" class="button button--success">Fetch posts</a>
+		<a href="#" id="delete-button" class="button button--danger" onclick="deletePost(1)">Delete Post</a>
+
+		 <!-- TODO: When clicked, redirect user to ./create-post.
+        html page. What HTML this button should be? -->
+
+		<a href="./create-post.html" id="create-button" class="button button--success">Create post</a>
 	</div>
 	<ul id="post-list">
 	</ul>

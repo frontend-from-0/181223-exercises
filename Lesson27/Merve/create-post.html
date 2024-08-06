@@ -5,7 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Create post</title>
-	<link rel="stylesheet" type="text/css" href="create.css" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
 <body>
@@ -16,11 +16,11 @@
 
 		<label for="content">Content</label>
 		<textarea id="content" name="content" required></textarea>
-
-		<button type="submit">Create Post</button>
-
+		
+		<a href="#" id="create-button">Create post</a>
+		<a href="#" id="delete-button" class="button button--danger" onclick="deletePost(1)">Delete Post</a>
 	</form>
-
+	<div id="postsContainer"></div>
 	<script src="./create.js"></script>
 </body>
 
