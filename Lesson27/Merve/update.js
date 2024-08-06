@@ -1,51 +1,71 @@
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('postId');
 
-// 1. Fetch post data for the post with given postId
+if (!postId) {
+  console.error('Post ID is missing in the URL');
+} else {
+  getPostById(postId).then(post => {
+    if (post) {
+      document.getElementById('postTitle').value = post.title;
+      document.getElementById('postContent').value = post.body;
+    } else {
+      console.error('Post not found');
+    }
+  });
+}
+
 function getPostById(id) {
-  return fetch(`${URL}${id}`)
-    .then(response => response.json())
-    .then(data => data)
+  return fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
     .catch(error => console.error('Error fetching post:', error));
 }
 
-
-
-// 2. Prefill form with post title and post body
-getPostById(postId).then(post => {
-  document.getElementById('postId').value = post.id;
-  document.getElementById('postContent').value = post.content;
-});
-
-
-
-// 3. Select form element and attach 'submit' event listener to it, send new post information with UPDATE request
-document.getElementById('update-post-form').addEventListener('submit', function (event) {
-  event.preventDefault();
-
-  const postId = document.getElementById('postId').value;
+document.getElementById('update-button').addEventListener('click', function(event) {
+  event.preventDefault(); 
+  const postTitle = document.getElementById('postTitle').value;
   const postContent = document.getElementById('postContent').value;
 
-  updatePost(postId, postContent);
+  if (postTitle.length < 3) {
+    alert('Title must be at least 3 characters long.');
+    return;
+  }
+
+  if (postContent.length < 3) {
+    alert('Content must be at least 3 characters long.');
+    return;
+  }
+  document.getElementById('update-post-form').dispatchEvent(new Event('submit')); 
 });
 
-function updatePost(id, content) {
-  fetch(`${URL}${id}`, {
+document.getElementById('update-post-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const postTitle = document.getElementById('postTitle').value;
+  const postContent = document.getElementById('postContent').value;
+  updatePost(postId, { title: postTitle, body: postContent });
+});
+
+function updatePost(id, { title, body }) {
+  fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ content: content })
+    body: JSON.stringify({ title, body })
   })
-    .then(response => {
-      if (response.ok) {
-
-
-        // 4. Show confirmation to the user if update operation was successful
-        alert('Post updated successfully!');
-      } else {
-        console.error('Failed to update post:', id);
-      }
-    })
-    .catch(error => console.error('Error:', error));
+  .then(response => {
+    if (response.ok) {
+      const messageElement = document.getElementById('message'); 
+      messageElement.innerText = 'Post updated successfully!';
+    } else {
+      console.error('Failed to update post:', id);
+      const messageElement = document.getElementById('message');
+      messageElement.innerText = 'Failed to update post.';
+    }
+  })
+  .catch(error => console.error('Error:', error));
 }
