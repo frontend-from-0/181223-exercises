@@ -10,15 +10,19 @@
 
 <body>
   <!-- TODO: add form element -->
-  
-  <form id="update-post-form">
+
+  <form id="update-post-form" novalidate>
     <label for="postTitle">Title</label>
-    <input type="text" id="postTitle" name="postTitle" required>
+    <input type="text" id="postTitle" name="postTitle" placeholder="Post Title" required>
+    <div class="alert-message__update" id="success-message" style="display:none;"></div>
+    <div class="alert-message__update" id="error-message" style="display:none;"></div>
+    <span class="error-message" id="title-error" class="error-message"></span>
     <label for="postContent">Content</label>
-    <textarea id="postContent" name="postContent" required></textarea>
+    <textarea id="postContent" name="postContent" placeholder="Post Content" required></textarea>
+    <span class="error-message" id="content-error" class="error-message"></span>
     <a href="#" id="update-button">Update post</a>
   </form>
-  <div id="message"></div>
+ 
   <script src="./update.js"></script>
 </body>
 

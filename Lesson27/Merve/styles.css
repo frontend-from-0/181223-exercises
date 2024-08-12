@@ -9,6 +9,9 @@
   --red-hover: #7a0916;
   --button-blue: #007bff;
   --button-blue-hover: #0056b3;
+  --error-light: #f8d7da;
+  --error-dark:  #721c24;
+  --light-green: #d4edda;
 }
 
 body {
@@ -42,7 +45,10 @@ body {
   border-radius: 4px;
   
 }
-
+div{
+  padding: 8px 16px;
+  border-radius: 10px;
+}
 #postsContainer {
   margin-top: 20px;
 }
@@ -120,3 +126,63 @@ a:hover {
     flex-direction: column;
     align-items: center;
   }
+  #succes-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  padding:10px 16px;
+  font-weight: 700;
+}
+
+.success {
+    background-color: var(--light-green);
+    color: var(--green-hover);
+}
+
+.error-message {
+    background-color:var(--light-gray);
+    color: var(--danger-red)
+}
+
+span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  padding:10px 16px;
+  font-weight: 700;
+}
+.alert-message__update{
+  border-radius: 10px;
+  background-color: var(--red-hover);
+  color: var(--light-gray);
+  margin: 10px 0; 
+  padding: 10px; 
+  text-align: center; 
+  width: 100%; 
+}
+ul{
+  list-style: none;
+  border-radius: 10px;
+}
+.update-button, .delete-button {
+  display: inline-block; 
+  margin-right: 10px; 
+  padding: 5px 10px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.update-button {
+  background-color: var(--button-blue); 
+  color: var(--white);
+}
+
+.delete-button {
+  background-color: var(--danger-red);
+  color: var(--white);
+}

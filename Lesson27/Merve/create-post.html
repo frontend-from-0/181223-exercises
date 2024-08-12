@@ -10,17 +10,18 @@
 
 <body>
 	<!-- TODO: add form element -->
-	<form id="newForm" method="post">
+	<form id="newForm" method="post" novalidate>
 		<label for="title">Title</label>
-		<input type="text" id="title" name="title" required>
-
+		<input type="text" id="title" name="title" placeholder="Title" required>
+		<span class="error-message" id="title-error" class="error-message"></span>
 		<label for="content">Content</label>
-		<textarea id="content" name="content" required></textarea>
-		
+		<textarea id="content" name="content" placeholder="Content" required></textarea>
+		<span class="error-message" id="content-error" class="error-message"></span>
 		<a href="#" id="create-button">Create post</a>
 		<a href="#" id="delete-button" class="button button--danger" onclick="deletePost(1)">Delete Post</a>
 	</form>
 	<div id="postsContainer"></div>
+	<div  id="success-message"></div>
 	<script src="./create.js"></script>
 </body>
 

@@ -1,20 +1,28 @@
+document.getElementById('newForm').setAttribute('novalidate', true); 
+
 document.getElementById('create-button').addEventListener('click', function(event) {
     event.preventDefault(); 
 
     const title = document.getElementById('title').value;
     const content = document.getElementById('content').value;
+    let valid = true; 
+    
+    document.getElementById('title-error').innerText = '';
+    document.getElementById('content-error').innerText = '';
 
     if (title.length < 3) {
-        alert('Title must be at least 3 characters long.');
-        return;
+        valid = false;
+        document.getElementById('title-error').innerText = 'Title must be at least 3 characters long.';
     }
 
     if (content.length < 3) {
-        alert('Content must be at least 3 characters long.');
-        return;
+        valid = false;
+        document.getElementById('content-error').innerText = 'Content must be at least 3 characters long.';
     }
 
-    document.getElementById('newForm').dispatchEvent(new Event('submit')); 
+    if (valid) {
+        document.getElementById('newForm').dispatchEvent(new Event('submit')); 
+    }
 });
 
 document.getElementById('newForm').addEventListener('submit', function(event) {
@@ -29,7 +37,7 @@ document.getElementById('newForm').addEventListener('submit', function(event) {
 function createPost(title, content) {
     const postData = {
         title: title,
-        content: content
+        body: content
     };
 
     fetch('https://jsonplaceholder.typicode.com/posts/', {
@@ -64,10 +72,8 @@ function deletePost(id) {
     .then(response => {
         if (response.ok) {
             console.log(`Post with ID ${id} deleted.`);
-            alert(`Post with ID ${id} has been deleted.`);
         } else {
             console.error('Failed to delete post:', id);
-            alert('Failed to delete post.');
         }
     })
     .catch(error => console.error('Error:', error));

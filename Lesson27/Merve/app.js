@@ -19,6 +19,7 @@ fetchButton.addEventListener('click', getPosts);
 // If you need to pass a parameter to the callback function, wrap it in an arrow function:
 // getPostButton.addEventListener('click', () => getPostById(id));
 
+getPostButton.addEventListener('click', () => getPostById(1));
 function getPosts() {
 	fetch(URL)
 		.then((response) => response.json())
@@ -38,7 +39,7 @@ function createPostHtml(postData) {
 	li.append(h2);
 
 	const deleteButton = document.createElement(`a`);
-	deleteButton.classList.add('button', 'button--danger','button--equal');
+	deleteButton.classList.add('button', 'button--danger', 'button--equal');
 	deleteButton.innerText = 'delete';
 	// TODO: add event listener for click event to call delete post method (postData.id)
 	deleteButton.addEventListener('click', () => deletePost(postData.id));
@@ -84,17 +85,25 @@ function createPost() {
 }
 
 function deletePost(id) {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log(`Post with ID ${id} deleted.`);
-            alert(`Post with ID ${id} has been deleted.`);
-        } else {
-            console.error('Failed to delete post:', id);
-            alert('Failed to delete post.');
-        }
-    })
-    .catch(error => console.error('Error:', error));
+	fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+		method: 'DELETE'
+	})
+		.then(response => {
+			const messageElement = document.getElementById('message');
+			if (response.ok) {
+				console.log(`Post with ID ${id} deleted.`);
+				messageElement.innerText = `Post with ID ${id} has been deleted.`;
+				messageElement.classList.add('success');
+			} else {
+				console.error('Failed to delete post:', id);
+				messageElement.innerText = 'Failed to delete post.';
+				messageElement.classList.add('error');
+			}
+		})
+		.catch(error => {
+			console.error('Error:', error);
+			const messageElement = document.getElementById('message');
+			messageElement.innerText = 'An error occurred while deleting the post.';
+			messageElement.classList.add('error');
+		});
 }
