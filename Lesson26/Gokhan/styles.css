@@ -103,6 +103,7 @@ button[type="reset"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 0px;
 }
 
 button[type="reset"]:hover {
