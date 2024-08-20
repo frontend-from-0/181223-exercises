@@ -7,12 +7,24 @@
 </head>
 
 <body>
-  <h1>Image Gallery</h1>
+  
+  <h3>Image Gallery</h3>
+
+  <label for="image-count">Image Count</label>
+  <select id="image-count">
+    <option value="0">Count</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+    <option value="25">25</option>
+  </select>
   <button id="fetch-button" class="button">Fetch Images</button>
-  <button id="reset-button" type="reset">Clear Images</button>
+
   <div id="image-container"></div>
 
-
+  <br><br><br><br><br>
+  <button id="reset-button" type="reset">Clear Images</button>
 
   <script src="./script.js"></script>
 </body>

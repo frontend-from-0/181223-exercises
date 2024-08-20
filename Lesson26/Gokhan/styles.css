@@ -3,12 +3,64 @@
 }
 
 body {
+  background: #1D4350;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #A43931, #1D4350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
   font-family: Arial, sans-serif;
   text-align: center;
 }
 
-h1 {
-  color: #333;
+h3 {
+  margin: 80px auto 30px auto;
+  color: #fff;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  border: none;
+  width: 60%;
+  height: 50px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 75;
+}
+
+label {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  margin: 20px;
+}
+
+#image-count {
+  background-color: #4CAF50;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  margin: auto 5px;
+}
+
+#image-count:hover {
+  background-color: #45a049;
+}
+
+option {
+  font-size: 14px;
+  color: #fff;
+  background-color: #4CAF50;
 }
 
 #image-container {
@@ -33,9 +85,10 @@ h1 {
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .button:hover {
@@ -44,7 +97,7 @@ h1 {
 
 button[type="reset"] {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 18px;
   background-color: #4CAF50;
   color: white;
   border: none;
