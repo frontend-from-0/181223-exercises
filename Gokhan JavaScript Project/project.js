@@ -18,7 +18,7 @@ const fetchImages = async (query, pageNo) => {
         }
 
         const url = `https://api.unsplash.com/search/photos?query=${query}
-    &per_page=10&page=${pageNo}&client_id=${api_key}`;
+    &per_page=5&page=${pageNo}&client_id=${api_key}`;
 
         const response = await fetch(url);
         const data = await response.json();
