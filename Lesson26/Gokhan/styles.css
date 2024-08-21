@@ -3,16 +3,10 @@
 }
 
 body {
-  background: #1D4350;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #A43931, #1D4350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
+  background: #1D4350;
+  background: -webkit-linear-gradient(to top, #A43931, #1D4350);
+  background: linear-gradient(to top, #A43931, #1D4350);
   background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-
   font-family: Arial, sans-serif;
   text-align: center;
 }
@@ -30,6 +24,7 @@ h3 {
   justify-content: center;
   align-items: center;
   font-weight: 75;
+  cursor: context-menu;
 }
 
 label {
@@ -53,21 +48,20 @@ label {
   margin: auto 5px;
 }
 
-#image-count:hover {
-  background-color: #45a049;
+label:hover+#image-count {
+  background-color: #4CAF50;
 }
 
-option {
-  font-size: 14px;
-  color: #fff;
-  background-color: #4CAF50;
+#image-count:hover {
+  background-color: #45a049;
 }
 
 #image-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  margin: 25px 150px;
 }
 
 .image {
@@ -77,7 +71,6 @@ option {
   object-fit: cover;
   border-radius: 5px;
 }
-
 
 .button {
   padding: 10px 20px;
@@ -103,7 +96,6 @@ button[type="reset"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 0px;
 }
 
 button[type="reset"]:hover {

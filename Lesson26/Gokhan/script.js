@@ -22,20 +22,36 @@ fetchButton.addEventListener('click', () => {
 				newImage.src = imgData.urls.regular;
 				newImage.alt = imgData.alt_description;
 				newImage.classList.add('image');
-				// const imageContainer = document.querySelector(`#image-container`);
 				imageContainer.appendChild(newImage);
 			});
-})
+		})
 		.catch((error) => console.log(error));
 });
 
-// const selectElement = document.getElementById('selectElement')
-
-// for (let i = 0; i < imageCount.options.length; i++) {
-// 	selectElement.options[i].text = `${i + 1}. ${selectElement.options[i].text}`;
-// }
-
 const resetButton = document.getElementById('reset-button');
-resetButton.addEventListener('click', () =>{
+resetButton.style.display = 'none';
+
+fetchButton.addEventListener('click', () => {
+	resetButton.style.display = 'block';
+	resetButton.style.margin = '0 auto';
+});
+
+resetButton.addEventListener('click', () => {
 	imageContainer.innerHTML = '';
+	resetButton.style.display = 'none';
+});
+
+// Reset Button for Clear The Images
+document.addEventListener('DOMContentLoaded', function () {
+	const fetchButton = document.getElementById('fetch-button');
+	const resetButton = document.querySelector('button[type="reset"]');
+	const imageContainer = document.getElementById('image-container');
+
+	fetchButton.addEventListener('click', function () {
+		resetButton.style.display = 'none';
+	});
+
+	imageContainer.addEventListener('mouseover', function () {
+		resetButton.style.display = 'block';
+	});
 });
