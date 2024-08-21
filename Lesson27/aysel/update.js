@@ -32,7 +32,6 @@ function updatePost(id) {
     const updatedPost = {
         title: document.getElementById('title').value,
         body: document.getElementById('body').value,
-        userId: 1
     };
 
     fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -45,7 +44,25 @@ function updatePost(id) {
     .then(response => response.json())
     .then(data => {
         console.log('Post updated:', data);
-        window.location.href = 'index.html'; 
+        showConfirmation(data); 
     })
     .catch(error => console.error('Error updating post:', error)); 
 }
+
+function showConfirmation(postData) {
+
+    const confirmationMessage = document.getElementById('confirmation-message');
+    const postTitle = document.getElementById('post-title');
+    const postBody = document.getElementById('post-body');
+
+    postTitle.innerText = "Post Title: " + postData.title; 
+    postBody.innerText = "Post Body: " + postData.body;
+
+    confirmationMessage.style.display = 'block';
+    const goBackButton = document.getElementById('go-back-button');
+    goBackButton.style.display = 'inline-block';
+    goBackButton.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+}
+

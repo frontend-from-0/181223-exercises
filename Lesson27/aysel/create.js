@@ -10,7 +10,6 @@ function createPost() {
     const newPost = {
         title: title,
         body: body,
-        userId: 1
     };
 
     fetch('https://jsonplaceholder.typicode.com/posts/', {
@@ -23,7 +22,30 @@ function createPost() {
     .then(response => response.json())
     .then(data => {
         console.log('Post created:', data);
-        window.location.href = 'index.html';
-    });
+        showConfirmation(data);
+    })
+    .catch(error => console.error('Error creating post:', error));
 }
+function showConfirmation(postData) {
+    const confirmationMessage = document.getElementById('confirmation-message');
+    const postTitle = document.getElementById('post-title');
+    const postBody = document.getElementById('post-body');
+    const goBackButton = document.getElementById('go-back-button');
+  
+    postTitle.innerText = "Post Title: " + postData.title;
+    postBody.innerText = "Post Body: " + postData.body;
+  
+    confirmationMessage.style.display = 'block';
+    goBackButton.style.display = 'inline-block';
+  
+    // Redirect after 3 seconds
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 3000); // 3000ms = 3 seconds
+  
+    // Event listener for the Go Back button
+    goBackButton.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  }
 
