@@ -11,11 +11,14 @@ let page = 1;
 
 // Function to fetch images using Unsplash API
 const fetchImages = async (query, pageNo) => {
+    
     try {
 
         if (pageNo === 1) {
             imagesContainer.innerHTML = '';
         }
+
+
 
         const url = `https://api.unsplash.com/search/photos?query=${query}
     &per_page=5&page=${pageNo}&client_id=${api_key}`;
@@ -50,6 +53,12 @@ const fetchImages = async (query, pageNo) => {
                 loadMoreBtn.style.display = "block";
             }
 
+            if (data.results.length > 0) {
+                resetBtn.style.display = 'block';
+            } else {
+                resetBtn.style.display = 'none';
+            }
+
         } else {
             imagesContainer.innerHTML = `<h2>No Image Found</h2>`;
             if (loadMoreBtn.style.display === "block") 
@@ -77,3 +86,16 @@ searchForm.addEventListener('submit', (e) => {
 loadMoreBtn.addEventListener('click', () => {
     fetchImages(searchInput.value.trim(), ++page);
 })
+
+const resetBtn = document.createElement('button');
+resetBtn.innerText = 'Reset';
+resetBtn.style.display = 'none';
+
+resetBtn.addEventListener('click', () => {
+    imagesContainer.innerHTML = '';
+    loadMoreBtn.style.display = 'none';
+    resetBtn.style.display = 'none';
+});
+
+document.body.appendChild(resetBtn);
+

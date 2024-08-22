@@ -6,7 +6,10 @@
 }
 
 body {
-    background: url(https://images.unsplash.com/photo-1723997774348-545a51f8f50b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D);
+    background: url(https://images.unsplash.com/photo-1465569704703-a083158c1672?q=80&w=1101&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-attachment:fixed;
+    
     width: 100%;
     height: 100vh;
     display: flex;
@@ -22,7 +25,10 @@ header {
 }
 
 header h1 {
-    color: #767676
+    margin-top: 25px;
+    padding-bottom: 20px;
+    font-size: 45px;
+    color: #777;
 }
 
 header form .search-container {
@@ -34,7 +40,7 @@ header form .search-container input {
     width: 100%;
     font-size: 20px;
     padding: 12px 14px;
-    border-radius: 20px;
+    border-radius: 14px;
     border: none;
     background: #eee;
 }
@@ -54,6 +60,10 @@ header form .search-container .material-symbols-outlined{
     align-items: center;
     flex-wrap: wrap;
     gap: 18px;
+}
+
+.images-container h2 {
+    color: #777;
 }
 
 .images-container img {
@@ -97,23 +107,47 @@ header form .search-container .material-symbols-outlined{
 
 /*  Adding Style To Load More Button */
 .loadMoreBtn {
+    display: none;
     border: none;
-    background-color: #44e2da;
-    color: #fff;
+    background-color: #ffe8f6cb;
+    color: #6d6c6c;
     font-size: 20px;
-    font-weight: 600;
-    padding: 8px 12px;
+    padding: 10px 24px;
     border-radius: 4px;
     cursor: pointer;
     display: none;
+    margin-bottom: 20px;
 }
+
+.loadMoreBtn:hover {
+    background-color: #dda7a7;
+    color: #645e5e;
+    cursor: pointer;
+}
+
+button {
+    color:#6d6c6c;
+    background-color:#ffe8f6cb;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 24px;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #dda7a7;
+    color: #645e5e;
+    cursor: pointer;
+} 
 
 main section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20pz 0 50px 0;
+    margin: 10px 10px 10px 10px;
 }
 
 /* Responsive Code */
