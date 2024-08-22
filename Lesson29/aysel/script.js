@@ -28,9 +28,9 @@ console.log(a, b, c); // 4, 2, true
 const personE16 = {
 	name: 'Jane Doe',
 };
-const { name: fullName } = personE16;
+const { name: fullName1 } = personE16;
 
-console.log(fullName);
+console.log(fullName1);
 
 // 5. Nested Object Destructuring
 // Given the following nested object, use object destructuring to assign the values of name, age, and city to their respective variables:
