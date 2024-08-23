@@ -422,7 +422,7 @@ const usersExercise10 = [
 	},
 ];
 console.log('Ex.10:');
-const filteredUsers = usersExercise10.filter(user => !user.name.startsWith('J'));
+const filteredUsers = usersExercise10.filter(user => !user.name.toUpperCase().startsWith('J'));
 
 console.log(filteredUsers);
 
