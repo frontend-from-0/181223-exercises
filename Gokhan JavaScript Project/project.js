@@ -8,7 +8,6 @@ const imagesContainer = document.querySelector('.images-container');
 const loadMoreBtn = document.querySelector('.loadMoreBtn');
 
 let page = 1;
-
 // Function to fetch images using Unsplash API
 const fetchImages = async (query, pageNo) => {
     
@@ -99,3 +98,10 @@ resetBtn.addEventListener('click', () => {
 
 document.body.appendChild(resetBtn);
 
+let imageCounter = 0;
+function addImage() {
+    imageCounter ++;
+    if (imageCounter === 6) {
+
+    }
+}
