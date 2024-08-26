@@ -1,6 +1,7 @@
-document.getElementById('newForm').setAttribute('novalidate', true); 
+// This is already set in HTML:
+// document.getElementById('createPostForm').setAttribute('novalidate', true); 
 
-document.getElementById('create-button').addEventListener('click', function(event) {
+document.getElementById('createPostForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
     const title = document.getElementById('title').value;
@@ -21,18 +22,10 @@ document.getElementById('create-button').addEventListener('click', function(even
     }
 
     if (valid) {
-        document.getElementById('newForm').dispatchEvent(new Event('submit')); 
+        createPost(title, content); 
     }
 });
 
-document.getElementById('newForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
-
-    const title = document.getElementById('title').value;
-    const content = document.getElementById('content').value;
-
-    createPost(title, content);
-});
 
 function createPost(title, content) {
     const postData = {
@@ -47,34 +40,34 @@ function createPost(title, content) {
         },
         body: JSON.stringify(postData)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (response.status === 201) {
+            return response.json();
+        } else {
+            // error occured, show error message.
+        }
+        })
     .then(data => {
-        console.log('Success:', data);
-        const postHtml = `
-            <div class="post">
-                <h3>${title}</h3>
-                <p>${content}</p>
-            </div>
-        `;
-        const postsContainer = document.getElementById('postsContainer');
-        postsContainer.insertAdjacentHTML('beforeend', postHtml);
-        document.getElementById('newForm').reset();
+        const title = document.createElement('h2');
+        title.innerText = 'Post created successfully';
+
+        const h2 = document.createElement('h2');
+	    h2.innerText = data.title;
+	    h2.classList.add('post-title');
+	
+	    const p = document.createElement('p');
+	    p.innerText = data.body;
+	    p.classList.add('post-body');
+	
+        const postContainer = document.getElementById('postContainer');
+        postContainer.classList.add('post');
+        postContainer.append(title);
+        postContainer.append(h2);
+        postContainer.append(p);
+
+        document.getElementById('createPostForm').reset();
     })
     .catch((error) => {
         console.error('Error:', error);
     });
-}
-
-function deletePost(id) {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (response.ok) {
-            console.log(`Post with ID ${id} deleted.`);
-        } else {
-            console.error('Failed to delete post:', id);
-        }
-    })
-    .catch(error => console.error('Error:', error));
 }

@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Update post</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Update post</title>
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-</head>
+	<body>
+		<!-- TODO: add form element -->
+		<form id="update-post-form" class="post-form" novalidate>
+			<label for="postTitle">Title</label>
+			<input
+				type="text"
+				class="text-input"
+				id="postTitle"
+				name="postTitle"
+				placeholder="Post Title"
+				required
+			/>
+			<span class="error-message" id="title-error" class="error-message"></span>
 
-<body>
-  <!-- TODO: add form element -->
+			<label for="postContent">Content</label>
+			<textarea
+				id="postContent"
+				class="text-input"
+				name="postContent"
+				placeholder="Post Content"
+				required
+			></textarea>
+			<span
+				class="error-message"
+				id="content-error"
+				class="error-message"
+			></span>
+			<!-- No reason for this element to be <a>. It shoudl trigger JS functionality, not redirect a user. -->
+			<div class="post-actions">
+				<button type="submit" id="update-button" class="button button--success">
+					Update post
+				</button>
+				<a href="./index.html" class="button button--danger">Go back</a>
+			</div>
+		</form>
+		<!-- There's no reason to put this error messages inside the form. In fact, you don't even need to different elements for it.
+ -->
+		<div
+			class="alert-message__update"
+			id="update-result"
+			style="display: none"
+		></div>
 
-  <form id="update-post-form" novalidate>
-    <label for="postTitle">Title</label>
-    <input type="text" id="postTitle" name="postTitle" placeholder="Post Title" required>
-    <div class="alert-message__update" id="success-message" style="display:none;"></div>
-    <div class="alert-message__update" id="error-message" style="display:none;"></div>
-    <span class="error-message" id="title-error" class="error-message"></span>
-    <label for="postContent">Content</label>
-    <textarea id="postContent" name="postContent" placeholder="Post Content" required></textarea>
-    <span class="error-message" id="content-error" class="error-message"></span>
-    <a href="#" id="update-button">Update post</a>
-  </form>
- 
-  <script src="./update.js"></script>
-</body>
-
+		<script src="./update.js"></script>
+	</body>
 </html>
