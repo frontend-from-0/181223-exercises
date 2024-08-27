@@ -59,10 +59,11 @@ function showConfirmation(postData) {
     postBody.innerText = "Post Body: " + postData.body;
 
     confirmationMessage.style.display = 'block';
-    const goBackButton = document.getElementById('go-back-button');
-    goBackButton.style.display = 'inline-block';
-    goBackButton.addEventListener('click', () => {
+
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('go-back-button').addEventListener('click', () => {
         window.location.href = 'index.html';
     });
-}
+});
 

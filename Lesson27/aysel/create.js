@@ -43,9 +43,10 @@ function showConfirmation(postData) {
       window.location.href = 'index.html';
     }, 3000); // 3000ms = 3 seconds
   
-    // Event listener for the Go Back button
-    goBackButton.addEventListener('click', () => {
-      window.location.href = 'index.html';
-    });
   }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('go-back-button').addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+});
 
