@@ -30,37 +30,38 @@ function getPosts() {
 getPostButton.addEventListener('click', () => getPostById(id));
 
 function createPostHtml(postData) {
-	const h2 = document.createElement('h2');
-	h2.innerText = postData.title;
-	h2.classList.add('post-title');
 
 	const li = document.createElement('li');
 	li.classList.add('post');
+
+	const h2 = document.createElement('h2');
+	h2.innerText = postData.title;
+	h2.classList.add('post-title');
 	li.append(h2);
 
-	const deleteButton = document.createElement(`a`);
-	deleteButton.classList.add('button', 'button--danger', 'button--equal');
-	deleteButton.innerText = 'delete';
-	// TODO: add event listener for click event to call delete post method (postData.id)
-	deleteButton.addEventListener('click', () => deletePost(postData.id));
-
-	const updateButton = document.createElement(`a`);
-	updateButton.addEventListener('click', () => updatePost(postData.id));
-	updateButton.classList.add('button', 'button--success', 'button--equal');
-	updateButton.innerText = 'update';
-	updateButton.href = `./update-post.html?postId=${postData.id}`;
-
-	li.append(updateButton, deleteButton);
-
-	document.getElementById('post-list').append(li);
-
-	// p
-	// p.innerText
-	// add class
 	const p = document.createElement('p');
 	p.innerText = postData.body;
 	p.classList.add('post-body');
 	li.append(p);
+
+	const postActionsContainer = document.createElement('div');
+	postActionsContainer.classList.add('post-actions');
+
+	const deleteButton = document.createElement('button');
+	deleteButton.classList.add('button', 'button--danger');
+	deleteButton.innerText = 'Delete';
+	deleteButton.addEventListener('click', () => deletePost(postData.id));
+
+	const updateButton = document.createElement('a');
+	updateButton.addEventListener('click', () => updatePost(postData.id));
+	updateButton.classList.add('button', 'button--success');
+	updateButton.innerText = 'Update';
+	updateButton.href = `./update-post.html?postId=${postData.id}`;
+
+	// Place buttons in the div first, then append the div to the list item
+	postActionsContainer.append(updateButton, deleteButton);
+	li.append(postActionsContainer);
+	document.getElementById('post-list').append(li);
 }
 
 function createPost() {

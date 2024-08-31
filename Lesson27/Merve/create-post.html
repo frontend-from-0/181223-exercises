@@ -10,18 +10,28 @@
 
 <body>
 	<!-- TODO: add form element -->
-	<form id="newForm" method="post" novalidate>
+	<form id="createPostForm" class="post-form" method="post" novalidate>
 		<label for="title">Title</label>
-		<input type="text" id="title" name="title" placeholder="Title" required>
+		<input type="text" class="text-input" id="title" name="title" placeholder="Title" required>
 		<span class="error-message" id="title-error" class="error-message"></span>
+		
 		<label for="content">Content</label>
-		<textarea id="content" name="content" placeholder="Content" required></textarea>
+		<textarea id="content" class="text-input" name="content" placeholder="Content" required></textarea>
 		<span class="error-message" id="content-error" class="error-message"></span>
-		<a href="#" id="create-button">Create post</a>
-		<a href="#" id="delete-button" class="button button--danger" onclick="deletePost(1)">Delete Post</a>
+		
+		<div class="post-actions">
+			<!-- Should be button element, not <a>. -->
+			<button type="submit" class="button button--success" id="create-button">Create post</button>
+			<a href="./index.html" class="button button--danger">Go back</a>
+		</div>
+		<!-- No need for this button here
+			<a href="#" id="delete-button" class="button button--danger" onclick="deletePost(1)">Delete Post</a> -->
 	</form>
-	<div id="postsContainer"></div>
+	<!-- Show message above the post -->
 	<div  id="success-message"></div>
+	<div id="postContainer"></div>
+	
+
 	<script src="./create.js"></script>
 </body>
 
