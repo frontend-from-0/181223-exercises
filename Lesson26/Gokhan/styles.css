@@ -28,9 +28,7 @@ h3 {
 }
 
 label {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 4px;
   font-size: 18px;
@@ -38,9 +36,9 @@ label {
 }
 
 #image-count {
-  background-color: #4CAF50;
+  background-color:#1b343f;
   cursor: pointer;
-  color: #fff;
+  color: #fffe;
   font-size: 14px;
   border: none;
   border-radius: 4px;
@@ -48,20 +46,12 @@ label {
   margin: auto 5px;
 }
 
-label:hover+#image-count {
-  background-color: #4CAF50;
-}
-
-#image-count:hover {
-  background-color: #45a049;
-}
-
 #image-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* margin-top: 20px; */
   margin: 25px 150px;
+  margin-bottom: 30px;
 }
 
 .image {
@@ -100,4 +90,12 @@ button[type="reset"] {
 
 button[type="reset"]:hover {
   background-color: #45a049;
+}
+
+.hidden {
+  display: none;
+}
+
+.centered {
+  margin: 0 auto;
 }
