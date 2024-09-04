@@ -1,73 +1,181 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --marine-blue: #02295a;
+  --light-gray: #e2e2e2;
+  --cool-gray: #9699ab;
+  --white: #ffffff;
+  --success-green: #4CAF50;
+  --green-hover: #258b25;
+  --danger-red: #c9302c;
+  --red-hover: #7a0916;
+  --button-blue: #007bff;
+  --button-blue-hover: #0056b3;
+  --error-light: #f8d7da;
+  --error-dark:  #721c24;
+  --light-green: #d4edda;
+}
 
 body {
-  font-family: Arial, sans-serif;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* Unless you have very litle content of the page, never restrict it's height with height. Use min-height if needed instead. */
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
-  background-color: #f2f2f2;
+  background-color: var(--light-gray);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  /* Removed all styles related to buttons from generic <a> selector. All should be only added to the button class to keep teh code clean and consistent. */
 }
 
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h1 {
+  width: 100%;
+  max-width: 600px;
+  margin: 60px auto 0;
   text-align: center;
-  color: #333;
 }
 
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px 10px;
+}
+/* Make buttons fetch and create post button take all available space. */
+.post-actions > .button {
+  flex: 1;
+}
+
+.text-input {
+  padding: 14px;
+  border: 1px solid var(--cool-gray);
+  border-radius: 4px;
+}
+/* This is too generic styling, avoid using selectors like this.
+div{
+  padding: 8px 16px;
+  border-radius: 10px;
+} */
+
+/* Remove default styles from the list element. */
 ul {
-  list-style-type: none;
-  padding: 0;
+  list-style: none;
+  padding-left: none;
+}
+
+#post-list {
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
 .post {
-  background-color: #fff;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
-.post-title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  margin: 0 0 10px;
+  border: 1px solid var(--cool-gray);
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: var(--white);
 }
 
 .post-body {
-  color: #666;
-  margin: 0;
+  font-weight: 500;
 }
 
 .button {
-  padding: 10px 20px;
-  
-  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 64px;
+  padding: 10px;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
+  color: var(--white);
+  text-decoration: none;
   cursor: pointer;
-  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .button--success {
-  background-color: #4CAF50;
+  background-color: var(--success-green);
 }
-
 .button--success:hover {
-  background-color: #45a049;
+  background-color: var(--green-hover);
+}
+  .button--danger {
+    background-color: var(--danger-red);
+  }
+  .button--danger:hover {
+    background-color: var(--red-hover);
+  }
+  h1 {
+    color: var(--marine-blue);
+    margin-bottom: 20px;
+  }
+
+
+  .post-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+
+  #postContainer {
+    max-width: 800px;
+    margin: 20px auto;
+  }
+
+.success {
+    background-color: var(--light-green);
+    color: var(--green-hover);
+}
+.error-message {
+    background-color:var(--light-gray);
+    color: var(--danger-red)
 }
 
-
-.button--danger {
-  background-color: #7a0916;
+span{
+  /* Making an element without children a flex container makes no sense!
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  overflow: hidden;
+  border-radius: 10px;
+  padding:10px 16px;
+  font-weight: 700;
 }
 
-.button--danger:hover {
-  background-color: #79000cf4;
+.alert-message__update{
+  border-radius: 10px;
+  background-color: var(--red-hover);
+  color: var(--light-gray);
+  margin: 10px 0; 
+  padding: 10px; 
+  text-align: center; 
+  max-width: 800px; 
+  margin: 20px auto;
+}
+
+.update-button, .delete-button {
+  display: inline-block; 
+  margin-right: 10px; 
+  padding: 5px 10px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+.update-button {
+  background-color: var(--button-blue); 
+  color: var(--white);
+}
+.delete-button {
+  background-color: var(--danger-red);
+  color: var(--white);
 }

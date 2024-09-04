@@ -4,19 +4,32 @@
 		<title>Posts</title>
 		<link rel="stylesheet" type="text/css" href="styles.css" />
 	</head>
+
 	<body>
 		<div class="container">
 			<h1>Posts</h1>
-			<button id="fetch-button" class="button button--success">
-				Fetch posts
-			</button>
-      <!-- TODO: When clicked, redirect user to ./create-post.html page. What HTML this button should be? -->
-			<button id="create-button" class="button button--success">
-				Create post
-			</button>
+			<div class="post-actions">
+				<!-- There's no reason for this element to be an <a>. This element is used to trigger JS function, not to redirect a user to a different page. -->
+				<button href="#" id="fetch-button" class="button button--success">
+					Fetch posts
+				</button>
+				<!-- Delete post button should not be displayed on the main page, it should only be added to each post. When on the main page, we have not selected any post yet so we don't know what post to delet.
+		This would also be a button HTML element, not <a>. -->
+				<!-- <a href="#" id="delete-button" class="button button--danger">Delete Post</a> -->
+				<!-- This element is correct since it redirect the user to a different page. -->
+				<a
+					href="./create-post.html"
+					id="create-button"
+					class="button button--success"
+					>Create post</a
+				>
+			</div>
+
+			<!-- Moved this dive above the list since we want to have it visible (posts would hide it). -->
+			<div id="message" class="message"></div>
 		</div>
-		<ul id="post-list">
-		</ul>
+
+		<ul id="post-list"></ul>
 
 		<script src="app.js"></script>
 	</body>

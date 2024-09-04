@@ -27,38 +27,57 @@ function getPosts() {
 		);
 }
 
+getPostButton.addEventListener('click', () => getPostById(id));
+
 function createPostHtml(postData) {
-	const h2 = document.createElement('h2');
-	h2.innerText = postData.title;
-	h2.classList.add('post-title');
 
 	const li = document.createElement('li');
 	li.classList.add('post');
+
+	const h2 = document.createElement('h2');
+	h2.innerText = postData.title;
+	h2.classList.add('post-title');
 	li.append(h2);
 
-	const deleteButton = document.createElement(`button`);
+	const p = document.createElement('p');
+	p.innerText = postData.body;
+	p.classList.add('post-body');
+	li.append(p);
+
+	const postActionsContainer = document.createElement('div');
+	postActionsContainer.classList.add('post-actions');
+
+	const deleteButton = document.createElement('button');
 	deleteButton.classList.add('button', 'button--danger');
-	deleteButton.innerText = 'delete';
-  // TODO: add event listener for click event to call delete post method (postData.id)
+	deleteButton.innerText = 'Delete';
+	deleteButton.addEventListener('click', () => deletePost(postData.id));
 
-	const updateButton = document.createElement(`a`);
+	const updateButton = document.createElement('a');
+	updateButton.addEventListener('click', () => updatePost(postData.id));
 	updateButton.classList.add('button', 'button--success');
-	updateButton.innerText = 'update';
-  updateButton.href = `./update-post.html?postId=${postData.id}`;
+	updateButton.innerText = 'Update';
+	updateButton.href = `./update-post.html?postId=${postData.id}`;
 
-	li.append(updateButton, deleteButton);
-
+	// Place buttons in the div first, then append the div to the list item
+	postActionsContainer.append(updateButton, deleteButton);
+	li.append(postActionsContainer);
 	document.getElementById('post-list').append(li);
-
-	// p
-	// p.innerText
-	// add class
 }
 
-
-function createPost() {
-  // Send post request
+function createPost() {	// Send post request
+	const newPost = {
+		title: 'New Post Title',
+		body: 'New post content',
+		userId: 1
+	};
+	fetch(URL, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(newPost)
+	})
+		.then(response => response.json())
+		.then(data => console.log('Post created:', data))
+		.catch(error => console.error('Error:', error));
 }
-
-
-function deletePost(postId) {}
