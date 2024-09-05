@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 30vmin;
   pointer-events: none;
 }
 
@@ -14,7 +14,11 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+
+  background-image: url(https://media.istockphoto.com/id/181664840/tr/foto%C4%9Fraf/abstract-art-vintage-background.jpg?s=612x612&w=0&k=20&c=oKZ6PTQx4ffJKlWUlJ0Ab-pXks4bhud10CO_GcKWvKI=);
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +26,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .App-link {
