@@ -10,7 +10,7 @@ const loadMoreBtn = document.querySelector('.loadMoreBtn');
 let page = 1;
 // Function to fetch images using Unsplash API
 const fetchImages = async (query, pageNo) => {
-    
+
     try {
 
         if (pageNo === 1) {
@@ -18,9 +18,8 @@ const fetchImages = async (query, pageNo) => {
         }
 
 
-
         const url = `https://api.unsplash.com/search/photos?query=${query}
-    &per_page=5&page=${pageNo}&client_id=${api_key}`;
+    &per_page=3&page=${pageNo}&client_id=${api_key}`;
 
         const response = await fetch(url);
         const data = await response.json();
@@ -60,7 +59,7 @@ const fetchImages = async (query, pageNo) => {
 
         } else {
             imagesContainer.innerHTML = `<h2>No Image Found</h2>`;
-            if (loadMoreBtn.style.display === "block") 
+            if (loadMoreBtn.style.display === "block")
                 loadMoreBtn.style.display = "none";
         }
     } catch (error) {
@@ -91,17 +90,36 @@ resetBtn.innerText = 'Reset';
 resetBtn.style.display = 'none';
 
 resetBtn.addEventListener('click', () => {
+    searchInput.value = '';
     imagesContainer.innerHTML = '';
     loadMoreBtn.style.display = 'none';
     resetBtn.style.display = 'none';
+    page = 1;
 });
 
 document.body.appendChild(resetBtn);
 
 let imageCounter = 0;
 function addImage() {
-    imageCounter ++;
+    imageCounter++;
     if (imageCounter === 6) {
 
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const categories = ['Nature', 'Car', 'Animal', 'Food', 'City', 'Technology', 'Travel', 'Baby', 'Tree', 'Eye'];
+
+    const createCategoryButtons = () => {
+        const categoryButtonsContainer = document.querySelector('.category-buttons');
+        categories.forEach(category => {
+            const categoryBtn = document.createElement('button');
+            categoryBtn.innerText = category;
+            categoryBtn.addEventListener('click', () => fetchImages(category, 1));
+            categoryButtonsContainer.appendChild(categoryBtn);
+        });
+    }
+
+    createCategoryButtons();
+});
+
