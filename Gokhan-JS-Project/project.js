@@ -19,7 +19,7 @@ const fetchImages = async (query, pageNo) => {
 
 
         const url = `https://api.unsplash.com/search/photos?query=${query}
-    &per_page=3&page=${pageNo}&client_id=${api_key}`;
+    &per_page=6&page=${pageNo}&client_id=${api_key}`;
 
         const response = await fetch(url);
         const data = await response.json();
@@ -85,7 +85,8 @@ loadMoreBtn.addEventListener('click', () => {
     fetchImages(searchInput.value.trim(), ++page);
 })
 
-const resetBtn = document.createElement('button');
+// Reset
+const resetBtn = document.querySelector('.resetBtn');
 resetBtn.innerText = 'Reset';
 resetBtn.style.display = 'none';
 
@@ -97,16 +98,18 @@ resetBtn.addEventListener('click', () => {
     page = 1;
 });
 
-document.body.appendChild(resetBtn);
+// document.body.appendChild(resetBtn);
 
-let imageCounter = 0;
-function addImage() {
-    imageCounter++;
-    if (imageCounter === 6) {
+// let imageCounter = 0;
+// function addImage() {
+//     imageCounter++;
+//     if (imageCounter === 6) {
 
-    }
-}
+//     }
+// }
 
+
+// Categories
 document.addEventListener('DOMContentLoaded', function () {
     const categories = ['Nature', 'Car', 'Animal', 'Food', 'City', 'Technology', 'Travel', 'Baby', 'Tree', 'Eye'];
 
