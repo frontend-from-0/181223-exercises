@@ -7,6 +7,25 @@ const searchInput = document.querySelector('.search-input');
 const imagesContainer = document.querySelector('.images-container');
 const loadMoreBtn = document.querySelector('.loadMoreBtn');
 
+// Categories
+document.addEventListener('DOMContentLoaded', function () {
+    const categories = ['Nature', 'Car', 'Animal', 'Food', 'City', 'Technology', 'Travel', 'Baby', 'Tree', 'Eye'];
+
+    const createCategoryButtons = () => {
+        const categoryButtonsContainer = document.querySelector('.category-buttons');
+        categories.forEach((category, index) => {
+            const categoryBtn = document.createElement('button');
+            categoryBtn.innerText = category;
+            categoryBtn.addEventListener('click', () => {
+                page = index + 1;
+                fetchImages(category, page);
+            });
+            categoryButtonsContainer.appendChild(categoryBtn);
+        });
+    }
+    createCategoryButtons();
+});
+
 let page = 1;
 // Function to fetch images using Unsplash API
 const fetchImages = async (query, pageNo) => {
@@ -19,7 +38,7 @@ const fetchImages = async (query, pageNo) => {
 
 
         const url = `https://api.unsplash.com/search/photos?query=${query}
-    &per_page=6&page=${pageNo}&client_id=${api_key}`;
+    &per_page=10&page=${pageNo}&client_id=${api_key}`;
 
         const response = await fetch(url);
         const data = await response.json();
@@ -65,6 +84,14 @@ const fetchImages = async (query, pageNo) => {
     } catch (error) {
         imagesContainer.innerHTML = `<h2>Failed To Fetch Images. Please Try Again Later</h2>`;
     }
+
+    const response = await fetch(url);
+    if (!response.ok) {
+        return new error('Response Status Is Not OK!')
+    }
+
+    const data = await response.json();
+    return data;
 }
 
 // Adding Event Listener to Search Form
@@ -97,32 +124,3 @@ resetBtn.addEventListener('click', () => {
     resetBtn.style.display = 'none';
     page = 1;
 });
-
-// document.body.appendChild(resetBtn);
-
-// let imageCounter = 0;
-// function addImage() {
-//     imageCounter++;
-//     if (imageCounter === 6) {
-
-//     }
-// }
-
-
-// Categories
-document.addEventListener('DOMContentLoaded', function () {
-    const categories = ['Nature', 'Car', 'Animal', 'Food', 'City', 'Technology', 'Travel', 'Baby', 'Tree', 'Eye'];
-
-    const createCategoryButtons = () => {
-        const categoryButtonsContainer = document.querySelector('.category-buttons');
-        categories.forEach(category => {
-            const categoryBtn = document.createElement('button');
-            categoryBtn.innerText = category;
-            categoryBtn.addEventListener('click', () => fetchImages(category, 1));
-            categoryButtonsContainer.appendChild(categoryBtn);
-        });
-    }
-
-    createCategoryButtons();
-});
-

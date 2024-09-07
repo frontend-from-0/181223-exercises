@@ -68,6 +68,16 @@ header form .search-container .material-symbols-outlined {
   cursor: pointer;
 }
 
+.container {
+  width: 400px;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .images-container {
   margin: 30px 25px;
   display: flex;
@@ -82,7 +92,7 @@ header form .search-container .material-symbols-outlined {
 }
 
 .images-container img {
-  width: 225px;
+  width: 250px;
   height: 280px;
   border-radius: 8px;
 }
@@ -146,6 +156,7 @@ button {
   padding: 10px 24px;
   margin-top: 5px;
   transition: 500ms;
+  opacity: 0.8;
 }
 
 button:hover {
