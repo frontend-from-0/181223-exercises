@@ -9,6 +9,7 @@ const loadMoreBtn = document.querySelector('.loadMoreBtn');
 
 // Categories
 document.addEventListener('DOMContentLoaded', function () {
+    // Fetch this categories from API. Try https://unsplash.com/documentation#list-topics enpoint to ge this information
     const categories = ['Nature', 'Car', 'Animal', 'Food', 'City', 'Technology', 'Travel', 'Baby', 'Tree', 'Eye'];
 
     const createCategoryButtons = () => {
@@ -27,8 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 let page = 1;
+
 // Function to fetch images using Unsplash API
+// 1. I don't see a reason for this function to take pageNo as parameter. What are you trying to achive using it?
+// 2. I think it could be good to clear the screen before every new query to fetch images otherwise it's hard to see new images on the page.
 const fetchImages = async (query, pageNo) => {
+    console.log('Fetching images. Query:', query, 'pageNo', pageNo);
 
     try {
 
@@ -77,6 +82,7 @@ const fetchImages = async (query, pageNo) => {
             }
 
         } else {
+            // Avoid using neer HTML. Create elements ad fill them with content as we did in the lessons.
             imagesContainer.innerHTML = `<h2>No Image Found</h2>`;
             if (loadMoreBtn.style.display === "block")
                 loadMoreBtn.style.display = "none";
@@ -85,13 +91,14 @@ const fetchImages = async (query, pageNo) => {
         imagesContainer.innerHTML = `<h2>Failed To Fetch Images. Please Try Again Later</h2>`;
     }
 
-    const response = await fetch(url);
-    if (!response.ok) {
-        return new error('Response Status Is Not OK!')
-    }
+    // I think this part is not needed:
+    // const response = await fetch(url);
+    // if (!response.ok) {
+    //     return new error('Response Status Is Not OK!')
+    // }
 
-    const data = await response.json();
-    return data;
+    // const data = await response.json();
+    // return data;
 }
 
 // Adding Event Listener to Search Form
