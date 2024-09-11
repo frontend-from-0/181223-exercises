@@ -35,7 +35,7 @@ const personE16 = {
 	name: 'Jane Doe',
 };
 
-const { name: fullName1} = personE16;
+const { name: fullName1 } = personE16;
 console.log("Ex4: ", fullName1);
 
 
@@ -50,8 +50,7 @@ const personE17 = {
 	},
 };
 
-const { name, age: age1, address } = personE17;
-const { city } = address;
+const { name, age: age1, address: { city } } = personE17;
 console.log("Ex5: ", ' name: ', name, ' age: ', age1, ' city: ', city);
 
 
@@ -61,8 +60,8 @@ console.log("Ex5: ", ' name: ', name, ' age: ', age1, ' city: ', city);
 // function greet(name, greeting) {
 // 	return `${greeting}, ${name}!`;
 // }
-const greet = (greeting='hello', name='Aysel') => `${greeting}, ${name}!`;
-console.log("Ex6: ",greet('hi'));
+const greet = (greeting = 'hello', name = 'Aysel') => `${greeting}, ${name}!`;
+console.log("Ex6: ", greet('hi'));
 
 
 
@@ -73,10 +72,10 @@ const calculateTotal = (price, taxRate = 0.1, discount = 0) => {
 };
 
 const calculateTotalVAT10 = (price, discount = 0) => {
-  return calculateTotal(price, 0.1, discount);
+	return calculateTotal(price, 0.1, discount);
 }
 
-console.log("Ex7: ",calculateTotalVAT10(100, 0));
+console.log("Ex7: ", calculateTotalVAT10(100, 0));
 
 
 
@@ -106,14 +105,14 @@ console.log('EX8: ', userCity);
 const userEx9 = {
 	profile: {
 		name: 'Alice',
-    address: {
-      country: null
-    }
+		address: {
+			country: null
+		}
 	},
 };
 
 const userCountry = userEx9?.profile?.address?.country || 'Unknown'; // left (if true) OR right
-console.log("Ex9: ",userCountry);
+console.log("Ex9: ", userCountry);
 
 
 
@@ -126,7 +125,7 @@ const userEx10 = {
 	},
 };
 
-const safelyCall =userEx10?.profile?.getName();
+const safelyCall = userEx10?.profile?.getName();
 console.log('Ex10: ', safelyCall);
 
 
@@ -137,13 +136,13 @@ let storedData = userInput ?? 'Default Value';
 
 
 
-console.log( "Ex11: ", "storedData: " , storedData); // Default Value
+console.log("Ex11: ", "storedData: ", storedData); // Default Value
 
 
 
 // 12. Rewrite the code using the nullish coalescing operator to display number of users even if it is 0.
 let userCount = 0;
-let displayCount = userCount || 'No users';
+let displayCount = userCount ?? 'No users';
 
 console.log("Ex12: ", displayCount); // No users
 
@@ -155,9 +154,6 @@ const config = {
 	timeout: null,
 };
 
-const timeout =
-	config.timeout !== undefined && config.timeout !== null
-		? config.timeout
-		: 3000;
+const timeout = config.timeout ?? 3000;
 
 console.log("Ex13: ", timeout); // 3000
