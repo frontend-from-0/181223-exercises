@@ -49,7 +49,15 @@ const fetchImages = async (query, pageNo) => {
             data.results.forEach(photo => {
                 const imageElement = document.createElement('div');
                 imageElement.classList.add('imageDiv');
-                imageElement.innerHTML = `<img src="${photo.urls.regular}"/>`;
+
+                // Data-Photo
+                const photoData = JSON.stringify({
+                    urls: photo.urls,
+                    alt_description: photo.alt_description,
+                    user: { name: photo.user.name }
+                });
+
+                imageElement.innerHTML = `<img src="${photo.urls.regular}" data-photo='${photoData}'/>`;
 
                 const overlayElement = document.createElement('div');
                 overlayElement.classList.add('overlay');
@@ -62,6 +70,8 @@ const fetchImages = async (query, pageNo) => {
 
                 imagesContainer.appendChild(imageElement);
             });
+
+            addImgClickEvents();
 
             if (data.total_pages === pageNo) {
                 loadMoreBtn.style.display = "none";
@@ -105,6 +115,38 @@ loadMoreBtn.addEventListener('click', () => {
         fetchImages(searchInput.value.trim(), ++page);
     }
 });
+
+// Modal Item
+const modal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const imageDesc = document.getElementById("imageDescription");
+const photographerName = document.getElementById("photographerName");
+
+const addImgClickEvents = () => {
+    document.querySelectorAll('.imageDiv img').forEach(image => {
+        image.addEventListener('click', (e) => {
+            const photoData = e.target.getAttribute('data-photo');
+            const photo = JSON.parse(photoData);
+
+            modal.style.display = "block";
+            modalImage.src = photo.urls.regular;
+            imageDesc.textContent = photo.alt_description || "No Description";
+            photographerName.textContent = `Photo by: ${photo.user.name}` || "Unknown Photographer";
+        });
+    });
+}
+
+const closeModalBtn = document.querySelector(".close");
+closeModalBtn.onclick = function () {
+    modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
 
 // Reset Button
 const resetBtn = document.querySelector('.resetBtn');
