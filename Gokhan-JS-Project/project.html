@@ -37,14 +37,18 @@
         </section>
     </main>
 
-    <!-- Modal HTML -->
+    <!-- Modal Structure -->
     <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <img id="modalImage" class="modal-content">
-            <div id="imageDescription"></div>
-            <div id="photographerName"></div>
+            <img id="modalImage" src="" alt="Modal Image">
+            <div class="modal-info"></div>
+            <p id="imageDescription"></p>
+            <p id="photographerName"></p>
+            <button id="nextButton">Next</button>
+            <button id="prevButton">Previous</button>
         </div>
+    </div>
     </div>
 
     <script src="project.js"></script>

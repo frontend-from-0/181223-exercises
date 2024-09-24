@@ -136,6 +136,8 @@ const addImgClickEvents = () => {
     });
 }
 
+
+
 const closeModalBtn = document.querySelector(".close");
 closeModalBtn.onclick = function () {
     modal.style.display = "none";
@@ -146,6 +148,50 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+// Next and Previous Button for Modal
+// let currentImageIndex = 0;
+// let currentPhotos = [];
+
+// const addImgClickEvents = () => {
+//     const images = document.querySelectorAll('.imageDiv img');
+//     images.forEach((image, index) => {
+//         image.addEventListener('click', (e) => {
+//             const photoData = e.target.getAttribute('data-photo');
+//             const photo = JSON.parse(photoData);
+
+//             currentPhotos = Array.from(images).map(img => JSON.parse(img.getAttribute('data-photo')));
+//             currentImageIndex = index; 
+
+//             modal.style.display ="block";
+//             modalImage.src = photo.urls.regular;
+//             imageDesc.textContent = photo.alt_description || "No Description";
+//         });
+//     });
+// };
+
+// // Add ClickEvents For Next and Previous Button
+document.getElementById("prevButton").addEventListener("click", () => {
+    if (currentImageIndex > 0) {
+        currentImageIndex--;
+        updateModalImage();
+    }
+});
+
+document.getElementById("nextButton").addEventListener("click", () => {
+    if (currentImageIndex < currentPhotos.length - 1) {
+        currentImageIndex++;
+        updateModalImage();
+    }
+});
+
+// Update Modal
+// const updateModalImage = () => {
+//     const photo currentPhotos[currentImageIndex];
+//     modalImage.src = photo.urls.regular;
+//     imageDesc.textContent = photo.urls.regular;
+//     photographerName.textContent = `Photo by: ${photo.user.name}` || "Unknown Photographer";
+// };
 
 
 // Reset Button

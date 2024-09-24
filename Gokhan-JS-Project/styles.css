@@ -184,33 +184,43 @@ main section {
   transform: translate(-50%, -50%);
   padding: 60px;
   width: 85%;
-  height: 90%;
+  height: 98%;
   overflow: scroll;
   background-color: rgb(0, 0, 0);
-  background-color: rgb(0, 0, 0, 0.8);
+  background-color: rgb(0, 0, 0, 0.9);
   border-radius: 12px;
 }
 
 .model-content {
-  background-color: #fefefe;
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content img {
   max-width: 100%;
-  max-height: 100%;
-  border: 8px;
+  max-height: 80vh;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 .close {
+  /* color: #6d6c6c; */
+  background-color: #ffe8f6cb;
   position: absolute;
-  top: 10px;
-  right: 40px;
-  color: #aaa;
+  top: 30px;
+  right: 35px;
+  /* color: #aaa; */
   float: right;
   font-size: 30px;
   cursor: pointer;
   font-weight: bold;
-  border: rgb(0, 0, 0);
+  /* border: rgb(0, 0, 0); */
   border: 4px solid;
   margin: 2px;
   padding: 0 8px;
@@ -218,7 +228,7 @@ main section {
 
 .close:hover,
 .close-focus {
-  color: red;
+  color: #6d6c6c;
   text-decoration: none;
   cursor: pointer;
 }
@@ -228,6 +238,24 @@ main section {
   color: white;
   text-align: center;
   font-size: 16px;
+}
+
+#prevButton,
+#nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#prevButton {
+  left: 60px;
+}
+
+#nextButton {
+  right: 5px;
 }
 
 @media screen and (max-width: 920px) {
