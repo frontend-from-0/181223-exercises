@@ -3,9 +3,9 @@ import './styles.css';
 export const HeadingS = ({ color, children }) => {
 
     return (
-        <div className={`headingS ${color}`}>
+        <h3 className={`headingS ${color}`}>
             {children}
-        </div>
+        </h3>
 
     );
 };
