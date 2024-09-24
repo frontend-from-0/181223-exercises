@@ -116,7 +116,7 @@ header form .search-container .material-symbols-outlined {
 }
 
 .imageDiv:hover .overlay {
-  height: 45%;
+  height: 25%;
   border-radius: 10px;
 }
 
@@ -124,7 +124,7 @@ header form .search-container .material-symbols-outlined {
   color: #fff;
   display: none;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   margin-bottom: px;
 }
 

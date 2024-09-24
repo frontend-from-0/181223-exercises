@@ -4,29 +4,30 @@ const url = `https://api.unsplash.com/search/photos`;
 // Categories
 document.addEventListener('DOMContentLoaded', function () {
 
-    const categories = ['Nature', 'Car', 'Animal', 'Food', 'City', 'Technology', 'Travel', 'Baby', 'Tree', 'Eye'];
+    const categories = ['Book', 'Car', 'Animal', 'Food', 'Paint', 'Cartoon', 'Cities', 'Technology', 'Traveler', 'Sky', 'Tree'];
 
     const createCategoryButtons = () => {
         const categoryButtonsContainer = document.querySelector('.category-buttons');
         categories.forEach((category, index) => {
             const categoryBtn = document.createElement('button');
             categoryBtn.innerText = category;
+            categoryBtn.setAttribute('data-index', index);
 
             // Adding Event Listener to Categories
             categoryBtn.addEventListener('click', () => {
                 searchInput.value = '';
-                selectedCategory = category;
+                selectedCategory = category.toUpperCase();
                 page = 1;
+                console.log(`Selected Category: ${selectedCategory}`);
                 fetchImages(category, page);
             });
-
             categoryButtonsContainer.appendChild(categoryBtn);
         });
     }
     createCategoryButtons();
 });
 
-// Function to fetch images using Unsplash API
+// // Function to fetch images using Unsplash API
 let page = 1;
 let selectedCategory = '';
 
@@ -62,7 +63,7 @@ const fetchImages = async (query, pageNo) => {
                 overlayElement.classList.add('overlay');
 
                 const overlayText = document.createElement('h3');
-                overlayText.innerText = `${photo.alt_description}`;
+                overlayText.innerText = (photo.alt_description || "No Description").toUpperCase();
 
                 overlayElement.appendChild(overlayText);
                 imageElement.appendChild(overlayElement);
@@ -84,6 +85,7 @@ const fetchImages = async (query, pageNo) => {
         }
     } catch (error) {
         imagesContainer.innerHTML = `<h2>Failed To Fetch Images. Please Try Again Later</h2>`;
+        loadMoreBtn.style.display = "none";
     }
 }
 
@@ -167,7 +169,12 @@ document.getElementById("nextButton").addEventListener("click", () => {
 const updateModalImage = () => {
     const photo = currentPhotos[currentImageIndex];
     modalImage.src = photo.urls.regular;
-    imageDesc.textContent = photo.alt_description || "No Description";
+
+    // Capitalize the letters of the description
+    const description = photo.alt_description || "No Description";
+    const capitalizedDescription = description.toUpperCase();
+
+    imageDesc.textContent = capitalizedDescription;
     photographerName.textContent = `Photo by: ${photo.user.name}` || "Unknown Photographer";
 };
 
