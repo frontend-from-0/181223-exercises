@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
             categoryButtonsContainer.appendChild(categoryBtn);
         });
     }
-
     createCategoryButtons();
 });
 
@@ -122,21 +121,21 @@ const modalImage = document.getElementById("modalImage");
 const imageDesc = document.getElementById("imageDescription");
 const photographerName = document.getElementById("photographerName");
 
-const addImgClickEvents = () => {
-    document.querySelectorAll('.imageDiv img').forEach(image => {
-        image.addEventListener('click', (e) => {
-            const photoData = e.target.getAttribute('data-photo');
-            const photo = JSON.parse(photoData);
+let currentImageIndex = 0;
+let currentPhotos = [];
 
+const addImgClickEvents = () => {
+    const images = document.querySelectorAll('.imageDiv img');
+    currentPhotos = Array.from(images).map(img => JSON.parse(img.getAttribute('data-photo')));
+
+    images.forEach((image, index) => {
+        image.addEventListener('click', (e) => {
+            currentImageIndex = index;
             modal.style.display = "block";
-            modalImage.src = photo.urls.regular;
-            imageDesc.textContent = photo.alt_description || "No Description";
-            photographerName.textContent = `Photo by: ${photo.user.name}` || "Unknown Photographer";
+            updateModalImage();
         });
     });
 }
-
-
 
 const closeModalBtn = document.querySelector(".close");
 closeModalBtn.onclick = function () {
@@ -147,28 +146,7 @@ window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
-
-// Next and Previous Button for Modal
-// let currentImageIndex = 0;
-// let currentPhotos = [];
-
-// const addImgClickEvents = () => {
-//     const images = document.querySelectorAll('.imageDiv img');
-//     images.forEach((image, index) => {
-//         image.addEventListener('click', (e) => {
-//             const photoData = e.target.getAttribute('data-photo');
-//             const photo = JSON.parse(photoData);
-
-//             currentPhotos = Array.from(images).map(img => JSON.parse(img.getAttribute('data-photo')));
-//             currentImageIndex = index; 
-
-//             modal.style.display ="block";
-//             modalImage.src = photo.urls.regular;
-//             imageDesc.textContent = photo.alt_description || "No Description";
-//         });
-//     });
-// };
+};
 
 // // Add ClickEvents For Next and Previous Button
 document.getElementById("prevButton").addEventListener("click", () => {
@@ -185,13 +163,13 @@ document.getElementById("nextButton").addEventListener("click", () => {
     }
 });
 
-// Update Modal
-// const updateModalImage = () => {
-//     const photo currentPhotos[currentImageIndex];
-//     modalImage.src = photo.urls.regular;
-//     imageDesc.textContent = photo.urls.regular;
-//     photographerName.textContent = `Photo by: ${photo.user.name}` || "Unknown Photographer";
-// };
+// Modal
+const updateModalImage = () => {
+    const photo = currentPhotos[currentImageIndex];
+    modalImage.src = photo.urls.regular;
+    imageDesc.textContent = photo.alt_description || "No Description";
+    photographerName.textContent = `Photo by: ${photo.user.name}` || "Unknown Photographer";
+};
 
 
 // Reset Button

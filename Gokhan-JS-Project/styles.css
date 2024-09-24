@@ -136,11 +136,11 @@ header form .search-container .material-symbols-outlined {
 .loadMoreBtn {
   display: none;
   border: none;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px 24px;
   border-radius: 4px;
   margin-bottom: 20px;
-  transition: 500ms;
+  transition: 400ms;
 }
 
 .loadMoreBtn:hover {
@@ -210,17 +210,14 @@ main section {
 }
 
 .close {
-  /* color: #6d6c6c; */
   background-color: #ffe8f6cb;
   position: absolute;
   top: 30px;
   right: 35px;
-  /* color: #aaa; */
   float: right;
   font-size: 30px;
   cursor: pointer;
   font-weight: bold;
-  /* border: rgb(0, 0, 0); */
   border: 4px solid;
   margin: 2px;
   padding: 0 8px;
@@ -231,6 +228,7 @@ main section {
   color: #6d6c6c;
   text-decoration: none;
   cursor: pointer;
+  transition: 200ms;
 }
 
 #imageDescription {
