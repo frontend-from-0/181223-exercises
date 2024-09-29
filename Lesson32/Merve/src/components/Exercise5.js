@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export const Exercise5 = ({ children }) => {
+export const Exercise5 = () => {
+  
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
-  const [tracking, setTracking] = useState(false);
-
-
+  
   const handleMouseMove = (e) => {
     setCoordinates({
       x: e.clientX,
@@ -12,25 +11,15 @@ export const Exercise5 = ({ children }) => {
     });
   };
 
-  useEffect(() => {
-    if (tracking) {
-      window.addEventListener('mousemove', handleMouseMove);
-    } else {
-      window.removeEventListener('mousemove', handleMouseMove);
-    }
+  const handleClick = () => {
+    console.log(`Coordinates: ${coordinates.x}, ${coordinates.y}`);
+  };
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [tracking]);
+  return (
+    <div onMouseMove={handleMouseMove}>
+      <button onClick={handleClick}>Get Coordinates</button>
+      <p>Coordinates:{coordinates.x}, {coordinates.y}</p>
 
-  const startTracking = () => setTracking(true);
-  const stopTracking = () => setTracking(false);
-
-  return children({
-    coordinates,
-    tracking,
-    startTracking,
-    stopTracking,
-  });
+    </div>
+  );
 };

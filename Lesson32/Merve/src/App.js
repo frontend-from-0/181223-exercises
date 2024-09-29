@@ -1,7 +1,7 @@
 import { Exercise1 } from './components/Exercise1';
 import { Exercise2 } from './components/Exercise2';
 import { Exercise3 } from './components/Exercise3';
-import Exercise4 from './components/Exercise4';
+import {Exercise4} from './components/Exercise4';
 import { Exercise4v2 } from './components/Exercise4';
 import { Exercise5 } from './components/Exercise5';
 import { Exercise6 } from './components/Exercise6';
@@ -34,12 +34,12 @@ function App() {
 			</ul>
 			<Exercise4v2 />
 			<Exercise5>
-				{({ coordinates, tracking, startTracking, stopTracking }) => (
+				{({ coordinates }) => (
 					<div className="mouse-tracker">
 						<h2>Mouse Coordinates Tracker</h2>
 						<p>X: {coordinates.x}, Y: {coordinates.y}</p>
-						<button onClick={tracking ? stopTracking : startTracking}>
-							{tracking ? 'Stop Tracking' : 'Start Tracking'}
+						<button onClick={() => console.log(`Coordinaes: ${coordinates.x}, ${coordinates.y}`)}>
+							Get Coordinates
 						</button>
 					</div>
 				)}
@@ -47,15 +47,10 @@ function App() {
 			<Exercise6>
 				Click me
 			</Exercise6>
-			<Exercise7 onClick={onClick}>
-				<div className="child" onClick={handleChildClick}>
-					Child Element
-				</div>
-			</Exercise7>
+			<Exercise7 />
 			<Exercise8 />
 			<Exercise9 />
 			<Exercise10 />
-
 		</div>
 	);
 }

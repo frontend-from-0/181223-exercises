@@ -1,4 +1,4 @@
-const Exercise4=(props)=>{
+export const Exercise4=(props)=>{
   const {item}= props;
     return(
 
@@ -10,7 +10,7 @@ const Exercise4=(props)=>{
 
 };
 
-export default Exercise4;
+
 
 
 

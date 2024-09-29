@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 export const Exercise8 = () => {
     const [todos, setTodos] = useState([
-        'Finish the assignments',
-        'Study JS on freetime',
-        'Learn React',
+        { id: Date.now(), label: 'Finish the assignments' },
+        { id: Date.now() + 1, label: 'Study JS on freetime' }, 
+        { id: Date.now() + 2, label: 'Learn React' }, 
     ]);
 
-    const removeTodo = (index) => {
-        const newTodos = todos.filter((_, i) => i !== index);
+    const removeTodo = (id) => {
+        const newTodos = todos.filter(todo => todo.id !== id);
         setTodos(newTodos);
     };
 
@@ -16,10 +16,10 @@ export const Exercise8 = () => {
         <div>
             <h1>To Do List</h1>
             <ul>
-                {todos.map((todo, index) => (
-                    <li key={index}>
-                        {todo}
-                        <button onClick={() => removeTodo(index)}>Remove</button>
+                {todos.map((todo) => (
+                    <li className="todo-item" key={todo.id}>
+                        {todo.label}
+                        <button className="remove-button"onClick={() => removeTodo(todo.id)}>Remove</button>
                     </li>
                 ))}
             </ul>

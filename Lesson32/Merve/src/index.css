@@ -30,9 +30,7 @@ code {
   font-size: 16px;
   cursor: pointer;
 }
-.exercise9 {
-  padding: 20px;
-}
+
 
 .white {
   background-color: white;
@@ -52,4 +50,10 @@ code {
 
 .greyblue {
   background-color: rgb(110, 119, 163);
+}
+.remove-button{
+  margin-left: 20px;
+}
+.todo-item .remove-button{
+  margin: 10px;
 }
