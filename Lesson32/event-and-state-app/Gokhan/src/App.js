@@ -3,11 +3,13 @@ import { Exercise2 } from './components/Exercise2';
 import { Exercise3 } from './components/Exercise3';
 import Exercise4 from './components/Exercise4';
 import { Exercise4v2 } from './components/Exercise4';
-
+import { Exercise5 } from './components/Exercise5';
+import { Exercise6 } from './components/Exercise6';
+import { Exercise7 } from './components/Exercise7';
 
 const itemsArray = ['apple', 'banana', 'pineapple'];
 const all = itemsArray.map((item) => (
-  <Exercise4 key={item} item={item} />
+	<Exercise4 key={item} item={item} />
 ));
 
 function App() {
@@ -19,7 +21,10 @@ function App() {
 			<ul>
 				{all}
 			</ul>
-      <Exercise4v2 />
+			<Exercise4v2 />
+			<Exercise5 />
+			<Exercise6 />
+			<Exercise7 />
 		</div>
 	);
 }

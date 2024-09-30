@@ -10,7 +10,7 @@ export const Exercise2 = () => {
 		// 	setLabel('On');
 		// }
 
-		setLabel((prevValue) => 
+		setLabel((prevValue) =>
 			prevValue === 'On' ? setLabel('Off') : setLabel('On'),
 		);
 	}
