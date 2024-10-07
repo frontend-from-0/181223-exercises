@@ -13,16 +13,6 @@ export const Exercise7 = () => {
         child.addEventListener('click', function (event) {
             console.log('Child Element Clicked');
         });
-
-        return () => {
-            parent.removeEventListener('click', function () {
-                console.log('Parent Element Clicked');
-            });
-
-            child.removeEventListener('click', function (event) {
-                console.log('Child Element Clicked');
-            });
-        };
     });
 
     return (
