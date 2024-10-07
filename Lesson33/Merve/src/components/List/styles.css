@@ -40,4 +40,5 @@
 .completed-todos {
   list-style-type: none;
   padding-left: 0;
+  line-height: 2.2rem;
 }

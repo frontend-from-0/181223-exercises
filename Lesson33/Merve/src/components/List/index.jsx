@@ -1,12 +1,6 @@
-import { useState } from 'react';
 import './styles.css';
 
-
-
-export const List = ({ todos, setTodos }) => {
-
-	const [localTodos, setLocalTodos] = useState(todos);
-
+export const List = ({ todos, setTodos, completedTodos }) => {
 	const handleClick = (id) => {
 		setTodos(prevState =>
 			prevState.map(todo =>
@@ -15,7 +9,6 @@ export const List = ({ todos, setTodos }) => {
 		);
 	};
 
-	const completedTodos = todos.filter(todo => todo.completed);
 	return (
 		<div>
 			<h2>Todo List</h2>
@@ -30,11 +23,11 @@ export const List = ({ todos, setTodos }) => {
 				))}
 			</ul>
 			<h3>Completed Todos</h3>
-			<ul class='completed-todos'>
+			<ul className='completed-todos'>
 				{completedTodos.length > 0 ? (
 					completedTodos.map(item => <li key={item.id}>{item.title}</li>)
 				) : (
-					<li class='done-tasks'>No completed todos</li>
+					<li className='done-tasks'>No completed todos</li>
 				)}
 			</ul>
 		</div>

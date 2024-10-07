@@ -13,9 +13,9 @@
 .app {
   margin: 50px auto;
   padding: 20px;
-  background-color: var(--background-light);
+  background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 2px 5px var(--main-darkborder);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 600px;
 }

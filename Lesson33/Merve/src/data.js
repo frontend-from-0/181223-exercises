@@ -35,9 +35,9 @@ export const loggedInUser = {
 	name: 'User',
 	username: 'johndoe01',
 	isLoggedInUser: true,
-	
+
 };
 export const loggedOutUser = {
-    name: 'Guest',
+	name: 'Guest',
 	isLoggedIn: false,
 };

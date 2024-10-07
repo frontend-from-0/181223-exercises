@@ -1,3 +1,6 @@
+import './styles.css';
+
 export const PerformanceState = ({ completedTodos, totalTodos }) => {
-	return <div>{`Completed ${completedTodos} of ${totalTodos}`}</div>;
+	return <div className='numof_doneTask'>{`Completed ${completedTodos} of ${totalTodos}`}</div>;
 };
+
