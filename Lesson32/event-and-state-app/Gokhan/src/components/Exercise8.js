@@ -1,8 +1,6 @@
-import Exercise8 from "./Exercise4";
+import React from "./Exercise8";
 
 export const Exercise8 = () => {
-
-
 
     return (
         <div>
