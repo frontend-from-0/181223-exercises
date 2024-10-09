@@ -7,6 +7,7 @@ import { Exercise5 } from './components/Exercise5';
 import { Exercise6 } from './components/Exercise6';
 import { Exercise7 } from './components/Exercise7';
 import { Exercise8 } from './components/Exercise8';
+import { Exercise9 } from './components/Exercise9';
 
 const itemsArray = ['apple', 'banana', 'pineapple'];
 const all = itemsArray.map((item) => (
@@ -27,6 +28,7 @@ function App() {
 			<Exercise6 />
 			<Exercise7 />
 			<Exercise8 />
+			<Exercise9 />
 		</div>
 	);
 }
