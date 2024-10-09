@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const Exercise9 = () => {
     // Buttons with id and with label
