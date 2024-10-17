@@ -1,0 +1,44 @@
+:root {
+  --main-darkborder: #a7a7a7;
+  --main-lightborder: #ffffffe2;
+  --background-light: #ffffff
+}
+
+.todo__list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.todo__list>li {
+  border-bottom: 1px solid var(--background-light);
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+
+.todo__list>li:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn {
+  background-color: inherit;
+  border: none;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: var(--main-darkborder);
+}
+
+.completed-todos {
+  list-style-type: none;
+  padding-left: 0;
+  line-height: 2.2rem;
+}
