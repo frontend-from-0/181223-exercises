@@ -1,26 +1,24 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserDispatchContext } from "../UserProvider";
 import './styles.css';
 
-const registeredUsers = [
-  { username: "johndoe01", password: "password123" },
-  { username: "janedoe02", password: "password456" },
-];
-
-export const LogInForm = ({ handleLogin }) => {
+export const LogInForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const { dispatch, authenticateUser } = useContext(UserDispatchContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const user = registeredUsers.find(
-      (user) => user.username === username && user.password === password
-    );
+    console.log('username:', username, 'password:', password);
+    const user = authenticateUser(username, password);
 
     if (user) {
-      handleLogin(user.username);
+      console.log("User authenticated:", user);
+      dispatch({ type: 'LOGIN', payload: { username: user.username } });
       setError("");
     } else {
+      console.log("Authentication failed"); 
       setError("Invalid username or password");
     }
   };

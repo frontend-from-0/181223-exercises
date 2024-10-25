@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserDispatchContext } from "../UserProvider";
 import './styles.css';
 
-export const UserDetailsForm = ({ username, onNameChange }) => {
+export const UserDetailsForm = ({ username }) => {
   const [newName, setNewName] = useState(username);
   const dispatch = useContext(UserDispatchContext);
   const [error, setError] = useState("");
@@ -18,7 +18,6 @@ export const UserDetailsForm = ({ username, onNameChange }) => {
       return;
     }
     dispatch({ type: 'UPDATE_NAME', payload: newName });
-    onNameChange(newName);
     setNewName(newName);
     setError("");
   };

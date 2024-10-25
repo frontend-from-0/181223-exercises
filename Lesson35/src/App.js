@@ -1,4 +1,4 @@
-import { useReducer, useState } from 'react';
+import { useContext, useState } from 'react';
 import { List } from './modules/todo/List';
 import { Navbar } from './components/Navbar';
 import { Account } from './modules/user/Account';
@@ -6,35 +6,14 @@ import { PerformanceState } from './modules/todo/PerformanceState';
 import { LogInForm } from './modules/user/LogInForm';
 import { todoData } from './data';
 import './App.css';
-
-const initialState = {
-  isLoggedInUser: false,
-  username: 'Guest',
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'LOGIN':
-      return {
-        ...state,
-        isLoggedInUser: true,
-        username: action.payload.username,
-      };
-    case 'LOGOUT':
-      return {
-        ...state,
-        isLoggedInUser: false,
-        username: 'Guest',
-      };
-    default:
-      return state;
-  }
-};
+import { UserContext, UserDispatchContext, UserProvider } from './modules/user/UserProvider';
 
 export const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const user = useContext(UserContext);
+  const dispatch = useContext(UserDispatchContext);
   const [todos, setTodos] = useState([]);
   const [currentView, setCurrentView] = useState('list');
+  
   const handleLogin = (username) => {
     dispatch({ type: 'LOGIN', payload: { username } });
     setTodos(todoData);
@@ -58,22 +37,22 @@ export const App = () => {
   const totalTodos = todos.length;
 
   return (
-    <>
+  <UserProvider>  
       <div className='container'>
         <Navbar
-          isLoggedInUser={state.isLoggedInUser}
+          isLoggedInUser={user.isLoggedInUser}
           onSignOut={handleLogout}
           onAccountClick={handleAccountClick}
           onHomeClick={handleHomeClick}
         />
       </div>
       <div className='app'>
-        {!state.isLoggedInUser ? (
+        {!user.isLoggedInUser ? (
           <LogInForm handleLogin={handleLogin} />
         ) : (
           <>
             {currentView === 'account' ? (
-              <Account username={state.username} />
+              <Account username={user.username} />
             ) : (
               <>
                 <List todos={todos} setTodos={setTodos} completedTodos={completedTodos} />
@@ -83,6 +62,6 @@ export const App = () => {
           </>
         )}
       </div>
-    </>
+    </UserProvider>
   );
 };
