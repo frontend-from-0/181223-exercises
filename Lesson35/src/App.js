@@ -6,12 +6,12 @@ import { PerformanceState } from './modules/todo/PerformanceState';
 import { LogInForm } from './modules/user/LogInForm';
 import { todoData } from './data';
 import './App.css';
-import { UserContext, UserDispatchContext, UserProvider } from './modules/user/UserProvider';
+import { UserContext, UserDispatchContext } from './modules/user/UserProvider';
 
 export const App = () => {
   const user = useContext(UserContext);
   const dispatch = useContext(UserDispatchContext);
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(todoData);
   const [currentView, setCurrentView] = useState('list');
   
   const handleLogin = (username) => {
@@ -37,16 +37,13 @@ export const App = () => {
   const totalTodos = todos.length;
 
   return (
-  <UserProvider>  
-      <div className='container'>
-        <Navbar
-          isLoggedInUser={user.isLoggedInUser}
-          onSignOut={handleLogout}
-          onAccountClick={handleAccountClick}
-          onHomeClick={handleHomeClick}
-        />
-      </div>
-      <div className='app'>
+      <><div className='container'>
+      <Navbar
+        isLoggedInUser={user.isLoggedInUser}
+        onSignOut={handleLogout}
+        onAccountClick={handleAccountClick}
+        onHomeClick={handleHomeClick} />
+    </div><div className='app'>
         {!user.isLoggedInUser ? (
           <LogInForm handleLogin={handleLogin} />
         ) : (
@@ -61,7 +58,7 @@ export const App = () => {
             )}
           </>
         )}
-      </div>
-    </UserProvider>
+      </div></>
+  
   );
 };
