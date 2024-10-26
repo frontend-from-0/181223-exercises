@@ -1,14 +1,30 @@
 import './styles.css';
+import { useContext } from 'react';
+import { UserDispatchContext } from '../../modules/user/UserProvider';
 
-export const Navbar = ({ isLoggedInUser, onAccountClick, onHomeClick, onSignOut }) => {
+export const Navbar = ({ isLoggedInUser }) => {
+  const { dispatch } = useContext(UserDispatchContext);
+  
+  const handleAccountClick = () => {
+    dispatch({ type: 'ACCOUNT_CLICK' });
+  };
+
+  const handleHomeClick = () => {
+    dispatch({ type: 'HOME_CLICK' });
+  };
+
+  const handleSignOut =() => {
+    dispatch({ type: 'LOGOUT' });
+  };
+  
   return (
     <nav className='navigation'>
       <ul className='navigation-list'>
-        <li className='home-btn' onClick={onHomeClick}>Home</li>
+        <li className='home-btn' onClick={handleHomeClick}>Home</li>
         {isLoggedInUser ? (
           <>
-            <li className='account-btn' onClick={onAccountClick}>Account</li>
-            <li className='out-btn' onClick={onSignOut}>Sign out</li>
+            <li className='account-btn' onClick={handleAccountClick}>Account</li>
+            <li className='out-btn' onClick={handleSignOut}>Sign out</li>
           </>
         ) : (
           <li className='in-btn'>Sign in</li>

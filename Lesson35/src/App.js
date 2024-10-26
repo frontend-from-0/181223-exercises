@@ -10,45 +10,31 @@ import { UserContext, UserDispatchContext } from './modules/user/UserProvider';
 
 export const App = () => {
   const user = useContext(UserContext);
-  const dispatch = useContext(UserDispatchContext);
+  const { dispatch } = useContext(UserDispatchContext);
   const [todos, setTodos] = useState(todoData);
-  const [currentView, setCurrentView] = useState('list');
-  
-  const handleLogin = (username) => {
+
+  const handleSignIn = (username) => {
     dispatch({ type: 'LOGIN', payload: { username } });
     setTodos(todoData);
   };
 
-  const handleLogout = () => {
+  const handleSignOut = () => {
     dispatch({ type: 'LOGOUT' });
     setTodos([]);
-    setCurrentView('list');
-  };
-
-  const handleHomeClick = () => {
-    setCurrentView('list');
-  };
-
-  const handleAccountClick = () => {
-    setCurrentView('account');
   };
 
   const completedTodos = todos.filter(todo => todo.completed);
   const totalTodos = todos.length;
 
   return (
-      <><div className='container'>
-      <Navbar
-        isLoggedInUser={user.isLoggedInUser}
-        onSignOut={handleLogout}
-        onAccountClick={handleAccountClick}
-        onHomeClick={handleHomeClick} />
+    <><div className='container'>
+      <Navbar isLoggedInUser={user.isLoggedInUser} dispatch={dispatch} />
     </div><div className='app'>
         {!user.isLoggedInUser ? (
-          <LogInForm handleLogin={handleLogin} />
+          <LogInForm handleSignIn={handleSignIn} />
         ) : (
           <>
-            {currentView === 'account' ? (
+            {user.currentView === 'account' ? (
               <Account username={user.username} />
             ) : (
               <>
@@ -59,6 +45,6 @@ export const App = () => {
           </>
         )}
       </div></>
-  
+
   );
 };

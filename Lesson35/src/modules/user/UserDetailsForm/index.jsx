@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { UserDispatchContext } from "../UserProvider";
 import './styles.css';
 
 export const UserDetailsForm = ({ username }) => {
   const [newName, setNewName] = useState(username);
-  const dispatch = useContext(UserDispatchContext);
+  const { dispatch } = useContext(UserDispatchContext);
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
@@ -18,7 +18,7 @@ export const UserDetailsForm = ({ username }) => {
       return;
     }
     dispatch({ type: 'UPDATE_NAME', payload: newName });
-    setNewName(newName);
+    setNewName("");
     setError("");
   };
 
