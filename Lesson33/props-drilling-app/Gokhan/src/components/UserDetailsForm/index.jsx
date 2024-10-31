@@ -1,18 +1,29 @@
 import { useState } from "react"
 import './styles.css';
 
-export const UserDetailsForm = ({incomingUsername}) => {
+export const UserDetailsForm = ({ incomingUsername, onUsernameChange }) => {
   const [username, setUsername] = useState(incomingUsername);
 
-  function handleSubmit (e) {
+  const handleChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('New user name is: ', username);
+    onUsernameChange(username);
   };
 
   return (
     <form className='user-details-form' onSubmit={handleSubmit}>
-      <input type="text" name="username" onChange={(e) => setUsername(e.target.value)} value={username} />
-      <button type="submit">Save</button>
+      <label>
+        Username:
+        <input
+          type="text"
+          value={username}
+          onChange={handleChange}
+        />
+      </label>
+      <button type="submit">Update</button>
     </form>
-  )
-}
+  );
+};

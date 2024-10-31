@@ -1,18 +1,22 @@
 .navigation {
+  position: relative;
   margin: 0;
   padding: 20px;
-  background-color: #fff;
 }
 
 .navigation-list {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  display: flex;
+  gap: 30px;
+  list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
-  list-style-type: none;
+  font-size: 18px;
 }
 
 .navigation-list > li:hover {
   cursor: pointer;
+  font-weight: 500;
 }

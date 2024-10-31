@@ -1,24 +1,35 @@
-import {useState} from 'react';
-import {todoData} from '../../data';
 import './styles.css';
+export const List = ({ todos, setTodos }) => {
 
-export const List = () => {
-	const [todos, setTodos] = useState(todoData);
-
-	function handleClick (id) {
-		setTodos(prevState => prevState.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo));
+	const handleClick = (id) => {
+		setTodos(prevState =>
+			prevState.map(todo =>
+				todo.id === id ? { ...todo, completed: !todo.completed } : todo
+			)
+		);
 	};
-
+	const completedTodos = todos.filter(todo => todo.completed);
 	return (
-		<ul className='todo__list'>
-			{todos.map((item) => (
-				<li onClick={() => handleClick(item.id)} key={item.id}>
-					<span className={item.completed ? 'completed' : ''}>
-						{item.title}
-					</span>
-					<button className={'btn'}>X</button>
-				</li>
-			))}
-		</ul>
+		<div>
+			<h2>Todo List</h2>
+			<ul className='todo__list'>
+				{todos.map((item) => (
+					<li onClick={() => handleClick(item.id)} key={item.id}>
+						<span className={item.completed ? 'completed' : ''}>
+							{item.title}
+						</span>
+						<button className={`btn ${item.completed ? 'completed' : ''}`} onClick={() => handleClick(item.id)}>X</button>
+					</li>
+				))}
+			</ul>
+			<h3>Completed Todos</h3>
+			<ul class='completed-todos'>
+				{completedTodos.length > 0 ? (
+					completedTodos.map(item => <li key={item.id}>{item.title}</li>)
+				) : (
+					<li class='done-tasks'>No completed todos</li>
+				)}
+			</ul>
+		</div>
 	);
 };

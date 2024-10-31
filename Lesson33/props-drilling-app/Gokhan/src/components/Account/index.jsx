@@ -1,10 +1,16 @@
-import {UserDetailsForm} from '../UserDetailsForm';
+import { UserDetailsForm } from '../UserDetailsForm';
+import { useState } from 'react';
 
 export const Account = () => {
+  const [username, setUsername] = useState('Placeholder User Name');
+
   return (
     <div className="account-container">
       <h1>Account information</h1>
-      <UserDetailsForm incomingUsername='Placeholder user name'/>
+      <UserDetailsForm
+        incomingUsername={username}
+        setUsername={setUsername}
+      />
     </div>
-  )
-}
+  );
+};
