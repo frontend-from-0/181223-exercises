@@ -28,7 +28,7 @@ export const UserDetailsForm = ({ username }) => {
         type="text"
         value={newName}
         onChange={handleChange}
-        placeholder="Change username"
+        placeholder="John01"
       />
       <button className="btn-submit" type="submit">Change Username</button>
       {error && <p className="error-message">{error}</p>}

@@ -6,20 +6,15 @@ export const LogInForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { dispatch, authenticateUser } = useContext(UserDispatchContext);
+  const { dispatch } = useContext(UserDispatchContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('username:', username, 'password:', password);
-    const user = authenticateUser(username, password);
-
-    if (user) {
-      console.log("User authenticated:", user);
-      dispatch({ type: 'LOGIN', payload: { username: user.username } });
-      setError("");
-    } else {
-      console.log("Authentication failed"); 
+    const success = dispatch({ type: 'LOGIN', payload: { username, password } });
+    if (!success) {
       setError("Invalid username or password");
+    } else {
+      setError("");
     }
   };
 

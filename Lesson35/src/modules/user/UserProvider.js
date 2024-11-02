@@ -7,7 +7,7 @@ export const UserAuthContext = createContext();
 const initialState = {
   name: 'Guest',
   isLoggedInUser: false,
-  currentView: 'list', 
+  currentView: 'list',
 };
 
 const userReducer = (state, action) => {
@@ -15,14 +15,19 @@ const userReducer = (state, action) => {
     case 'UPDATE_NAME':
       return { ...state, name: action.payload };
     case 'LOGIN':
-      return { ...state, isLoggedInUser: true, username: action.payload.username };
+      const user = authenticateUser(action.payload.username, action.payload.password);
+      if (user) {
+        return { ...state, isLoggedInUser: true, username: action.payload.username };
+      } else {
+        return { ...state, isLoggedInUser: false };
+      }
     case 'ACCOUNT_CLICK':
       return { ...state, currentView: 'account' };
     case 'HOME_CLICK':
       return { ...state, currentView: 'list' };
     case 'LOGOUT':
       return { ...state, isLoggedInUser: false, username: 'Guest' };
-      case 'SET_VIEW':
+    case 'SET_VIEW':
       return { ...state, currentView: action.payload };
     default:
       return state;
