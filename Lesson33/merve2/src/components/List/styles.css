@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+.todo-item span {
+  flex-grow: 1;
+}
+
+.todo-item:hover {
+  background-color: #f1f1f1;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+button {
+  margin-left: 10px;
+  align-self: center;
+}
+
+button.complete {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button.undo {
+  background-color: #f44336;
+  color: white;
+}
