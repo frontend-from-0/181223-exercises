@@ -11,10 +11,30 @@ const Exercise9 = () => {
     return (
         <div style={{ backgroundColor: bgColor, padding: '20px', textAlign: 'center' }}>
             <h2>Choose a Background Color</h2>
-            <button onClick={() => handleButtonClick('lightblue')}>Light Blue</button>
-            <button onClick={() => handleButtonClick('lightgreen')}>Light Green</button>
-            <button onClick={() => handleButtonClick('lightcoral')}>Light Coral</button>
-            <button onClick={() => handleButtonClick('lightyellow')}>Light Yellow</button>
+            <button 
+                onClick={() => handleButtonClick('lightblue')} 
+                style={{ margin: '5px' }} 
+            >
+                Light Blue
+            </button>
+            <button 
+                onClick={() => handleButtonClick('lightgreen')} 
+                style={{ margin: '5px' }} 
+            >
+                Light Green
+            </button>
+            <button 
+                onClick={() => handleButtonClick('lightcoral')} 
+                style={{ margin: '5px' }} 
+            >
+                Light Coral
+            </button>
+            <button 
+                onClick={() => handleButtonClick('lightyellow')} 
+                style={{ margin: '5px' }} 
+            >
+                Light Yellow
+                </button>
         </div>
     );
 };

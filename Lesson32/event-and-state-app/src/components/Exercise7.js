@@ -8,14 +8,35 @@ const Exercise7 = () => {
 
     const handleChildClick = (event) => {
         alert('Child clicked!');
-        event.stopPropagation(); // Olayın ebeveyn öğeye yayılmasını engelle
+        event.stopPropagation();
     };
 
     return (
-        <div onClick={handleParentClick} style={{ padding: '20px', backgroundColor: '#f0f0f0' }}>
-            Parent Element
-            <div onClick={handleChildClick} style={{ padding: '10px', backgroundColor: '#c0c0c0' }}>
-                Child Element
+        <div 
+            onClick={handleParentClick} 
+            style={{
+                padding: '20px',
+                border: '2px solid #007BFF',
+                borderRadius: '10px',
+                backgroundColor: '#f0f8ff',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                textAlign: 'center',
+                maxWidth: '400px', 
+                margin: '50px auto', 
+            }}
+        >
+            <h2>Parent Element</h2>
+            <div 
+                onClick={handleChildClick} 
+                style={{
+                    padding: '10px',
+                    border: '1px solid #0056b3F',
+                    borderRadius: '5px',
+                    backgroundColor: '#007BFF',
+                    marginTop: '10px', 
+                }}
+            >
+                <h3>Child Element</h3>
             </div>
         </div>
     );

@@ -12,11 +12,16 @@ const Exercise8 = () => {
     return (
         <div>
             <h2>Todo List</h2>
-            <ul>
+            <ul style={{ padding: '0', listStyleType: 'none' }}>
                 {items.map((item, index) => (
-                    <li key={index}>
+                    <li key={index} style={{ marginBottom: '10px' }}> 
                         {item} 
-                        <button onClick={() => handleRemove(index)}>Remove</button>
+                        <button 
+                            onClick={() => handleRemove(index)} 
+                            style={{ marginLeft: '10px' }}
+                        >
+                            Remove
+                        </button>
                     </li>
                 ))}
             </ul>
