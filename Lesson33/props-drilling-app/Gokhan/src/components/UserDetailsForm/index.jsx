@@ -1,20 +1,13 @@
-import { useState } from "react"
 import './styles.css';
 
-export const UserDetailsForm = ({ incomingUsername, onUsernameChange }) => {
-  const [username, setUsername] = useState(incomingUsername);
+export const UserDetailsForm = ({ username, onUsernameChange }) => {
 
   const handleChange = (e) => {
-    setUsername(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onUsernameChange(username);
+    onUsernameChange(e.target.value);
   };
 
   return (
-    <form className='user-details-form' onSubmit={handleSubmit}>
+    <form className='user-details-form'>
       <label>
         Username:
         <input
@@ -23,7 +16,7 @@ export const UserDetailsForm = ({ incomingUsername, onUsernameChange }) => {
           onChange={handleChange}
         />
       </label>
-      <button type="submit">Update</button>
+      <button type="submit" onClick={() => onUsernameChange(username)}>Update</button>
     </form>
   );
 };

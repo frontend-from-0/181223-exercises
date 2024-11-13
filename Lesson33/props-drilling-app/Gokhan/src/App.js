@@ -56,7 +56,10 @@ export const App = () => {
 
 			<div className='app'>
 				{showAccountPage ? (
-					<Account onUsernameChange={handleUserNameChange} />
+					<Account
+						username={user.name}
+						onUsernameChange={handleUserNameChange}
+					/>
 				) : (
 					<>
 						{user.isLoggedInUser && showListPage ? (

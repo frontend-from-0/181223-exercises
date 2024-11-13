@@ -1,9 +1,6 @@
 import './styles.css';
-import { loggedInUser, loggedOutUser } from '../../data';
 
 export const Navbar = ({ isLoggedInUser, onAccountClick, onHomeClick, onSignOut, onSignIn }) => {
-	const user = isLoggedInUser ? loggedInUser : loggedOutUser;
-	console.log(user);
 
 	return (
 		<nav className='navigation'>

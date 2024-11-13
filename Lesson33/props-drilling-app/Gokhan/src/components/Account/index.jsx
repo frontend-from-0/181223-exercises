@@ -1,15 +1,13 @@
 import { UserDetailsForm } from '../UserDetailsForm';
-import { useState } from 'react';
 
-export const Account = () => {
-  const [username, setUsername] = useState('Placeholder User Name');
+export const Account = ({ username, onUserNameChange }) => {
 
   return (
     <div className="account-container">
       <h1>Account information</h1>
       <UserDetailsForm
-        incomingUsername={username}
-        setUsername={setUsername}
+        username={username}
+        onUsernameChange={onUserNameChange}
       />
     </div>
   );
