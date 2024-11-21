@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update post</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+
+</head>
+<body>
+  <!-- TODO: DONE add form element -->
+  <form action="/submit-update" method="post">
+    <label for="postTitle">Title:</label>
+    <input type="text" id="postTitle" name="postTitle" required>
+    
+    <label for="postContent">Content:</label>
+    <textarea id="postContent" name="postContent" required></textarea>
+    
+    <button type="submit">Update Post</button>
+  </form>
+  <script src="./update.js"></script>
+  
+</body>
+</html>
