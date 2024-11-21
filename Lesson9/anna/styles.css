@@ -1,0 +1,279 @@
+
+
+*{
+    box-sizing:border-box;
+  }
+  :root {
+    --color-sucess: #429A35;
+    --color-secondary: #6b6b6b;
+    --color-third:#000000;
+    --color-light: #f2f2f2;
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 20px;
+    --space-lg: 32px;
+    --space-xl: 64px;
+    --font-size-s:12px;
+    --font-size-m:14px;
+    --font-size-l:16px;
+    --font-size-xl:20px;
+    --codebackground:#F2F2F2;
+  }
+  body {
+    margin: 0;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 16px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .width-restricted {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .separator--dot {
+    margin-right: var(--space-xxs);
+    margin-left: var(--space-xxs);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  . {
+    background-color: inherit;
+    border: none;
+    padding: var(--space-xs);
+    color: var(--color-secondary);
+  }
+  .article-info {
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: var(--space-lg) auto;
+  }
+  .article-author-info-container {
+    display:flex;
+    gap: var(--space-md);
+    align-items: center;
+    margin: var(--space-lg)c  auto;
+  }
+  .author-photo-wrapper {
+    position: relative;
+    min-width: 60px;
+  }
+  .author-photo {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+  .organization-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 28px;
+  }
+  .text-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+  .link--success {
+    color: var(--color-sucess);
+  }
+  .text-info-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .action-icon{
+    border:none;
+    color: var(--color-secondary);
+    background-color:inherit;
+  }
+  .action-icon:hover{
+    color:var(--color-third);
+  }
+  .article-actions-container {
+    margin: var(--space-lg) auto;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.5px solid var(--color-light);
+    border-bottom: 0.5px solid var(--color-light);
+  }
+  .info-link:hover{
+    text-decoration:underline;
+  }
+  .article-actions-left{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:var(--space-sm);
+    gap:var(--space-xs);
+  }
+  
+  .first{
+    display:flex;
+    align-items:center;
+  }
+  .second{
+    display:flex;
+    align-items:center;
+  }
+    
+  
+  
+  .article-actions-right{
+    display:flex;
+    align-items:center;
+    gap:var(--space-md);
+     margin:var(--space-sm);
+  }
+  
+  .hero-content{
+    max-width:100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .fig-text{
+    color:var(--color-secondary);
+    font-family:sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: var(--font-size-m);
+    margin:var(--space-xs) auto;
+    text-align:center;
+    display:block;
+    font-weight:400;
+  }
+  .fig-text-link{
+    text-decoration:underline;
+    color:var(--color-secondary);
+  }
+  
+  .parag{
+    max-width:680px;
+    color:inherit;
+    font-size:var(--font-size-xl);
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    line-height:32px;
+    letter-spacing: -0.003em;
+    padding:20px;
+    margin:0 auto;
+  }
+  .scnd{
+    margin-top:42px;
+    margin-bottom:10px;
+  }
+  
+  
+  .space{
+    margin-top:46px;
+    margin-bottom:6px;
+  }
+  
+  .fth{
+    margin-top:18px;
+    margin-bottom:10px;
+  }
+  .oth-photo{
+    max-width:100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  } /*bunu yaparak fotoğrafı büyük yapmaya çalıştım ama olmadı*/
+  
+  .codeblc{
+    display:block;
+    background-color:var(--codebackground);
+    font-family:source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
+    padding:var(--space-sm);
+    font-size:var( --font-size-l);
+    margin-top:50px;
+    line-height: 1.18;
+  }
+  .adv:hover{
+    background:#00FF00;
+  }
+  .litblock{
+    background-color:var(--codebackground);
+  }
+  .line{
+    text-decoration:underline;
+    color:inherit;
+  }
+  .caption{
+    color:var(--color-secondary);
+    font-size:var(--font-size-m);
+  }
+  .cen{
+    width:100%;
+      height:auto;
+      margin:0px;
+      padding:0px;
+      display:block;
+  }/*bunu yaparak fotoğrafı büyük yapmaya çalıştım ama olmadı*/
+  .num{
+    font-size:20px;
+  }
+  .box{
+    background-color:var(--codebackground);
+    border-radius:100px;
+    display:inline-block;
+    padding:8px 16px;
+    border:1px solid var(--codebackground);
+    font-size:14px;
+    margin:24px 0px; 
+  }
+  .last-container{
+    display:flex;
+    justify-content:space-between;
+  }
+  
+  @media all and (max-width: 767.99px) {
+    .width-restricted {
+      padding: 0 24px;
+    }
+    .article-author-info-container {
+      gap: var(--space-xs);
+    } 
+    .hero-content{
+      width:100%;
+      height:auto;
+      margin:0px;
+      padding:0px;
+      display:block;
+    }
+  
+    .oth-photo{
+      width:100%;
+      height:auto;
+      margin:0px;
+      padding:0px;
+      display:block;/*bunu yaparak fotoğrafı büyük yapmaya çalıştım ama olmadı*/
+    }
+  }
+    
+  @media all and (max-width:1039.99px) and (min-width:768px){
+    .hero-content{
+      width:90%;
+      height:auto;
+    }
+    .oth-photo{
+      width:90%;
+      height:auto;/*bunu yaparak fotoğrafı büyük yapmaya çalıştım ama olmadı*/
+    }
+  }
+    
+  @media all and (min-width:1040px) and {
+     .hero-content{
+      width:1044px;
+      height:784px;
+    }
+    .oth-photo{
+      width:1044px;
+      height:370px;/*bunu yaparak fotoğrafı büyük yapmaya çalıştım ama olmadı*/
+    }
+  }

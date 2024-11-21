@@ -6,6 +6,395 @@
     <title>This is a placeholder HTML for assignment 9</title>
   </head>
   <body>
+    <main>
+			<section class="article-info width-restricted">
+				<h1>Time-saving CSS techniques to create responsive images</h1>
+<! üst bilgi için genel div->
+        <div class="article-author-info-container">
+          <! fotoğrafla ilgili kısımlar için div->
+          <div class="author-photo-container">
+            <div class="author-photo-wrapper">
+              <a href="#">
+                <img
+                  class="author-photo"
+                  src="https://adrienzaganelli.com/_ipx/w_1280&f_webp/images/portrait.jpg"
+                  alt="Adrienne Zaganelli pp"
+                />
+              </a>
+              <a href="">
+                <img
+                  class="organization-logo"
+                  src="data:image/jpeg;base64,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"
+                  alt="FreeCodeCamp logo"
+                />
+                </a>
+            </div>
+          </div>
+          <div class="text-info-container">
+            <div class="text-info-row">
+              <a href="https://medium.com/@adri_zag">Adrienne Zaganelli</a>
+              <span class="separator--dot">·</span>
+              <a class="link--success" href="https://medium.com/m/signin">Follow</a>
+            </div>
+            <div class="text-info-row">
+              <span class="text-secondary">Published in&nbsp;</span>
+              <a class="info-link" href="https://medium.com/free-code-camp">We’ve moved to freeCodeCamp.org/news
+                <span class="separator--dot">·</span>
+              </a>
+              <span class="text-secondary">3 min read</span>
+              <span class="separator--dot"> · </span>
+              <span class="text-secondary">Aug 12, 2018</span>
+            </div>
+          </div>
+          
+        </div>
+        <div class="article-actions-container">
+          <div class="article-actions-left">
+            <div class="first">
+            <svg 
+} xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="18px" height="18px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"  viewBox="0 0 512 512"  xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style  type="text/css">
+   
+    .fil0 {fill:black}
+   
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+  <g id="_410732304">
+   <g>
+    <g id="_410738424">
+     <path class="fil0" d="M191 481c-2,0 -4,-1 -5,-2 -2,-2 -3,-4 -2,-6 0,-3 -1,-6 -3,-7l-70 -75c-1,-2 -3,-3 -5,-3 -2,0 -4,-2 -5,-4 -1,-2 -1,-4 0,-6 22,-49 34,-87 42,-135 2,-12 14,-21 28,-21 15,1 27,13 26,28l-1 38 113 -106c5,-5 12,-7 20,-7 7,0 14,3 19,9 7,7 9,19 5,28 5,1 10,4 14,8 0,0 0,0 0,0 5,5 7,12 7,20 0,4 -1,9 -4,13 5,1 9,4 12,7 0,0 0,0 0,0 9,10 10,25 2,36 4,1 7,3 10,7 5,5 8,12 8,19 -1,8 -4,14 -9,19l-92 86c-44,41 -57,44 -96,51 -4,1 -8,2 -12,3 -1,0 -1,0 -2,0zm-73 -104c1,1 3,2 4,3l70 75c3,3 4,6 5,9 2,0 3,0 5,-1 38,-7 48,-9 89,-47l92 -86c2,-2 3,-5 4,-8 0,-3 -1,-7 -4,-9 -4,-5 -11,-5 -16,-1 -2,1 -18,16 -26,23l-4 4c-3,3 -7,3 -10,0 -3,-3 -3,-8 0,-11 0,0 0,0 0,0l0 0c0,0 1,-1 2,-2l41 -38c5,-5 6,-13 1,-18 0,0 0,0 0,0 -2,-2 -5,-3 -9,-4 -3,0 -6,1 -8,4 0,0 0,0 -1,0l-42 40c-4,3 -8,3 -11,-1 -3,-3 -3,-7 0,-10l55 -51c2,-3 4,-6 4,-9 0,-3 -1,-6 -3,-9 0,0 0,0 0,0 -5,-5 -13,-5 -18,0l-55 51c-3,3 -8,3 -10,0 -3,-3 -3,-8 0,-11l55 -51c0,0 0,0 0,0 0,0 0,0 0,0l8 -8c5,-4 5,-12 1,-17 -3,-3 -6,-4 -9,-4 -3,0 -6,1 -9,3l-126 118c-3,2 -6,3 -9,2 -2,-2 -4,-4 -4,-8l2 -55c0,-3 -1,-6 -3,-9 -3,-2 -6,-4 -9,-4 -6,0 -11,4 -12,9 -8,47 -20,84 -40,131z"></path>
+    </g>
+    <g id="_410741496">
+     <path class="fil0" d="M162 507c-7,0 -13,-2 -17,-7l-70 -75c-5,-5 -7,-11 -7,-17 1,-7 3,-13 8,-17l13 -12c4,-4 10,-6 16,-6 7,0 13,3 17,7l70 75c9,10 9,25 -1,34l-13 12c-4,4 -10,6 -16,6zm-57 -119c-2,0 -5,1 -6,2l-13 12c-1,2 -2,4 -3,6 0,3 1,5 3,7l70 75c1,1 4,2 6,2 2,0 5,-1 6,-2l13 -12c3,-3 4,-9 0,-12l-70 -75c-1,-2 -4,-3 -6,-3z"></path>
+    </g>
+    <g id="_410731368">
+     <path class="fil0" d="M110 382c-2,0 -4,0 -5,-2l-62 -66c-1,-1 -3,-2 -5,-3 -2,0 -4,-2 -5,-4 -1,-2 -1,-4 0,-6 22,-49 33,-87 42,-135 2,-12 14,-21 27,-21 8,1 15,4 20,9 5,5 7,12 7,20l-1 37 113 -106c11,-10 28,-9 39,2 7,8 9,19 5,28 5,2 10,4 14,8 0,0 0,0 0,0 5,6 7,13 7,20 0,4 -2,9 -4,13 5,1 9,4 12,7 1,1 2,3 3,4 2,4 1,8 -2,11 -4,2 -9,1 -11,-3 0,0 -1,-1 -1,-2 -2,-2 -6,-3 -9,-3 -3,0 -6,1 -9,3 0,0 0,0 0,0l-43 40c-3,3 -7,3 -10,0 -3,-3 -3,-8 0,-11l55 -51c2,-2 4,-5 4,-9 0,-3 -1,-6 -4,-8 0,-1 0,-1 0,-1 -4,-4 -12,-5 -17,0l-55 51c-3,3 -8,3 -11,0 -2,-3 -2,-8 1,-11l55 -51c0,0 0,0 0,0 0,0 0,0 0,0l8 -8c2,-2 4,-5 4,-8 0,-3 -1,-7 -4,-9 -4,-5 -12,-5 -17,-1l-126 118c-3,2 -6,3 -9,2 -3,-2 -4,-4 -4,-7l2 -56c0,-3 -1,-6 -4,-9 -2,-2 -5,-3 -8,-4 -6,0 -11,4 -12,9 -9,47 -20,84 -40,131 1,1 3,2 4,4l62 66c3,3 3,8 -1,10 -1,2 -3,2 -5,2z"></path>
+    </g>
+    <g id="_410737248">
+     <path class="fil0" d="M76 419c-2,0 -4,0 -5,-2l-64 -69c-5,-5 -7,-11 -7,-17 0,-7 3,-12 8,-17l12 -12c5,-4 11,-6 18,-6 6,0 12,3 16,8l62 66c3,3 3,8 -1,10 -3,3 -7,3 -10,0l-62 -66c-1,-2 -4,-3 -6,-3 -2,0 -5,1 -6,3l-13 11c-2,2 -3,4 -3,6 0,3 1,5 3,7l64 69c3,3 2,7 -1,10 -1,2 -3,2 -5,2z"></path>
+    </g>
+    <g id="_410736360">
+     <path class="fil0" d="M365 159c-2,0 -4,0 -6,-2 -3,-3 -3,-8 0,-11l86 -86c3,-3 8,-3 11,0 3,3 3,8 0,11l-86 86c-1,2 -3,2 -5,2z"></path>
+    </g>
+    <g>
+     <g id="_410732088">
+      <path class="fil0" d="M399 191c-3,0 -5,-2 -7,-4 -2,-4 -1,-8 3,-11l106 -60c3,-2 8,-1 10,2 2,4 1,9 -3,11l-105 61c-2,0 -3,1 -4,1z"></path>
+     </g>
+     <g id="_410736264">
+      <path class="fil0" d="M333 125c-1,0 -2,0 -3,-1 -4,-2 -5,-7 -3,-10l61 -106c2,-3 6,-5 10,-2 4,2 5,6 3,10l-61 105c-1,3 -4,4 -7,4z"></path>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
+             <button class="action-icon">10.4K</button></div>
+            <div class="second">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="17px" viewBox="0 0 511.626 511.627" style="enable-background:new 0 0 511.626 511.627;" xml:space="preserve">
+<g>
+	<path d="M477.364,127.481c-22.839-28.072-53.864-50.248-93.072-66.522c-39.208-16.274-82.036-24.41-128.479-24.41
+		c-46.442,0-89.269,8.136-128.478,24.41c-39.209,16.274-70.233,38.446-93.074,66.522C11.419,155.555,0,186.15,0,219.269
+		c0,28.549,8.61,55.299,25.837,80.232c17.227,24.934,40.778,45.874,70.664,62.813c-2.096,7.611-4.57,14.842-7.426,21.7
+		c-2.855,6.851-5.424,12.467-7.708,16.847c-2.286,4.374-5.376,9.23-9.281,14.555c-3.899,5.332-6.849,9.093-8.848,11.283
+		c-1.997,2.19-5.28,5.801-9.851,10.848c-4.565,5.041-7.517,8.33-8.848,9.853c-0.193,0.097-0.953,0.948-2.285,2.574
+		c-1.331,1.615-1.999,2.419-1.999,2.419l-1.713,2.57c-0.953,1.42-1.381,2.327-1.287,2.703c0.096,0.384-0.094,1.335-0.57,2.854
+		c-0.477,1.526-0.428,2.669,0.142,3.429v0.287c0.762,3.234,2.283,5.853,4.567,7.851c2.284,1.992,4.858,2.991,7.71,2.991h1.429
+		c12.375-1.526,23.223-3.613,32.548-6.279c49.87-12.751,93.649-35.782,131.334-69.094c14.274,1.523,28.074,2.283,41.396,2.283
+		c46.442,0,89.271-8.135,128.479-24.414c39.208-16.276,70.233-38.444,93.072-66.517c22.843-28.072,34.263-58.67,34.263-91.789
+		C511.626,186.154,500.207,155.555,477.364,127.481z M445.244,292.075c-19.896,22.456-46.733,40.303-80.517,53.529
+		c-33.784,13.223-70.093,19.842-108.921,19.842c-11.609,0-23.98-0.76-37.113-2.286l-16.274-1.708l-12.277,10.852
+		c-23.408,20.558-49.582,36.829-78.513,48.821c8.754-15.414,15.416-31.785,19.986-49.102l7.708-27.412l-24.838-14.27
+		c-24.744-14.093-43.918-30.793-57.53-50.114c-13.61-19.315-20.412-39.638-20.412-60.954c0-26.077,9.945-50.343,29.834-72.803
+		c19.895-22.458,46.729-40.303,80.515-53.531c33.786-13.229,70.089-19.849,108.92-19.849c38.828,0,75.13,6.617,108.914,19.845
+		c33.783,13.229,60.62,31.073,80.517,53.531c19.89,22.46,29.834,46.727,29.834,72.802S465.133,269.615,445.244,292.075z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+            <button class="action-icon">21</button>
+              </div>
+            
+          </div>
+          <div class="article-actions-right">
+            <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>save_alt</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rounded" transform="translate(-443.000000, -1529.000000)">
+            <g id="Content" transform="translate(100.000000, 1428.000000)">
+                <g id="-Round-/-Content-/-save_alt" transform="translate(340.000000, 98.000000)">
+                    <g>
+                        <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path d="M19,13 L19,18 C19,18.55 18.55,19 18,19 L6,19 C5.45,19 5,18.55 5,18 L5,13 C5,12.45 4.55,12 4,12 C3.45,12 3,12.45 3,13 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,13 C21,12.45 20.55,12 20,12 C19.45,12 19,12.45 19,13 Z M13,12.67 L14.88,10.79 C15.27,10.4 15.9,10.4 16.29,10.79 C16.68,11.18 16.68,11.81 16.29,12.2 L12.7,15.79 C12.31,16.18 11.68,16.18 11.29,15.79 L7.7,12.2 C7.31,11.81 7.31,11.18 7.7,10.79 C8.09,10.4 8.72,10.4 9.11,10.79 L11,12.67 L11,4 C11,3.45 11.45,3 12,3 C12.55,3 13,3.45 13,4 L13,12.67 Z" id="🔹Icon-Color" fill="#1D1D1D"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+             <button class="action-icon"></button> </svg>
+            
+          <svg width="18px" height="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 118.28 122.88" style="enable-background:new 0 0 118.28 122.88" xml:space="preserve"><g><path d="M111.85,108.77c-3.47,4.82-8.39,8.52-14.13,10.48c-0.26,0.12-0.55,0.18-0.84,0.18c-0.28,0-0.56-0.06-0.82-0.17v0.06 c0,1.96-1.6,3.56-3.57,3.56l-7.68,0c-1.96,0-3.57-1.6-3.57-3.56l0-55.13c0-1.96,1.6-3.57,3.57-3.57h7.68c1.96,0,3.57,1.6,3.57,3.57 v0.34c0.26-0.12,0.54-0.18,0.82-0.18c0.22,0,0.44,0.04,0.64,0.1l0,0.01c4.36,1.45,8.26,3.92,11.42,7.11V59.15 c0-14.89-4.99-27.63-13.81-36.6l-3.91,5.83c-7.95-8.75-19.4-14.27-32.08-14.27c-12.76,0-24.29,5.59-32.24,14.45l-4.73-5.78 C13.47,31.65,8.54,44.21,8.54,59.15V73.4c3.4-4.08,7.92-7.22,13.07-8.93l0-0.01c0.21-0.07,0.43-0.11,0.64-0.11 c0.28,0,0.57,0.06,0.82,0.17v-0.34c0-1.96,1.61-3.57,3.57-3.57l7.68,0c1.96,0,3.57,1.6,3.57,3.57v55.13c0,1.96-1.61,3.56-3.57,3.56 h-7.68c-1.96,0-3.57-1.6-3.57-3.56v-0.06c-0.25,0.11-0.53,0.17-0.82,0.17c-0.3,0-0.58-0.07-0.83-0.18 c-5.74-1.96-10.66-5.66-14.13-10.48c-1.82-2.52-3.24-5.34-4.17-8.37l-3.12,0V59.15c0-16.27,6.65-31.05,17.37-41.77 C28.09,6.66,42.88,0,59.14,0c16.27,0,31.06,6.66,41.77,17.37c10.72,10.72,17.37,25.5,17.37,41.77v41.25h-2.27 C115.1,103.39,113.68,106.23,111.85,108.77L111.85,108.77L111.85,108.77z"></path></g><button class="action-icon"></button></svg>
+              
+            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline></line> <button class="action-icon"></button></svg>
+         
+      </div>   <!svg leri gri yapmaya çalıştım (color="var(--color-secondary)" ama çalışmadı siyah kaldı. class verererek de denedim, html de svg nin içindeki styles kısmından da yaptım ama siyah kaldı. Hover yapıldığında da renk değişimi olmuyor->
+ </div>
+			</section>
+<section class="hero-photo-part">
+  <figure class="hero-photo-parttwo">
+  <img class="hero-content" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*aVzJTznRRfP1lM7AXe9yLw.jpeg" alt="Photo by on Unsplash"   </figure>
+    <figcaption class="fig-text">Photo by <a class="fig-text-link" href=""> Kevin Ku</a> on <a class="fig-text-link" href="">Unsplash</a></figcaption>
+	</section>
+  <article class="parag">
+    <p class="scnd">As a web developer, there is a high probability that you have encountered the two enemies of this article:<strong> images </strong> and <strong> deadlines.</strong> Sometimes, for some reasons, your images won’t fit the layout and you don’t want to wrap your head around this for hours.</p>
+    <p class="scnd">
+      This situation has happened to me many times and I have learned from my mistakes. No more black magic hacks — here are my five favorites techniques to handle image resizing.
+    </p>
+    <h1  class="space">the “OMG I NEED THIS ASAP” way</h1>
+    <p class="fth">It’s 5:00 pm on Friday, you have to finish this page, but the images won’t fit the layout. It’s time to use your magic trick!</p>
+    <pre><code  class="codeblc">.myImg {
+  background-image: url("my-image.png");
+  background-size: cover;
+}
+</code></pre>
+    <p class="scnd">Sounds familiar? We’ve all done it once, doesn’t it feel like cheating to you?</p>
+<p class="scnd">
+Using background properties is very useful, they just work. Yet, remember that you should use them only for non-content images or as a replacement of text and in some particular cases.</p>
+
+    <h1 class="space">The way from the future</h1>
+<p class="fth">
+  What if I told you this kind of magic exists also for <code class="litblock">&lt;img&gt;</code> elements? Say “hi” to the <code class="litblock">&lt;object-fit&gt;</code> property — which also works for videos, by the way!</p>
+    <pre><code  class="codeblc">.myImg {
+  object-fit: cover;
+  width: 320px;
+  height: 180px;
+}
+</code></pre>
+    <p class="scnd">Sounds familiar? We’ve all done it once, doesn’t it feel like cheating to you?</p>
+    <p class="scnd">Using <code class="litblock">background</code> properties is very useful, they just work. Yet, remember that you should use them only for non-content images or as a replacement of text and in <a class="line" href=""> some particular cases</a>
+</p>
+    <p class="scnd">That’s all folks! See how when we retrieve the friendly value <code class="litblock">cover</code>, we can also use <code class="litblock">contain</code>.</p>
+    <h2 class="scnd">Okay what’s the trap?</h2>
+    <p class="fth">Unfortunately <code class="litblock"> object-fit</code> will not work on IE and older versions of Safari, but there is a <a class="line" href="">polyfill</a>.</p>
+    <figure>
+    <img class="cen" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*d0wZwFpXGiAYH9_NrJCroA.png" alt="browsers"></figure>
+    <figcaption class="caption">source: <a class="line" href="">https://css-tricks.com/almanac/properties/o/object-fit/#article-header-id-4</a></figcaption>
+    <h1 class="space">The “Netflix” way</h1>
+    <p class="fth">You may think “nice trick man, one more way that doesn’t work in old browsers like IE 😔”. Don’t worry, this one works everywhere and it is my favorite! You’ll need to wrap your image with a relative padded parent.</p>
+    <p class="space">We will keep the image ratio with a percentage on the padding property. Your image will be a full size absolute child.</p>
+    <p class="space">The code looks like this</p>
+    <pre><code  class="codeblc">.wrapper {
+  position: relative;
+  padding-top: 56.25%; /* <strong>16:9 Aspect Ratio</strong> */
+}
+img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+</code></pre>
+    <p class="scnd">“Hey man, it looks complicated.”</p>
+    <p class="scnd">Once you get the concept, the technique is simple and <a class="line" href=""> widely used </a>. Netflix uses it!</p>
+    <figure>
+  <img class="oth-photo" src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*rTrhAIVolZR2oQh2ou1jXg.png" alt="netflix screen shot">
     
+  </figure>
+    <p class="scnd">A little demo:</p>
+    <h1>The Simple way</h1>
+    <p class="fth">You may already know this one:</p>
+    <pre><code  class="codeblc">img {
+  height: auto;
+  width: 100%;
+/* even more control with max-width */
+  max-width: 720px;
+}
+</code></pre>
+    <p class="scnd">If your layout isn’t too complicated, it works in most cases.</p>
+    <h1 class="space">The Performance way (Advanced)</h1>
+    <p class="fth">By performance, I mean load times. A big hero image can ruin it and make your page feel slow, especially on mobile.</p>
+    <p class="adv">Did you know that in <a class="line" href="">modern browsers</a> you can change an image source depending on your page width? That’s what <code class="litblock">srcset</code> is made for!</p>
+    <p class="scnd">You can combine them with the HTML 5 <code class="litblock">&lt;picture&gt;</code>tag, which gracefully degrades with an <code class="litblock">&lt;img&gt;</code>.</p>
+    <code class="codeblc">
+    &lt;source media="(max-width: 799px)" srcset="elva-480w.jpg"&gt;
+    &lt;source media="(min-width: 800px)" srcset="elva-800w.jpg"&gt;
+    &lt;img src="elva-800w.jpg"&gt;
+  </code>
+<h1 class="space">To Recap</h1>
+    <ol>
+      <li class="num">Use <code class="litblock">background-image</code> if your image is not part of the page’s content.</li>
+      <li class="num">Use <code class="litblock">object-fit</code>  if you don’t care about IE.</li>
+      <li class="num">The padded container technique, used by Netflix, works everywhere.</li>
+      <li class="num">In most cases, just add <code class="litblock">height: auto;</code> in your CSS.</li>
+      <li class="num">If you need fast load times, use <code class="litblock">srcset</code> to load smaller images on mobile.</li>
+    </ol>
+   <div>
+     <div class="box"><a href="">CSS</a></div>
+     <div class="box"><a href="">Coding</a></div>
+     <div class="box"><a href="">Responsive Design</a></div>
+     <div class="box"><a href="">Tech</a></div>
+     <div class="box"><a href="">Programming</a></div>
+    </div>
+    <div class="last-container">
+      <div class="article-actions-left">
+            <div class="first">
+            <svg 
+} xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="18px" height="18px" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"  viewBox="0 0 512 512"  xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style  type="text/css">
+   
+    .fil0 {fill:black}
+   
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+  <g id="_410732304">
+   <g>
+    <g id="_410738424">
+     <path class="fil0" d="M191 481c-2,0 -4,-1 -5,-2 -2,-2 -3,-4 -2,-6 0,-3 -1,-6 -3,-7l-70 -75c-1,-2 -3,-3 -5,-3 -2,0 -4,-2 -5,-4 -1,-2 -1,-4 0,-6 22,-49 34,-87 42,-135 2,-12 14,-21 28,-21 15,1 27,13 26,28l-1 38 113 -106c5,-5 12,-7 20,-7 7,0 14,3 19,9 7,7 9,19 5,28 5,1 10,4 14,8 0,0 0,0 0,0 5,5 7,12 7,20 0,4 -1,9 -4,13 5,1 9,4 12,7 0,0 0,0 0,0 9,10 10,25 2,36 4,1 7,3 10,7 5,5 8,12 8,19 -1,8 -4,14 -9,19l-92 86c-44,41 -57,44 -96,51 -4,1 -8,2 -12,3 -1,0 -1,0 -2,0zm-73 -104c1,1 3,2 4,3l70 75c3,3 4,6 5,9 2,0 3,0 5,-1 38,-7 48,-9 89,-47l92 -86c2,-2 3,-5 4,-8 0,-3 -1,-7 -4,-9 -4,-5 -11,-5 -16,-1 -2,1 -18,16 -26,23l-4 4c-3,3 -7,3 -10,0 -3,-3 -3,-8 0,-11 0,0 0,0 0,0l0 0c0,0 1,-1 2,-2l41 -38c5,-5 6,-13 1,-18 0,0 0,0 0,0 -2,-2 -5,-3 -9,-4 -3,0 -6,1 -8,4 0,0 0,0 -1,0l-42 40c-4,3 -8,3 -11,-1 -3,-3 -3,-7 0,-10l55 -51c2,-3 4,-6 4,-9 0,-3 -1,-6 -3,-9 0,0 0,0 0,0 -5,-5 -13,-5 -18,0l-55 51c-3,3 -8,3 -10,0 -3,-3 -3,-8 0,-11l55 -51c0,0 0,0 0,0 0,0 0,0 0,0l8 -8c5,-4 5,-12 1,-17 -3,-3 -6,-4 -9,-4 -3,0 -6,1 -9,3l-126 118c-3,2 -6,3 -9,2 -2,-2 -4,-4 -4,-8l2 -55c0,-3 -1,-6 -3,-9 -3,-2 -6,-4 -9,-4 -6,0 -11,4 -12,9 -8,47 -20,84 -40,131z"></path>
+    </g>
+    <g id="_410741496">
+     <path class="fil0" d="M162 507c-7,0 -13,-2 -17,-7l-70 -75c-5,-5 -7,-11 -7,-17 1,-7 3,-13 8,-17l13 -12c4,-4 10,-6 16,-6 7,0 13,3 17,7l70 75c9,10 9,25 -1,34l-13 12c-4,4 -10,6 -16,6zm-57 -119c-2,0 -5,1 -6,2l-13 12c-1,2 -2,4 -3,6 0,3 1,5 3,7l70 75c1,1 4,2 6,2 2,0 5,-1 6,-2l13 -12c3,-3 4,-9 0,-12l-70 -75c-1,-2 -4,-3 -6,-3z"></path>
+    </g>
+    <g id="_410731368">
+     <path class="fil0" d="M110 382c-2,0 -4,0 -5,-2l-62 -66c-1,-1 -3,-2 -5,-3 -2,0 -4,-2 -5,-4 -1,-2 -1,-4 0,-6 22,-49 33,-87 42,-135 2,-12 14,-21 27,-21 8,1 15,4 20,9 5,5 7,12 7,20l-1 37 113 -106c11,-10 28,-9 39,2 7,8 9,19 5,28 5,2 10,4 14,8 0,0 0,0 0,0 5,6 7,13 7,20 0,4 -2,9 -4,13 5,1 9,4 12,7 1,1 2,3 3,4 2,4 1,8 -2,11 -4,2 -9,1 -11,-3 0,0 -1,-1 -1,-2 -2,-2 -6,-3 -9,-3 -3,0 -6,1 -9,3 0,0 0,0 0,0l-43 40c-3,3 -7,3 -10,0 -3,-3 -3,-8 0,-11l55 -51c2,-2 4,-5 4,-9 0,-3 -1,-6 -4,-8 0,-1 0,-1 0,-1 -4,-4 -12,-5 -17,0l-55 51c-3,3 -8,3 -11,0 -2,-3 -2,-8 1,-11l55 -51c0,0 0,0 0,0 0,0 0,0 0,0l8 -8c2,-2 4,-5 4,-8 0,-3 -1,-7 -4,-9 -4,-5 -12,-5 -17,-1l-126 118c-3,2 -6,3 -9,2 -3,-2 -4,-4 -4,-7l2 -56c0,-3 -1,-6 -4,-9 -2,-2 -5,-3 -8,-4 -6,0 -11,4 -12,9 -9,47 -20,84 -40,131 1,1 3,2 4,4l62 66c3,3 3,8 -1,10 -1,2 -3,2 -5,2z"></path>
+    </g>
+    <g id="_410737248">
+     <path class="fil0" d="M76 419c-2,0 -4,0 -5,-2l-64 -69c-5,-5 -7,-11 -7,-17 0,-7 3,-12 8,-17l12 -12c5,-4 11,-6 18,-6 6,0 12,3 16,8l62 66c3,3 3,8 -1,10 -3,3 -7,3 -10,0l-62 -66c-1,-2 -4,-3 -6,-3 -2,0 -5,1 -6,3l-13 11c-2,2 -3,4 -3,6 0,3 1,5 3,7l64 69c3,3 2,7 -1,10 -1,2 -3,2 -5,2z"></path>
+    </g>
+    <g id="_410736360">
+     <path class="fil0" d="M365 159c-2,0 -4,0 -6,-2 -3,-3 -3,-8 0,-11l86 -86c3,-3 8,-3 11,0 3,3 3,8 0,11l-86 86c-1,2 -3,2 -5,2z"></path>
+    </g>
+    <g>
+     <g id="_410732088">
+      <path class="fil0" d="M399 191c-3,0 -5,-2 -7,-4 -2,-4 -1,-8 3,-11l106 -60c3,-2 8,-1 10,2 2,4 1,9 -3,11l-105 61c-2,0 -3,1 -4,1z"></path>
+     </g>
+     <g id="_410736264">
+      <path class="fil0" d="M333 125c-1,0 -2,0 -3,-1 -4,-2 -5,-7 -3,-10l61 -106c2,-3 6,-5 10,-2 4,2 5,6 3,10l-61 105c-1,3 -4,4 -7,4z"></path>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
+             <button class="action-icon">10.4K</button></div>
+            <div class="second">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="17px" viewBox="0 0 511.626 511.627" style="enable-background:new 0 0 511.626 511.627;" xml:space="preserve">
+<g>
+	<path d="M477.364,127.481c-22.839-28.072-53.864-50.248-93.072-66.522c-39.208-16.274-82.036-24.41-128.479-24.41
+		c-46.442,0-89.269,8.136-128.478,24.41c-39.209,16.274-70.233,38.446-93.074,66.522C11.419,155.555,0,186.15,0,219.269
+		c0,28.549,8.61,55.299,25.837,80.232c17.227,24.934,40.778,45.874,70.664,62.813c-2.096,7.611-4.57,14.842-7.426,21.7
+		c-2.855,6.851-5.424,12.467-7.708,16.847c-2.286,4.374-5.376,9.23-9.281,14.555c-3.899,5.332-6.849,9.093-8.848,11.283
+		c-1.997,2.19-5.28,5.801-9.851,10.848c-4.565,5.041-7.517,8.33-8.848,9.853c-0.193,0.097-0.953,0.948-2.285,2.574
+		c-1.331,1.615-1.999,2.419-1.999,2.419l-1.713,2.57c-0.953,1.42-1.381,2.327-1.287,2.703c0.096,0.384-0.094,1.335-0.57,2.854
+		c-0.477,1.526-0.428,2.669,0.142,3.429v0.287c0.762,3.234,2.283,5.853,4.567,7.851c2.284,1.992,4.858,2.991,7.71,2.991h1.429
+		c12.375-1.526,23.223-3.613,32.548-6.279c49.87-12.751,93.649-35.782,131.334-69.094c14.274,1.523,28.074,2.283,41.396,2.283
+		c46.442,0,89.271-8.135,128.479-24.414c39.208-16.276,70.233-38.444,93.072-66.517c22.843-28.072,34.263-58.67,34.263-91.789
+		C511.626,186.154,500.207,155.555,477.364,127.481z M445.244,292.075c-19.896,22.456-46.733,40.303-80.517,53.529
+		c-33.784,13.223-70.093,19.842-108.921,19.842c-11.609,0-23.98-0.76-37.113-2.286l-16.274-1.708l-12.277,10.852
+		c-23.408,20.558-49.582,36.829-78.513,48.821c8.754-15.414,15.416-31.785,19.986-49.102l7.708-27.412l-24.838-14.27
+		c-24.744-14.093-43.918-30.793-57.53-50.114c-13.61-19.315-20.412-39.638-20.412-60.954c0-26.077,9.945-50.343,29.834-72.803
+		c19.895-22.458,46.729-40.303,80.515-53.531c33.786-13.229,70.089-19.849,108.92-19.849c38.828,0,75.13,6.617,108.914,19.845
+		c33.783,13.229,60.62,31.073,80.517,53.531c19.89,22.46,29.834,46.727,29.834,72.802S465.133,269.615,445.244,292.075z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+            <button class="action-icon">21</button>
+              </div>
+            
+          </div>
+       <div class="article-actions-right">
+            <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>save_alt</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rounded" transform="translate(-443.000000, -1529.000000)">
+            <g id="Content" transform="translate(100.000000, 1428.000000)">
+                <g id="-Round-/-Content-/-save_alt" transform="translate(340.000000, 98.000000)">
+                    <g>
+                        <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                        <path d="M19,13 L19,18 C19,18.55 18.55,19 18,19 L6,19 C5.45,19 5,18.55 5,18 L5,13 C5,12.45 4.55,12 4,12 C3.45,12 3,12.45 3,13 L3,19 C3,20.1 3.9,21 5,21 L19,21 C20.1,21 21,20.1 21,19 L21,13 C21,12.45 20.55,12 20,12 C19.45,12 19,12.45 19,13 Z M13,12.67 L14.88,10.79 C15.27,10.4 15.9,10.4 16.29,10.79 C16.68,11.18 16.68,11.81 16.29,12.2 L12.7,15.79 C12.31,16.18 11.68,16.18 11.29,15.79 L7.7,12.2 C7.31,11.81 7.31,11.18 7.7,10.79 C8.09,10.4 8.72,10.4 9.11,10.79 L11,12.67 L11,4 C11,3.45 11.45,3 12,3 C12.55,3 13,3.45 13,4 L13,12.67 Z" id="🔹Icon-Color" fill="#1D1D1D"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+             <button class="action-icon"></button> </svg>
+            
+ 
+              
+            <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline></line> <button class="action-icon"></button></svg>
+         
+      </div>
+      
+    </div>
+  </article>
+	</main>
+
+
   </body>
   </html>
