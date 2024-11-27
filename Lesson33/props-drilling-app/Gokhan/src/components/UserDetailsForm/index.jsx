@@ -1,9 +1,17 @@
 import './styles.css';
+import { useState } from 'react';
 
 export const UserDetailsForm = ({ username, onUsernameChange }) => {
+  const [tempUsername, setTempUsername] = useState(username);
+
 
   const handleChange = (e) => {
     onUsernameChange(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onUsernameChange(tempUsername);
   };
 
   return (
@@ -16,7 +24,7 @@ export const UserDetailsForm = ({ username, onUsernameChange }) => {
           onChange={handleChange}
         />
       </label>
-      <button type="submit" onClick={() => onUsernameChange(username)}>Update</button>
+      <button type="submit">Update</button>
     </form>
   );
 };
