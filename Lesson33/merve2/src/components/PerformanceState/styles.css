@@ -1,19 +1,18 @@
-.performance-state {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 20px 0;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+.performance-state-container {
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 20px; 
+    margin: 30px 0; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    display: block; 
+    width: 100%; 
 }
 
-.performance-state h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.performance-state p {
-    font-size: 18px;
-    color: #555;
-}
+.performance-state-container h2 {
+    font-size: 24px; 
+    margin-bottom: 15px; 
+    color: #333; 
+}  

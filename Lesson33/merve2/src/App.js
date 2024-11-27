@@ -1,41 +1,53 @@
+
+import React, { useState } from 'react';
 import { List } from './components/List';
 import { Navbar } from './components/Navbar';
 import { Account } from './components/Account';
 import { PerformanceState } from './components/PerformanceState';
+import { LogIn } from './components/LogIn'; 
+import { UserProvider, useUserContext } from './context/UserContext'; 
 import './App.css';
-import { loggedInUser } from './data';
-import { useState } from 'react';
 
 const initialTodos = [
     { id: 1, text: 'Do dishes', completed: true },
-    { id: 2, text: 'Do homework', completed: true },
-    { id: 3, text: 'Go running', completed: true },
-    { id: 4, text: 'Do dishes 2', completed: true },
-    { id: 5, text: 'Do homework 3', completed: true },
-    { id: 6, text: 'Go running 4', completed: true },
+    { id: 2, text: 'Do homework', completed: false },
+    { id: 3, text: 'Go running', completed: false },
+    { id: 4, text: 'Read a book', completed: false },
+    { id: 5, text: 'Write code', completed: false },
+    { id: 6, text: 'Go grocery shopping', completed: false },
 ];
 
 export const App = () => {
-    const [user, setUser] = useState(loggedInUser);
     const [todos, setTodos] = useState(initialTodos); 
-    const updateUsername = (newUsername) => {
-        setUser((prevUser) => ({ ...prevUser, username: newUsername }));
-    };
-
-    
-    const totalTodos = todos.length; 
-    const completedTodos = todos.filter(todo => todo.completed).length; 
 
     return (
-        <div className='container'>
-            <Navbar isLoggedInUser={user.isLoggedInUser} updateUser={setUser} />
-            {user.isLoggedInUser && (
+        <UserProvider>
+            <div className='container'>
+                <Navbar />
+                <MainContent todos={todos} setTodos={setTodos} /> 
+            </div>
+        </UserProvider>
+    );
+};
+
+const MainContent = ({ todos, setTodos }) => { 
+    const { state, dispatch } = useUserContext(); 
+
+    const updateUsername = (newUsername) => {
+        dispatch({ type: 'UPDATE_USERNAME', payload: { username: newUsername } });
+    };
+
+    return (
+        <>
+            {state.isLoggedInUser ? (
                 <>
-                    <List todos={todos} setTodos={setTodos} />
-                    <Account incomingUsername={user.username} updateUsername={updateUsername} />
-                    <PerformanceState totalTodos={totalTodos} completedTodos={completedTodos} />
+                    <Account incomingUsername={state.username} updateUsername={updateUsername} /> 
+                    <List todos={todos} setTodos={setTodos} /> 
+                    <PerformanceState totalTodos={todos.length} completedTodos={todos.filter(todo => todo.completed).length} />
                 </>
+            ) : (
+                <LogIn />
             )}
-        </div>
+        </>
     );
 };

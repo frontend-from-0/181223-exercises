@@ -1,30 +1,26 @@
-import { useState, useEffect } from "react";
-import './styles.css';
+
+import React, { useState, useEffect } from 'react';
 
 export const UserDetailsForm = ({ incomingUsername, updateUsername }) => {
-  const [username, setUsername] = useState(incomingUsername);
+    const [username, setUsername] = useState(incomingUsername);
 
-  
-  useEffect(() => {
-    setUsername(incomingUsername);
-  }, [incomingUsername]);
+    useEffect(() => {
+        setUsername(incomingUsername);
+    }, [incomingUsername]);
 
-  function handleSubmit(e) {
-    e.preventDefault(); 
-    console.log('New user name is: ', username);
-    updateUsername(username); 
-    console.log('Username updated successfully!'); // B
-  }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        updateUsername(username); 
+    };
 
-  return (
-    <form className='user-details-form' onSubmit={handleSubmit}>
-      <input 
-        type="text" 
-        name="username" 
-        onChange={(e) => setUsername(e.target.value)} 
-        value={username} 
-      />
-      <button type="submit">Save</button>
-    </form>
-  );
-}
+    return (
+        <form onSubmit={handleSubmit}>
+            <input 
+                type="text" 
+                value={username} 
+                onChange={(e) => setUsername(e.target.value)} 
+            />
+            <button type="submit">Save</button>
+        </form>
+    );
+};

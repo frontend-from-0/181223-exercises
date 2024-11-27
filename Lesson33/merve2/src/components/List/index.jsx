@@ -1,8 +1,6 @@
-import {useState} from 'react';
-import {todoData} from '../../data';
-import './styles.css';
 
 
+import './styles.css'; 
 
 export const List = ({ todos, setTodos }) => {
     const toggleComplete = (id) => {
@@ -12,20 +10,17 @@ export const List = ({ todos, setTodos }) => {
     };
 
     return (
-        <ul>
+        <div className="list-container"> 
+            <h2>Todo List</h2>
             {todos.map(todo => (
-                <li key={todo.id} className="todo-item">
-                    <span className={todo.completed ? 'completed' : ''}>
-                        {todo.text}
-                    </span>
-                    <button 
-                        className={todo.completed ? 'undo' : 'complete'} 
-                        onClick={() => toggleComplete(todo.id)}
-                    >
-                        {todo.completed ? 'Undo' : 'Complete'}
-                    </button>
-                </li>
+                <div 
+                    key={todo.id} 
+                    className={`todo-item ${todo.completed ? 'completed' : ''}`} 
+                    onClick={() => toggleComplete(todo.id)}
+                >
+                    {todo.text}
+                </div>
             ))}
-        </ul>
+        </div>
     );
 };
