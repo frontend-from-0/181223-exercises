@@ -1,0 +1,27 @@
+
+
+.list-container {
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+  padding: 20px; 
+  margin: 30px 0; 
+  background-color: #e9f7ef; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  display: block; 
+  width: 100%; 
+}
+
+.todo-item {
+  cursor: pointer; 
+  padding: 10px; 
+  border-bottom: 1px solid #ccc; 
+}
+
+.todo-item:last-child {
+  border-bottom: none; 
+}
+
+.todo-item.completed {
+  text-decoration: line-through; 
+  color: gray; 
+}
