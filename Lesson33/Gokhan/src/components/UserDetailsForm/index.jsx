@@ -6,7 +6,7 @@ export const UserDetailsForm = ({ username, onUsernameChange }) => {
 
 
   const handleChange = (e) => {
-    onUsernameChange(e.target.value);
+    setTempUsername(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -15,12 +15,12 @@ export const UserDetailsForm = ({ username, onUsernameChange }) => {
   };
 
   return (
-    <form className='user-details-form'>
+    <form className='user-details-form' onSubmit={handleSubmit}>
       <label>
         Username:
         <input
           type="text"
-          value={username}
+          value={tempUsername}
           onChange={handleChange}
         />
       </label>
