@@ -1,8 +1,10 @@
 import './styles.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { UserContex } from '../../context/UserContext';
 
 export const UserDetailsForm = ({ username, onUsernameChange }) => {
   const [tempUsername, setTempUsername] = useState(username);
+  const { setUser } = useContext(UserContex);
 
 
   const handleChange = (e) => {
@@ -12,6 +14,7 @@ export const UserDetailsForm = ({ username, onUsernameChange }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onUsernameChange(tempUsername);
+    setUser(tempUsername);
   };
 
   return (

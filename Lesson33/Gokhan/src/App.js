@@ -55,19 +55,17 @@ export const App = () => {
 			</div>
 
 			<div className='app'>
-				{showAccountPage ? (
-					<Account
-						username={user.name}
-						onUsernameChange={handleUserNameChange}
-					/>
+				{user.isLoggedInUser ? (
+					showAccountPage ? (
+						<Account
+							username={user.name}
+							onUsernameChange={handleUserNameChange}
+						/>
+					) : (
+						<List todos={todos} setTodos={setTodos} complateTodos={complateTodos} />
+					)
 				) : (
-					<>
-						{user.isLoggedInUser && showListPage ? (
-							<List todos={todos} setTodos={setTodos} complateTodos={complateTodos} />
-						) : (
-							<h2 className='signin-message'>Please login</h2>
-						)}
-					</>
+					<h2 className='signin-message'>Please login</h2>
 				)}
 				{user.isLoggedInUser && !showAccountPage && (
 					<PerformanceState complateTodos={complateTodos.length} totalTodos={todos.length} />
