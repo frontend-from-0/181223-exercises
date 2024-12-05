@@ -1,0 +1,47 @@
+.todo__list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+h2 {
+  font-size: 2.1em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.todo__list > li {
+  border: 2px solid gray;
+  border-radius: 8px;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  justify-content: space-between;
+  margin: 15px auto;
+  color: rgb(6, 88, 6);
+  font-size: 1.2em;
+}
+
+.todo__list > li:hover {
+  cursor: pointer;
+  font-weight: 550;
+}
+
+.btn {
+  background-color: inherit;
+  border: none;
+  border-radius: 2px;
+  padding-right: 15px;
+}
+.btn:hover {
+  background-color: var(--color-light);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(110, 59, 59);
+}
