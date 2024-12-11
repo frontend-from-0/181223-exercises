@@ -1,10 +1,10 @@
 import './styles.css';
 import { useContext, useState } from 'react';
-import { UserContex } from '../../context/UserContext';
+import { UserContext } from '../../context/UserContext';
 
 export const UserDetailsForm = ({ username, onUsernameChange }) => {
   const [tempUsername, setTempUsername] = useState(username);
-  const { setUser } = useContext(UserContex);
+  const { setUser } = useContext(UserContext);
 
 
   const handleChange = (e) => {
