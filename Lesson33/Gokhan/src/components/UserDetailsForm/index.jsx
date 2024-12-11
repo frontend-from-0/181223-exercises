@@ -1,11 +1,10 @@
 import './styles.css';
 import { useContext, useState } from 'react';
-import { UserContext } from '../../context/UserContext';
+import { UserContext } from '../../Context/UserContext';
 
-export const UserDetailsForm = ({ username, onUsernameChange }) => {
-  const [tempUsername, setTempUsername] = useState(username);
-  const { setUser } = useContext(UserContext);
-
+export const UserDetailsForm = () => {
+  const { user, setUser } = useContext(UserContext);
+  const [tempUsername, setTempUsername] = useState(user.name);
 
   const handleChange = (e) => {
     setTempUsername(e.target.value);
@@ -13,8 +12,7 @@ export const UserDetailsForm = ({ username, onUsernameChange }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onUsernameChange(tempUsername);
-    setUser(tempUsername);
+    setUser((prevUser) => ({ ...prevUser, name: tempUsername }));
   };
 
   return (

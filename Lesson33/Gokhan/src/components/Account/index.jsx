@@ -1,14 +1,11 @@
-import { UserDetailsForm } from '../UserDetailsForm';
+import { UserDetailsForm } from "../UserDetailsForm";
 
-export const Account = ({ username, onUserNameChange }) => {
+export const Account = () => {
 
   return (
     <div className="account-container">
       <h1>Account information</h1>
-      <UserDetailsForm
-        username={username}
-        onUsernameChange={onUserNameChange}
-      />
+      <UserDetailsForm />
     </div>
   );
 };

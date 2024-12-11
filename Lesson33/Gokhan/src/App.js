@@ -1,15 +1,15 @@
-import { Account } from './components/Account';
+import { UserProvider, useUser } from './Context/UserContext';
 import { List } from './components/List';
 import { Navbar } from './components/Navbar';
+import { Account } from './components/Account';
 import { PerformanceState } from './components/PerformanceState';
 import './App.css';
-import { loggedInUser, loggedOutUser, todoData } from './data';
-import { useState } from 'react';
+import { todoData } from './data';
 
 export const App = () => {
-	const [user, setUser] = useState(loggedInUser);
+	const { user, setUser, login, logout, updateUsername } = useUser();
 	const [showAccountPage, setShowAccountPage] = useState(false);
-	const [todos, setTodos] = useState(todoData);
+	const completeTodos = todoData.filter(todo => todo.completed);
 
 	const handleAccountClick = () => {
 		setShowAccountPage(true);
@@ -20,23 +20,21 @@ export const App = () => {
 	};
 
 	const handleSignIn = () => {
-		setUser(loggedInUser);
+		login();
 		setShowAccountPage(false);
 	};
 
 	const handleSignOut = () => {
-		setUser(loggedOutUser);
+		logout();
 		setShowAccountPage(false);
 	};
 
 	const handleUserNameChange = (newUserName) => {
-		setUser((prevUser) => ({ ...prevUser, name: newUserName }));
+		updateUsername(newUserName);
 	};
 
-	const completeTodos = todos.filter(todo => todo.completed);
-
 	return (
-		<>
+		<UserProvider>
 			<div className='container'>
 				<Navbar
 					isLoggedInUser={user.isLoggedInUser}
@@ -56,15 +54,15 @@ export const App = () => {
 							onUsernameChange={handleUserNameChange}
 						/>
 					) : (
-						<List todos={todos} setTodos={setTodos} completeTodos={completeTodos} />
+						<List todos={todoData} completeTodos={completeTodos} />
 					)
 				) : (
 					<h2 className='signin-message'>Please login</h2>
 				)}
-				{user.isLoggedInUser && !showAccountPage && (
-					<PerformanceState completeTodos={completeTodos.length} totalTodos={todos.length} />
-				)}
+
+				<PerformanceState completeTodos={completeTodos.length} totalTodos={todoData.length} />
+
 			</div>
-		</>
+		</UserProvider>
 	);
 };
