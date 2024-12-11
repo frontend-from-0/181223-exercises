@@ -1,4 +1,5 @@
 import './styles.css';
+
 export const List = ({ todos, setTodos }) => {
 
 	const handleClick = (id) => {
@@ -8,7 +9,9 @@ export const List = ({ todos, setTodos }) => {
 			)
 		);
 	};
+
 	const completedTodos = todos.filter(todo => todo.completed);
+
 	return (
 		<div>
 			<h2>Todo List</h2>
