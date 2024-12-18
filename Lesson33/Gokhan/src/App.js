@@ -5,9 +5,10 @@ import { Account } from './components/Account';
 import { PerformanceState } from './components/PerformanceState';
 import './App.css';
 import { todoData } from './data';
+import { useState } from 'react';
 
 export const App = () => {
-	const { user, setUser, login, logout, updateUsername } = useUser();
+	const { user, login, logout, updateUsername } = useUser();
 	const [showAccountPage, setShowAccountPage] = useState(false);
 	const completeTodos = todoData.filter(todo => todo.completed);
 
@@ -38,7 +39,6 @@ export const App = () => {
 			<div className='container'>
 				<Navbar
 					isLoggedInUser={user.isLoggedInUser}
-					updateUser={setUser}
 					onAccountClick={handleAccountClick}
 					onHomeClick={handleHomeClick}
 					onSignIn={handleSignIn}

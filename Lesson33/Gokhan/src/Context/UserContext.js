@@ -1,16 +1,13 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-    const [user, setUser] = useState({
-        isLoggedInUser: false,
-        name: '',
-    });
+    const [user, setUser] = useState(null);
 
     const login = () => setUser({ isLoggedInUser: true, name: 'John Doe' });
     const logout = () => setUser({ isLoggedInUser: false, name: '' });
-    const updateUsername = (newUserName) => setUser((prevUser) => ({ ...prevUser, name: newUserName }));
+    const updateUsername = (name) => setUser((prevUser) => ({ ...prevUser, name }));
 
     return (
         <UserContext.Provider value={{ user, setUser, login, logout, updateUsername }}>
@@ -20,3 +17,5 @@ export const UserProvider = ({ children }) => {
 };
 
 export const useUser = () => useContext(UserContext);
+
+export { UserContext };
