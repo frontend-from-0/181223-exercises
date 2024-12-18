@@ -73,7 +73,7 @@ import { Navbar } from './components/Navbar';
 import { Account } from './components/Account';
 import { PerformanceState } from './components/PerformanceState';
 import { LogIn } from './components/LogIn';
-import { UserProvider, useUserContext } from './context/UserContext';
+import { UserProvider, useUserContext } from './Context';
 import './App.css';
 
 const initialTodos = [
