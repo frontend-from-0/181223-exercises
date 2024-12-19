@@ -1,14 +1,14 @@
 .account-container {
-  border: 0.6dvh solid #e9775a;
+  border: 0.5dvh solid #e9775a;
   border-radius: 8px;
   padding: 8px;
   padding-top: 0;
   padding-bottom: 20px;
   margin: 30px auto;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: block;
-  width: 45%;
+  width: 30%;
 }
 
 .account-container h1 {

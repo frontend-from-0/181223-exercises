@@ -1,3 +1,13 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+  position: absolute;
+  width: 100%;
+}
+
 .navbar a {
   margin-left: 20px;
   text-decoration: none;
@@ -14,14 +24,4 @@
 
 .navbar a:last-child {
   margin-left: 10px;
-}
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 10px;
-  background-color: #f8f8f8;
-  position: absolute;
-  width: 100%;
-  top: 0;
 }
