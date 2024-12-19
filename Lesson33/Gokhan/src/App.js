@@ -8,12 +8,12 @@ import { UserProvider, useUserContext } from './components/Context/UserContext';
 import './App.css';
 
 const initialTodos = [
-	{ id: 1, text: 'Do dishes', completed: false },
-	{ id: 2, text: 'Do homework', completed: false },
-	{ id: 3, text: 'Go running', completed: false },
-	{ id: 4, text: 'Read a book', completed: false },
-	{ id: 5, text: 'Write code', completed: false },
-	{ id: 6, text: 'Go grocery shopping', completed: false },
+	{ id: 1, text: 'Do not give up', completed: false },
+	{ id: 2, text: 'Keep Dreaming', completed: true },
+	{ id: 3, text: 'Follow Your Dreams', completed: false },
+	{ id: 4, text: 'Work Hard', completed: false },
+	{ id: 5, text: 'Think Possitive', completed: true },
+	{ id: 6, text: 'Finish Course', completed: false },
 ];
 
 export const App = () => {
