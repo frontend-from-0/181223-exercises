@@ -4,7 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Account } from './components/Account';
 import { PerformanceState } from './components/PerformanceState';
 import { LogIn } from './components/LogIn';
-import { UserProvider, useUserContext } from './components/Context/UserContext';
+import { useUserContext } from './components/Context/UserContext';
 import './App.css';
 
 const initialTodos = [
@@ -20,17 +20,15 @@ export const App = () => {
 	const [todos, setTodos] = useState(initialTodos);
 
 	return (
-		<UserProvider>
-			<div className='container'>
-				<Navbar />
-				<MainContent todos={todos} setTodos={setTodos} />
-			</div>
-		</UserProvider>
+		<div className='container'>
+			<Navbar />
+			<MainContent todos={todos} setTodos={setTodos} />
+		</div>
 	);
 };
 
-const MainContent = ({ todos, setTodos }) => {
-	const { state, dispatch } = useUserContext();
+const MainContent = () => {
+	const { state, dispatch, todos, setTodos } = useUserContext();
 
 	const updateUsername = (newUsername) => {
 		dispatch({ type: 'UPDATE_USERNAME', payload: { username: newUsername } });
