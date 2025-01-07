@@ -27,20 +27,24 @@ export const App = () => {
 	);
 };
 
-const MainContent = () => {
-	const { state, dispatch, todos, setTodos } = useUserContext();
+const MainContent = ({ todos, setTodos }) => {
+	const { state } = useUserContext();
 
-	const updateUsername = (newUsername) => {
-		dispatch({ type: 'UPDATE_USERNAME', payload: { username: newUsername } });
-	};
+	// const updateUsername = (newUsername) => {
+	// 	dispatch({ type: 'UPDATE_USERNAME', payload: { username: newUsername } });
+	// };
 
 	return (
 		<>
 			{state.isLoggedInUser ? (
 				<>
-					<Account incomingUsername={state.username} updateUsername={updateUsername} />
-					<List todos={todos} setTodos={setTodos} />
-					<PerformanceState totalTodos={todos.length} completedTodos={todos.filter(todo => todo.completed).length} />
+					<Account />
+					<List
+						todos={todos}
+						setTodos={setTodos} />
+					<PerformanceState
+						totalTodos={todos.length}
+						completedTodos={todos.filter(todo => todo.completed).length} />
 				</>
 			) : (
 				<LogIn />

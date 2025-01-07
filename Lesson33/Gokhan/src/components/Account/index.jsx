@@ -13,7 +13,9 @@ export const Account = () => {
   return (
     <div className="account-container">
       <h1>Account information</h1>
-      <UserDetailsForm incomingUsername={state.username} updateUsername={updateUsername} />
+      <UserDetailsForm
+        incomingUsername={state.username}
+        updateUsername={updateUsername} />
     </div>
   );
-}
+};
