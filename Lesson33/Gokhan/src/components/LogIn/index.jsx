@@ -1,16 +1,31 @@
 import { useState } from 'react';
 import { useUserContext } from '../Context/UserContext';
+import registeredUsers from '../Data/registeredUsers';
 import './styles.css';
 
 export const LogIn = () => {
     const { dispatch } = useUserContext();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (username && password) {
+
+        if (!username || !password) {
+            // dispatch({ type: 'LOGIN', payload: { username } });
+            setError('Both Fields Are Required')
+        }
+
+        const user = registeredUsers.find(
+            (user) => user.username === username && user.password === pasword
+        );
+
+        if (user) {
             dispatch({ type: 'LOGIN', payload: { username } });
+            setError('');
+        } else {
+            setError('Invalid Username or Password');
         }
     };
 

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useUserContext } from '../Context/UserContext';
 
-export const UserDetailsForm = ({ incomingUsername, updateUsername }) => {
-  const [username, setUsername] = useState(incomingUsername);
+export const UserDetailsForm = () => {
+  const { state, dispatch } = useUserContext();
+  const [username, setUsername] = useState(state.username);
 
   useEffect(() => {
-    setUsername(incomingUsername);
-  }, [incomingUsername]);
+    setUsername(state.username);
+  }, [state.username]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateUsername(username);
+    dispatch({ type: 'UPDATE_USER', payload: { username } });
   };
 
   return (
