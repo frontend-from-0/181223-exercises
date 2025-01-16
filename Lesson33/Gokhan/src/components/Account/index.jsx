@@ -1,11 +1,12 @@
-import { UserDetailsForm } from '../UserDetailsForm';
+import React from 'react';
 import './styles.css';
+import { UserDetailsForm } from './UserDatailsForm';
 
-export const Account = ({ incomingUsername, updateUsername }) => {
+export const Account = () => {
   return (
     <div className="account-container">
       <h1>Account information</h1>
-      <UserDetailsForm incomingUsername={incomingUsername} updateUsername={updateUsername} />
+      <UserDetailsForm />
     </div>
   );
-}
+};
