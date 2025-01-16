@@ -15,5 +15,12 @@ export const Exercise2 = () => {
 		);
 	}
 
-	return <button onClick={handleClick}>{label}</button>;
+	return (
+        <button 
+            onClick={handleClick} 
+            style={{ color: label === 'Off' ? 'darkgray' : 'black' }} 
+        >
+            {label}
+        </button>
+    );
 };
