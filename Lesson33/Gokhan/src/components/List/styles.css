@@ -1,7 +1,36 @@
-.todo__list {
-  list-style-type: none;
-  padding-left: 0;
+.list-container h2 {
+  color: #696363;
 }
+
+.list-container {
+  border: 0.5dvh solid #e9775a;
+  border-radius: 10px;
+  padding: 15px;
+  padding-top: 2px;
+  margin: 5px auto;
+  background-color: #f9f9f9;
+  color: #696363;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 20%;
+}
+
+.todo-item {
+  cursor: pointer;
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #e9775a;
+}
+
+/* 
 
 h2 {
   font-size: 2.1em;
@@ -44,4 +73,4 @@ h3 {
 .completed {
   text-decoration: line-through;
   color: rgb(110, 59, 59);
-}
+} */
