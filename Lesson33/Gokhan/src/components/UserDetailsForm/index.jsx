@@ -3,9 +3,6 @@ import { useUserContext } from '../Context/UserContext';
 
 export const UserDetailsForm = () => {
   const { state, dispatch } = useUserContext();
-
-  const updateUsername = (newUserName) => {
-    dispatch({ type: 'UPDATE_USERNAME', payload: { username: newUserName } });
   };
 
   return (
