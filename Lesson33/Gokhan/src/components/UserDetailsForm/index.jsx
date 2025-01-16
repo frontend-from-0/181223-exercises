@@ -1,52 +1,28 @@
-import React from 'react';
-import { useUserContext } from '../Context/UserContext';
+import React, { useState } from 'react';
 
-export const UserDetailsForm = () => {
-  const { state, dispatch } = useUserContext();
+export const UserDetailsForm = ({ username, onUsernameChange }) => {
+    const [tempUsername, setTempUsername] = useState(username);
 
-  const updateUsername = (newUserName) => {
-    dispatch({ type: 'UPDATE_USERNAME', payload: { username: newUserName } });
-  };
+    const handleChange = (e) => {
+        setTempUsername(e.target.value);
+    };
 
-  return (
-    <form>
-      <label>
-        Username:
-        <input
-          type="text"
-          value={state.username}
-          onChange={(e) => updateUsername(e.target.value)}
-        />
-      </label>
-    </form>
-  );
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        onUsernameChange(tempUsername);
+    };
+
+    return (
+        <form className='user-details-form' onSubmit={handleSubmit}>
+            <label>
+                Username:
+                <input
+                    type="text"
+                    value={tempUsername}
+                    onChange={handleChange}
+                />
+            </label>
+            <button type="submit">Update</button>
+        </form>
+    );
 };
-
-// import React, { useState, useEffect } from 'react';
-// import { useUserContext } from '../Context/UserContext';
-
-// export const UserDetailsForm = () => {
-//   const [username, setUsername] = useState(incomingUsername);
-
-//   useEffect(() => {
-//     setUsername(incomingUsername);
-//   }, [incomingUsername]);
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     updateUsername(username);
-//   };
-
-//   return (
-//     <form>
-//       <label>
-//         Username:
-//         <input
-//           type='text'
-//           value={state.username}
-//           onChange={(e) => updateUsername(e.target.value)}
-//         />
-//       </label>
-//     </form>
-//   );
-// };
