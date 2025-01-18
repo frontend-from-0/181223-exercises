@@ -1,24 +1,36 @@
 import './styles.css';
 
 export const List = ({ todos, setTodos }) => {
-	const toggleComplete = (id) => {
-		setTodos(todos.map(todo =>
-			todo.id === id ? { ...todo, completed: !todo.completed } : todo
-		));
-	};
 
+	const handleClick = (id) => {
+		setTodos(prevState =>
+			prevState.map(todo =>
+				todo.id === id ? { ...todo, completed: !todo.completed } : todo
+			)
+		);
+	};
+	const completedTodos = todos.filter(todo => todo.completed);
 	return (
-		<div className="list-container">
+		<div>
 			<h2>Todo List</h2>
-			{todos.map(todo => (
-				<div
-					key={todo.id}
-					className={`todo-item ${todo.completed ? 'completed' : ''}`}
-					onClick={() => toggleComplete(todo.id)}
-				>
-					{todo.text}
-				</div>
-			))}
+			<ul className='todo__list'>
+				{todos.map((item) => (
+					<li onClick={() => handleClick(item.id)} key={item.id}>
+						<span className={item.completed ? 'completed' : ''}>
+							{item.title}
+						</span>
+						<button className={`btn ${item.completed ? 'completed' : ''}`} onClick={() => handleClick(item.id)}>X</button>
+					</li>
+				))}
+			</ul>
+			<h3>Completed Todos</h3>
+			<ul class='completed-todos'>
+				{completedTodos.length > 0 ? (
+					completedTodos.map(item => <li key={item.id}>{item.title}</li>)
+				) : (
+					<li class='done-tasks'>No completed todos</li>
+				)}
+			</ul>
 		</div>
 	);
 };

@@ -1,52 +1,31 @@
-import React from 'react';
-import { useUserContext } from '../Context/UserContext';
 
-export const UserDetailsForm = () => {
-  const { state, dispatch } = useUserContext();
+import './styles.css';
+import { useState } from 'react';
 
-  const updateUsername = (newUserName) => {
-    dispatch({ type: 'UPDATE_USERNAME', payload: { username: newUserName } });
+export const UserDetailsForm = ({ username, onUsernameChange }) => {
+  const [tempUsername, setTempUsername] = useState(username);
+
+
+  const handleChange = (e) => {
+    setTempUsername(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onUsernameChange(tempUsername);
   };
 
   return (
-    <form>
+    <form className='user-details-form' onSubmit={handleSubmit}>
       <label>
         Username:
         <input
           type="text"
-          value={state.username}
-          onChange={(e) => updateUsername(e.target.value)}
+          value={tempUsername}
+          onChange={handleChange}
         />
       </label>
+      <button type="submit">Update</button>
     </form>
   );
 };
-
-// import React, { useState, useEffect } from 'react';
-// import { useUserContext } from '../Context/UserContext';
-
-// export const UserDetailsForm = () => {
-//   const [username, setUsername] = useState(incomingUsername);
-
-//   useEffect(() => {
-//     setUsername(incomingUsername);
-//   }, [incomingUsername]);
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     updateUsername(username);
-//   };
-
-//   return (
-//     <form>
-//       <label>
-//         Username:
-//         <input
-//           type='text'
-//           value={state.username}
-//           onChange={(e) => updateUsername(e.target.value)}
-//         />
-//       </label>
-//     </form>
-//   );
-// };
