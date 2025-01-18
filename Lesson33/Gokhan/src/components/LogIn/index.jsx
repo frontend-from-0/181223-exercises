@@ -18,7 +18,7 @@ export const LogIn = () => {
         }
 
         const user = registeredUsers.find(
-            (user) => user.username === username && user.password === pasword
+            (user) => user.username === username && user.password === password
         );
 
         if (user) {

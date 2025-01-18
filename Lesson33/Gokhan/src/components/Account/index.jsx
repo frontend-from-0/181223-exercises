@@ -1,12 +1,14 @@
-import React from 'react';
-import './styles.css';
-import { UserDetailsForm } from './UserDatailsForm';
+import { UserDetailsForm } from '../UserDetailsForm';
 
-export const Account = () => {
+export const Account = ({ username, onUserNameChange }) => {
+
   return (
     <div className="account-container">
       <h1>Account information</h1>
-      <UserDetailsForm />
+      <UserDetailsForm
+        username={username}
+        onUsernameChange={onUserNameChange}
+      />
     </div>
   );
 };
