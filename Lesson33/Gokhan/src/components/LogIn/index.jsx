@@ -13,16 +13,20 @@ export const LogIn = () => {
         e.preventDefault();
 
         if (!username || !password) {
-            // dispatch({ type: 'LOGIN', payload: { username } });
-            setError('Both Fields Are Required')
+            dispatch({ type: 'LOGIN', payload: { username } });
+            setError('Both Fields Are Required');
+            return;
         }
 
         const user = registeredUsers.find(
-            (user) => user.username === username && user.password === pasword
+            (user) => user.username === username && user.password === password
         );
 
         if (user) {
-            dispatch({ type: 'LOGIN', payload: { username } });
+            dispatch({
+                type: 'LOGIN',
+                payload: { username, isLoggedInUser: true }
+            });
             setError('');
         } else {
             setError('Invalid Username or Password');
@@ -32,6 +36,7 @@ export const LogIn = () => {
     return (
         <form className="login-form" onSubmit={handleSubmit}>
             <h2>LOGIN</h2>
+            {error && <p className='error-message'>{error}</p>}
             <div class="username-container">
                 <label for="Username">Username</label>
                 <input

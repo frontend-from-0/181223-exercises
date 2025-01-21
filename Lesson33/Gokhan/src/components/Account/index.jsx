@@ -1,14 +1,16 @@
-import { UserDetailsForm } from '../UserDetailsForm';
+import React, { useContext } from 'react';
+import { UserContext } from './context/UserContext';
+import { UserDetailsForm } from './UserDetailsForm';
 
-export const Account = ({ username, onUserNameChange }) => {
+export const Account = () => {
+
+  const { username } = useContext(UserContext);
 
   return (
     <div className="account-container">
-      <h1>Account information</h1>
-      <UserDetailsForm
-        username={username}
-        onUsernameChange={onUserNameChange}
-      />
+      <h2>Account information</h2>
+      <p>Current Username: {username}</p>
+      <UserDetailsForm />
     </div>
   );
 };

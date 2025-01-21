@@ -1,6 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 
-export const UserDetailsForm = ({ username, onUsernameChange }) => {
+const UserContext = createContext();
+
+export const UserProvider = ({ children }) => {
+    const [username, setUsername] = useState('defaultUser');
+
+    const updateUsername = (newUsername) => {
+        setUsername(newUsername);
+    };
+
+    return (
+        <UserContext.Provider value={{ username, updateUsername }}>
+            {children}
+        </UserContext.Provider>
+    );
+};
+
+export const UserDetailsForm = () => {
+    const { username, updateUsername } = useContext(UserContext);
     const [tempUsername, setTempUsername] = useState(username);
 
     const handleChange = (e) => {
@@ -9,7 +26,7 @@ export const UserDetailsForm = ({ username, onUsernameChange }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onUsernameChange(tempUsername);
+        updateUsername(tempUsername);
     };
 
     return (
@@ -17,12 +34,12 @@ export const UserDetailsForm = ({ username, onUsernameChange }) => {
             <label>
                 Username:
                 <input
-                    type="text"
+                    type='text'
                     value={tempUsername}
                     onChange={handleChange}
                 />
             </label>
-            <button type="submit">Update</button>
+            <button type='submit'>Update</button>
         </form>
     );
 };
