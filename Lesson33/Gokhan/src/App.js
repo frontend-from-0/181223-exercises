@@ -5,7 +5,6 @@ import { PerformanceState } from './components/PerformanceState';
 import './App.css';
 import { loggedInUser, loggedOutUser, todoData } from './data';
 import { useState } from 'react';
-import { UserProvider } from './context/UserContext';
 
 export const App = () => {
 	// const [user, setUser] = useState(loggedInUser);
@@ -46,7 +45,7 @@ export const App = () => {
 	const complateTodos = todos.filter(todo => todo.completed);
 
 	return (
-		<UserProvider>
+		<>
 			<div className='container'>
 				<Navbar
 					isLoggedInUser={user.isLoggedInUser}
@@ -87,6 +86,6 @@ export const App = () => {
 					</>
 				)}
 			</div>
-		</UserProvider>
+		</>
 	);
 };
