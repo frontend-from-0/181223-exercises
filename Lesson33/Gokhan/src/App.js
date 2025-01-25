@@ -7,7 +7,6 @@ import { loggedInUser, loggedOutUser, todoData } from './data';
 import { useState } from 'react';
 
 export const App = () => {
-	// const [user, setUser] = useState(loggedInUser);
 	const [showAccountPage, setShowAccountPage] = useState(false);
 	const [showListPage, setShowListPage] = useState(false);
 	const [todos, setTodos] = useState(todoData);
@@ -23,24 +22,15 @@ export const App = () => {
 	};
 
 	const handleSignIn = () => {
-		setUser(loggedInUser);
 		setShowListPage(true);
 		setShowAccountPage(false);
 
 	};
 
 	const handleSignOut = () => {
-		dispatch({
-			type: 'LOGOUT',
-		});
-		setUser(loggedOutUser);
 		setShowAccountPage(false);
 		setShowListPage(false);
 	};
-
-	// const handleUserNameChange = (newUserName) => {
-	// 	setUser((prevUser) => ({ ...prevUser, name: newUserName }));
-	// };
 
 	const complateTodos = todos.filter(todo => todo.completed);
 
@@ -48,8 +38,6 @@ export const App = () => {
 		<>
 			<div className='container'>
 				<Navbar
-					isLoggedInUser={user.isLoggedInUser}
-					// updateUser={setUser}
 					onAccountClick={handleAccountClick}
 					onHomeClick={handleHomeClick}
 					onSignIn={handleSignIn}
@@ -58,33 +46,31 @@ export const App = () => {
 			</div>
 
 			<div className='app'>
-				{!user.isLoggedInUser ? (
-					<Login />
 				) : (
-					<>
-						{showAccountPage || !showListPage ? (
-							<Account />
-						) : (
-							<>
-								{showListPage ? (
-									<List
-										todos={todos}
-										setTodos={setTodos}
-										complateTodos={complateTodos}
-									/>
-								) : (
-									<h2 className='signin-message'>Please login</h2>
-								)}
-							</>
-						)}
-						{!showAccountPage && (
-							<PerformanceState
-								complateTodos={complateTodos.length}
-								totalTodos={todos.length}
-							/>
-						)}
-					</>
-				)}
+				<>
+					{showAccountPage || !showListPage ? (
+						<Account />
+					) : (
+						<>
+							{showListPage ? (
+								<List
+									todos={todos}
+									setTodos={setTodos}
+									complateTodos={complateTodos}
+								/>
+							) : (
+								<h2 className='signin-message'>Please login</h2>
+							)}
+						</>
+					)}
+					{!showAccountPage && (
+						<PerformanceState
+							complateTodos={complateTodos.length}
+							totalTodos={todos.length}
+						/>
+					)}
+				</>
+				)
 			</div>
 		</>
 	);

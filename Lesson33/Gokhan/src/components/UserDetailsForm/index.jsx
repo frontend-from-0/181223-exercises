@@ -1,24 +1,9 @@
-import React, { useState, useContext, createContext } from 'react';
-
-const UserContext = createContext();
-
-export const UserProvider = ({ children }) => {
-    const [username, setUsername] = useState('defaultUser');
-
-    const updateUsername = (newUsername) => {
-        setUsername(newUsername);
-    };
-
-    return (
-        <UserContext.Provider value={{ username, updateUsername }}>
-            {children}
-        </UserContext.Provider>
-    );
-};
+import React, { useState } from 'react';
+import { useUserContext } from '../Context/UserContext';
 
 export const UserDetailsForm = () => {
-    const { username, updateUsername } = useContext(UserContext);
-    const [tempUsername, setTempUsername] = useState(username);
+    const { state, dispatch } = useUserContext();
+    const [tempUsername, setTempUsername] = useState(state.username);
 
     const handleChange = (e) => {
         setTempUsername(e.target.value);
@@ -26,7 +11,10 @@ export const UserDetailsForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateUsername(tempUsername);
+        dispatch({
+            type: 'UPDATE_USERNAME',
+            payload: { username: tempUsername }
+        });
     };
 
     return (
