@@ -24,11 +24,11 @@ export const List = ({ todos, setTodos }) => {
 				))}
 			</ul>
 			<h3>Completed Todos</h3>
-			<ul class='completed-todos'>
+			<ul className='completed-todos'>
 				{completedTodos.length > 0 ? (
 					completedTodos.map(item => <li key={item.id}>{item.title}</li>)
 				) : (
-					<li class='done-tasks'>No completed todos</li>
+					<li className='done-tasks'>No completed todos</li>
 				)}
 			</ul>
 		</div>

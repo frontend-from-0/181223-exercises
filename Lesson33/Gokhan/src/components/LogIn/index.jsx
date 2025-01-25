@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useUserContext } from '../Context/UserContext';
-import registeredUsers from '../Data/registeredUsers';
+import registeredUsers from '../registeredUsers';
 import './styles.css';
+import { Pages } from '../../App';
 
-export const LogIn = () => {
+export const LogIn = ({setCurrentPage}) => {
     const { dispatch } = useUserContext();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -13,7 +14,6 @@ export const LogIn = () => {
         e.preventDefault();
 
         if (!username || !password) {
-            dispatch({ type: 'LOGIN', payload: { username } });
             setError('Both Fields Are Required');
             return;
         }
@@ -27,6 +27,7 @@ export const LogIn = () => {
                 type: 'LOGIN',
                 payload: { username, isLoggedInUser: true }
             });
+            setCurrentPage(Pages.LIST);
             setError('');
         } else {
             setError('Invalid Username or Password');
@@ -34,10 +35,10 @@ export const LogIn = () => {
     };
 
     return (
-        <form className="login-form" onSubmit={handleSubmit}>
-            <h2>LOGIN</h2>
-            {error && <p className='error-message'>{error}</p>}
-            <div class="username-container">
+        <form className="login-form" onSubmit={handleSubmit} noValidate>
+            <h2>Login</h2>
+            
+            <div className="input-group">
                 <label for="Username">Username</label>
                 <input
                     type="text"
@@ -46,7 +47,7 @@ export const LogIn = () => {
                     required
                 />
             </div>
-            <div class="password-container">
+            <div className="input-group">
                 <label for="password">Password</label>
                 <input
                     type="password"
@@ -55,6 +56,7 @@ export const LogIn = () => {
                     required
                 />
             </div>
+            {error && <p className='error-message'>{error}</p>}
             <button type="submit">Login</button>
         </form>
     );

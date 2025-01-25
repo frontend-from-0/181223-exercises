@@ -17,11 +17,7 @@ const userReducer = (state, action) => {
                 username: action.payload.username
             };
         case 'LOGOUT':
-            return {
-                ...state,
-                isLoggedInUser: false,
-                username: ''
-            };
+            return initialState;
         case 'UPDATE_USERNAME':
             return {
                 ...state,
