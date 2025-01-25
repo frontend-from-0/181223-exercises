@@ -7,9 +7,6 @@ export const Navbar = ({
 }) => {
   const { state, dispatch } = useUserContext();
 
-  console.log("Navbar re-rendered", state);
-
-
 	function handleSignOut () {
 		dispatch({
 			type: 'LOGOUT',
