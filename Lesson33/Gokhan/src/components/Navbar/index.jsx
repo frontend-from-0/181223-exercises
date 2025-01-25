@@ -1,20 +1,48 @@
-import './styles.css';
+import "./styles.css";
+import { useUserContext } from "../Context/UserContext";
+import { Pages } from "../../App";
 
-export const Navbar = ({ isLoggedInUser, onAccountClick, onHomeClick, onSignOut, onSignIn }) => {
+export const Navbar = ({
+  setCurrentPage
+}) => {
+  const { state, dispatch } = useUserContext();
 
-	return (
-		<nav className='navigation'>
-			<ul className='navigation-list'>
-				<li class='home-btn' onClick={onHomeClick}>Home</li>
-				{isLoggedInUser ? (
-					<>
-						<li class='account-btn' onClick={onAccountClick}>Account</li>
-						<li class='out-btn' onClick={onSignOut}>Sign out</li>
-					</>
-				) : (
-					<li class='in-btn' onClick={onSignIn}>Sign in</li>
-				)}
-			</ul>
-		</nav>
-	);
+	function handleSignOut () {
+		dispatch({
+			type: 'LOGOUT',
+		});
+		setCurrentPage(Pages.LOGIN);
+	}
+
+	function handleHomeClick () {
+		if (state.isLoggedInUser) {
+			setCurrentPage(Pages.LIST);
+		} else {
+			setCurrentPage(Pages.LOGIN);
+		}
+	}
+
+  return (
+    <nav className="navigation">
+      <ul className="navigation-list">
+        <li className="home-btn" onClick={handleHomeClick}>
+          Home
+        </li>
+        {state.isLoggedInUser ? (
+          <>
+            <li className="account-btn" onClick={() => setCurrentPage(Pages.ACCOUNT)}>
+              Account
+            </li>
+            <li className="out-btn" onClick={handleSignOut}>
+              Sign out
+            </li>
+          </>
+        ) : (
+          <li className="in-btn" onClick={() => setCurrentPage(Pages.LOGIN)}>
+            Sign in
+          </li>
+        )}
+      </ul>
+    </nav>
+  );
 };

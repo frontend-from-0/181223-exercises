@@ -1,51 +1,60 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* Don't center the content, instead let it take the available space
+  align-items: center; */
   justify-content: center;
-  border: 7px solid #ccc;
+  /* Border does not make the content look any better
+  border: 7px solid #ccc; */
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: #e0dcdc;
+  /* Avoiding box-shadow and backgroun color would make this component look better by default */
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  /* background-color: #e0dcdc; */
   margin: auto;
-  max-width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 600px;
+  color: #6b7280;
 }
 
 .login-form h2 {
   margin-bottom: 20px;
+  color: #374151;
+  align-self: center;
 }
 
-.username-container {
+.input-group {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
-}
-
-.password-container {
-  display: flex;
-  align-items: center;
-  gap: 17px;
-}
-
-.login-form input {
-  width: 60%;
-  max-width: 400px;
-  padding: 10px;
   margin: 10px 0;
+}
+
+.input-group > label {
+  /* Makes the label take 20% of the availabel space by default */
+  flex-basis: 20%;
+}
+.input-group > input {
+  /* Make the input takes the rest of the available space, so both inputs are equal in size */
+  flex-grow: 1;
+  padding: 10px;
+  /* Used margin on .input-group for vertical spaceing instead
+  margin: 10px 0; */
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
 }
 
 .login-form button {
+  /* Always add a min-width to make buttons accessible */
+  min-width: 48px;
   padding: 10px;
-  background-color: #007bff;
-  color: white;
+  /* To make color picking easier, use Tailwind colors. https://v3.tailwindcss.com/docs/customizing-colors
+  I used Sky-600 for main button color, sky-700 for hoover effect, and sky-50 for color.
+  To make the element look more natural, I replaced the white color of the label with a very light shade of the background color.
+  */
+  background-color: #0284c7;
+  color: #e0f2fe;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -54,24 +63,12 @@
 }
 
 .login-form button:hover {
-  background-color: #0056b3;
+  background-color: #0369a1;
 }
 
-.text-area {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  resize: vertical;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
 .error-message {
-  color: red;
-  font-size: 0.9rem;
+  /* Red-400 from Tailwind colors */
+  color: #f87171;
   margin-bottom: 10px;
+  font-weight: 600;
 }
