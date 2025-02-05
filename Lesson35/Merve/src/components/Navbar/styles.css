@@ -1,0 +1,45 @@
+:root {
+  --main-darkborder: #a7a7a7;
+  --main-lightborder: #ffffffe2;
+  --background-light: #ffffff
+}
+
+.navigation {
+  margin: 0;
+  padding: 20px;
+  background-color: var(--background-light);
+}
+
+.navigation-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.home-btn:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.account-btn:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.in-btn:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.out-btn:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.signin-message {
+  display: flex;
+  justify-content: center;
+}
