@@ -2,10 +2,12 @@ const Exercise4=(props)=>{
   const {item}= props;
     return(
 
-        <li
-        onClick={()=>alert(item)}
-        >{item}</li>
-
+      <li 
+      
+      onClick={() => alert(item)}
+  >
+      {item}
+  </li>
     );
 
 };

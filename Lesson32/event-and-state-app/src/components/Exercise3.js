@@ -8,9 +8,9 @@ export const Exercise3 = () => {
 	}
 
 	return (
-		<>
-			<button onClick={handleClick}>Increment count value</button>
-			<p>{count}</p>
-		</>
+		<div style={{ textAlign: 'center', marginTop: '20px' }}>
+            <button onClick={handleClick}>Increment count value</button>
+            <p style={{ fontSize: '48px', fontWeight: 'bold' }}>{count}</p> 
+        </div>
 	);
 };
