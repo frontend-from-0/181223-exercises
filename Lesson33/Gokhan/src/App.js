@@ -1,54 +1,78 @@
-import React, { useState } from 'react';
 import { List } from './components/List';
 import { Navbar } from './components/Navbar';
 import { Account } from './components/Account';
 import { PerformanceState } from './components/PerformanceState';
-import { LogIn } from './components/LogIn';
-import { useUserContext } from './components/Context/UserContext';
 import './App.css';
-
-const initialTodos = [
-	{ id: 1, text: 'Do not give up', completed: false },
-	{ id: 2, text: 'Keep Dreaming', completed: true },
-	{ id: 3, text: 'Follow Your Dreams', completed: false },
-	{ id: 4, text: 'Work Hard', completed: false },
-	{ id: 5, text: 'Think Possitive', completed: true },
-	{ id: 6, text: 'Finish Course', completed: false },
-];
+import { todoData } from './data';
+import { useState } from 'react';
 
 export const App = () => {
-	const [todos, setTodos] = useState(initialTodos);
+	const [user, setUser] = useState({ isLoggedInUser: false, name: '' });
+	const [showAccountPage, setShowAccountPage] = useState(false);
+	const [showListPage, setShowListPage] = useState(false);
+	const [todos, setTodos] = useState(todoData);
 
-	return (
-		<div className='container'>
-			<Navbar />
-			<MainContent todos={todos} setTodos={setTodos} />
-		</div>
-	);
-};
+	const handleAccountClick = () => {
+		setShowAccountPage(true);
+		setShowListPage(false);
+	};
 
-const MainContent = ({ todos, setTodos }) => {
-	const { state } = useUserContext();
+	const handleHomeClick = () => {
+		setShowListPage(true);
+		setShowAccountPage(false);
+	};
 
-	// const updateUsername = (newUsername) => {
-	// 	dispatch({ type: 'UPDATE_USERNAME', payload: { username: newUsername } });
-	// };
+	const handleSignIn = () => {
+		setUser({ isLoggedInUser: true, name: 'Default User' });
+		setShowListPage(true);
+		setShowAccountPage(false);
+
+	};
+
+	const handleSignOut = () => {
+		setUser({ isLoggedInUser: false, name: '' });
+		setShowAccountPage(false);
+		setShowListPage(false);
+	};
+
+	const handleUserNameChange = (newUserName) => {
+		setUser((prevUser) => ({ ...prevUser, name: newUserName }));
+	};
+
+	const complateTodos = todos.filter(todo => todo.completed);
 
 	return (
 		<>
-			{state.isLoggedInUser ? (
-				<>
-					<Account />
-					<List
-						todos={todos}
-						setTodos={setTodos} />
-					<PerformanceState
-						totalTodos={todos.length}
-						completedTodos={todos.filter(todo => todo.completed).length} />
-				</>
-			) : (
-				<LogIn />
-			)}
+			<div className='container'>
+				<Navbar
+					isLoggedInUser={user.isLoggedInUser}
+					updateUser={setUser}
+					onAccountClick={handleAccountClick}
+					onHomeClick={handleHomeClick}
+					onSignIn={handleSignIn}
+					onSignOut={handleSignOut}
+				/>
+			</div>
+
+			<div className='app'>
+				{showAccountPage ? (
+					<Account
+						username={user.name}
+						onUsernameChange={handleUserNameChange}
+					/>
+				) : (
+					<>
+						{user.isLoggedInUser && showListPage ? (
+							<List todos={todos} setTodos={setTodos} complateTodos={complateTodos} />
+						) : (
+							<h2 className='signin-message'>Please login</h2>
+						)}
+					</>
+				)}
+				{user.isLoggedInUser && !showAccountPage && (
+					<PerformanceState complateTodos={complateTodos.length} totalTodos={todos.length} />
+				)}
+			</div>
 		</>
 	);
 };
