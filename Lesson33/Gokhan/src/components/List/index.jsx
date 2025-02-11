@@ -1,4 +1,5 @@
 import './styles.css';
+
 export const List = ({ todos, setTodos }) => {
 
 	const handleClick = (id) => {

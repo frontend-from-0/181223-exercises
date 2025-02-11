@@ -3,11 +3,11 @@ import { Navbar } from './components/Navbar';
 import { Account } from './components/Account';
 import { PerformanceState } from './components/PerformanceState';
 import './App.css';
-import { loggedInUser, loggedOutUser, todoData } from './data';
+import { todoData } from './data';
 import { useState } from 'react';
 
 export const App = () => {
-	const [user, setUser] = useState(loggedInUser);
+	const [user, setUser] = useState({ isLoggedInUser: false, name: '' });
 	const [showAccountPage, setShowAccountPage] = useState(false);
 	const [showListPage, setShowListPage] = useState(false);
 	const [todos, setTodos] = useState(todoData);
@@ -23,14 +23,14 @@ export const App = () => {
 	};
 
 	const handleSignIn = () => {
-		setUser(loggedInUser);
+		setUser({ isLoggedInUser: true, name: 'Default User' });
 		setShowListPage(true);
 		setShowAccountPage(false);
 
 	};
 
 	const handleSignOut = () => {
-		setUser(loggedOutUser);
+		setUser({ isLoggedInUser: false, name: '' });
 		setShowAccountPage(false);
 		setShowListPage(false);
 	};
