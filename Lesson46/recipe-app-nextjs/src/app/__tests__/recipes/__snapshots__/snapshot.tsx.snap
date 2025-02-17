@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div>
+    <h1
+      data-testid="recipe-list-title"
+    >
+      Recipe list
+    </h1>
+  </div>
+</div>
+`;
