@@ -1,0 +1,20 @@
+.performance-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.5dvh solid #e9775a;
+  border-radius: 5px;
+  padding: 10px;
+  padding-top: 0;
+  margin: 25px auto;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 20%;
+}
+
+.performance-state h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #696363;
+}
