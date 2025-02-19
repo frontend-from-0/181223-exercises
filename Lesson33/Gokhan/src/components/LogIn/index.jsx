@@ -13,7 +13,6 @@ export const LogIn = () => {
         e.preventDefault();
 
         if (!username || !password) {
-            dispatch({ type: 'LOGIN', payload: { username } });
             setError('Both Fields Are Required');
             return;
         }
@@ -37,7 +36,7 @@ export const LogIn = () => {
         <form className="login-form" onSubmit={handleSubmit}>
             <h2>LOGIN</h2>
             {error && <p className='error-message'>{error}</p>}
-            <div class="username-container">
+            <div className="username-container">
                 <label for="Username">Username</label>
                 <input
                     type="text"
@@ -46,7 +45,7 @@ export const LogIn = () => {
                     required
                 />
             </div>
-            <div class="password-container">
+            <div className="password-container">
                 <label for="password">Password</label>
                 <input
                     type="password"
@@ -59,4 +58,3 @@ export const LogIn = () => {
         </form>
     );
 };
-

@@ -3,7 +3,7 @@ import { Navbar } from './components/Navbar';
 import { Account } from './components/Account';
 import { PerformanceState } from './components/PerformanceState';
 import './App.css';
-import { loggedInUser, loggedOutUser, todoData } from './data';
+import { todoData } from './data';
 import { useState } from 'react';
 
 export const App = () => {
@@ -46,31 +46,27 @@ export const App = () => {
 			</div>
 
 			<div className='app'>
+				{showAccountPage || !showListPage ? (
+					<Account />
 				) : (
-				<>
-					{showAccountPage || !showListPage ? (
-						<Account />
-					) : (
-						<>
-							{showListPage ? (
-								<List
-									todos={todos}
-									setTodos={setTodos}
-									complateTodos={complateTodos}
-								/>
-							) : (
-								<h2 className='signin-message'>Please login</h2>
-							)}
-						</>
-					)}
-					{!showAccountPage && (
-						<PerformanceState
-							complateTodos={complateTodos.length}
-							totalTodos={todos.length}
-						/>
-					)}
-				</>
-				)
+					<>
+						{showListPage ? (
+							<List
+								todos={todos}
+								setTodos={setTodos}
+								complateTodos={complateTodos}
+							/>
+						) : (
+							<h2 className='signin-message'>Please login</h2>
+						)}
+					</>
+				)}
+				{!showAccountPage && (
+					<PerformanceState
+						complateTodos={complateTodos.length}
+						totalTodos={todos.length}
+					/>
+				)}
 			</div>
 		</>
 	);
