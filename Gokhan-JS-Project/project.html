@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="favicon img/photo-camera.png" type="image/x-icon" />
+    <title>Image Search</title>
+</head>
+
+<body>
+    <header>
+        <h1>Image Search</h1>
+        <div class="category-buttons"></div>
+
+        <form action="">
+            <div class="search-container">
+                <input type="text" placeholder="Search Another Images" class="search-input" />
+                <span class="material-symbols-outlined">search</span>
+            </div>
+        </form>
+
+        <div class="container">
+            <img src="large-image.jpg" alt="" class="responsive-image" />
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <button class="resetBtn">Reset</button>
+            <div class="images-container"></div>
+            <button class="loadMoreBtn">Load More</button>
+
+        </section>
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Modal Image">
+            <div class="modal-info"></div>
+            <p id="imageDescription"></p>
+            <p id="photographerName"></p>
+            <button id="nextButton">Next</button>
+            <button id="prevButton">Previous</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="project.js"></script>
+</body>
+
+</html>
