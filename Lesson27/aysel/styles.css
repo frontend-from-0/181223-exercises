@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+  background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;}
+  
+  form label {
+    font-size: 20px;
+    color: #333;
+    margin: 0 0 10px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"], 
+  textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+  }
+  
+  form textarea {
+      height: 100px;
+      resize: vertical;
+  }
+  
+  .post {
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .post-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 10px;
+  }
+  
+  .post-body {
+    color: #666;
+    margin: 0;
+  }
+
+  #post-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+ .button--success {
+    background-color: #4CAF50;
+  }
+  
+  .button--success:hover {
+    background-color: #45a049;
+    color: white;
+  }
+  
+  
+  .button--danger {
+    background-color: #7a0916;
+    color: white;
+  }
+  
+ .button--danger:hover {
+    background-color: #79000cf4;
+  }
+
+  #go-back-button {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  #confirmation-message {
+    background-color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+#confirmation-message h3, #confirmation-message p {
+    margin: 0;
+}
+
+#confirmation-message #go-back-button{
+    margin-top: 10px;}

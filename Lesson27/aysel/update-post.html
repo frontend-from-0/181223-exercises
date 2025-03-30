@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update post</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+
+</head>
+<body>
+  <!-- TODO: add form element -->
+  <div class="container">
+    <h1>Update Post</h1>
+    <div class="post">
+    <form id="update-post-form"> 
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        <div>
+            <label for="body">Body:</label>
+            <textarea id="body" name="body" required></textarea>
+        </div>
+        <button type="submit" class="button button--success">Update</button>
+    </form>
+  </div>
+<div id="confirmation-message" style="display:none; padding: 10px; border: 1px solid #ccc; margin: 10px 0;">
+  <h3 id="post-title"></h3>
+  <p id="post-body"></p>
+</div>
+<button id="go-back-button" class="button button--success">Go Back</button>
+</div>
+  <script src="./update.js"></script>
+  
+</body>
+</html>
