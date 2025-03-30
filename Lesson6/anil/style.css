@@ -1,0 +1,202 @@
+/* Just realised I didn't create a branch when ı pushed my lesson6, I just pushed it in lesson22 */
+/* created july 3 2024 and this is the time stamp */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.navbar{
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.05);
+}
+
+.nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    
+}
+
+li{
+    list-style-type: none;
+}
+
+.btn{
+    padding: 6px 12px;
+    min-width: 48px;
+    border-radius: 10px;
+}
+
+.outlined-button{
+    border: 1px solid #007BFF;
+    color:#007BFF;
+}
+
+.nav-item:hover{
+    text-decoration: underline;
+}
+
+.outlined-button:hover{
+    color:white;
+    background-color: #007BFF;
+} 
+.no-underline:hover{
+    text-decoration: none;
+}
+
+.hero-content{
+    max-width: 600px;
+    text-align: center;
+    margin: 48px auto 24px;
+}
+
+.carts-container{
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+
+.cart{
+    border: 1px solid rgba(0,0,0,0.125);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 180px;
+    width: 30%;
+    height: 255px;
+    text-align: center;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.05);
+}
+
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    gap:2px;
+}
+
+.price{
+    font-size: 2.5rem;
+}
+
+.monthly{
+    font-size: 1.5rem;
+    color: grey;
+
+}
+
+.cart-btn{
+    padding: 10px 15px ;
+    border: 1px solid #007BFF;
+    color:#007BFF;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.cart-btn-blue{
+    padding: 10px 15px ;
+    border: 1px solid #007BFF;
+    background-color:#007BFF;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 80%;
+}
+
+.cart-btn-blue:hover{
+    color:#007BFF;
+    background-color: white;
+}
+
+
+
+.suscription-type{
+    background-color: lightgray;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    
+    
+}
+.suscription-type h2{
+    margin: 0;
+    padding: 5px;
+    display: inline-block;
+    font-weight: 370;
+  
+}
+
+footer{
+
+    display: flex;
+    margin: 40px auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    flex-wrap: wrap;
+    
+
+}
+
+.footer-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 180px;
+    width: 20%;
+    height: 255px;
+    text-align: center;
+}
+
+
+.footer-cart > h3{
+    margin: 3px;
+    font-weight: 200;
+    color: grey;
+    font-size: 1rem;
+}
+
+.footer-cart-image{
+    display: flex;
+    align-items: start;
+}
+
+.square{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 ;
+    height: 25px;
+    width: 25px;
+    color: white;
+    background-color: purple;
+    font-weight: bold;
+    border-radius: 5px;
+}
