@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.post {
+  display: grid;
+  margin: 100px auto;
+  grid-gap: 10px 10px;
+  grid-template-columns: 2fr 4fr 11fr 4fr 2fr;
+}
+img {
+  max-width: 100%;
+}
+
+.post > * {
+  grid-column: 3 / span 1;
+}
+.clock,
+.youtube-pic {
+  width: 100%;
+  grid-column: 2 / span 3;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 52px;
+  letter-spacing: -0.011em;
+}
+
+.first-pic {
+  border-radius: 50px;
+  position: relative;
+}
+.second-pic {
+  position: relative;
+  margin-left: -14px; /*i couldnt find any other way to put this pic on the first one*/
+  border-radius: 50px;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.publisher {
+  position: relative;
+  margin-left: 75px;
+  margin-top: -43px;
+  margin-bottom: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 20px;
+}
+
+.publisher > a {
+  color: black;
+  text-decoration: none;
+}
+
+.publisher > a:hover {
+  text-decoration: underline;
+}
+
+.publisher > span {
+  color: gray;
+}
+
+.publisher > button {
+  color: rgb(12, 172, 100);
+  border: none;
+  background-color: transparent;
+}
+
+.bottom-information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-bottom-information {
+  display: flex;
+  gap: 25px;
+}
+.right-bottom-information {
+  display: flex;
+  gap: 25px;
+}
+.bottom-information i {
+  color: rgb(130, 129, 129);
+  font-size: smaller;
+}
+hr {
+  border: 0.1px solid #c0bdbd;
+  margin: 0;
+}
+
+figcaption {
+  font-size: 14px;
+  text-align: center;
+  color: rgb(66, 65, 65);
+}
+
+.post > p,
+ol {
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+}
+
+.gray-box {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-top: 1.9rem;
+}
+
+.btn-section {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-section > a {
+  color: black;
+  text-decoration: none;
+  margin-bottom: 20px;
+  background-color: lightgray;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.socialmedia {
+  display: flex;
+  justify-content: space-between;
+}
+.responsive-publisher {
+  display: none;
+}
+
+@media all and (max-width: 900px) {
+  .clock,
+  .youtube-pic {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+}
+
+@media all and (max-width: 767.98px) {
+  h5 {
+    font-size: 18px;
+    margin-top: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 38px;
+    letter-spacing: -0.014em;
+  }
+
+  .post > p,
+  ol {
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 400;
+  }
+  .publisher {
+    display: none;
+  }
+  .responsive-publisher {
+    display: block;
+  }
+  .responsive-publisher {
+    position: relative;
+    margin-left: 75px;
+    margin-top: -43px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+  }
+
+  .responsive-publisher > a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .responsive-publisher > a:hover {
+    text-decoration: underline;
+  }
+
+  .responsive-publisher > span {
+    color: gray;
+  }
+
+  .responsive-publisher > button {
+    color: rgb(12, 172, 100);
+    border: none;
+    background-color: transparent;
+  }
+}
